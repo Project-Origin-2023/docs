@@ -24,51 +24,46 @@ Lo scopo è di fornire una descrizione accurata di tutte le regole, le convenzio
     \item \textbf{Approvazione}:Quando un redattore ha terminato le sue modifiche il Responsabile del progetto assegna ad un Verificatore il compito di esaminare ed approvare le modifiche.
 Il documento viene pubblicato se tutte le modifiche hanno ricevuto l’approvazione da parte dei Verificatori e successivamente dal Responsabile del Progetto.
 \end{itemize}
-
+\newpage
 \subsubsection{Struttura delle directory e dei file}
 I documenti saranno archiviati con la seguente struttura della directory: \\
+
 \begin{forest}
-    for tree={
-      font=\ttfamily,
-      grow'=0,
-      child anchor=west,
-      parent anchor=south,
-      anchor=west,
-      calign=first,
-      edge path={
-        \noexpand\path [draw, \forestoption{edge}]
-        (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.25pt] {} (.child anchor)\forestoption{edge label};
-      },
-      before typesetting nodes={
-        if n=1
-          {insert before={[,phantom]}}
-          {}
-      },
-      fit=band,
-      before computing xy={l=15pt},
-    }
-  [NomeDocumento
-    [NomeDoc.tex]
-    [NomeDoc.pdf]
-    [res
-      [sections
-          [01Introduzione.tex]
-          [02Sezione2.tex]
-          [03Sezione3.tex]
-      ]
-      [Immagini
-          [Immagine1.png]
-          [Immagine2.jpeg]
-      ]
-      [NomeDoc.tex]
-      [RegistroModifiche.tex]
-    ]
-    [config
-      [titlePageInput.tex]
-      [changeloginput.tex]
-    ]
+  for tree={
+    font=\ttfamily,
+    grow'=0,
+    child anchor=west,
+    parent anchor=south,
+    anchor=west,
+    calign=first,
+    edge path={
+      \noexpand\path [draw, \forestoption{edge}]
+      (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.25pt] {} (.child anchor)\forestoption{edge label};
+    },
+    before typesetting nodes={
+      if n=1
+        {insert before={[,phantom]}}
+        {}
+    },
+    fit=band,
+    before computing xy={l=15pt},
+  }
+[docs
+  [documenti esterni
+     [verbali
+        [VE-XXXX-YY-ZZ.pdf]
+     ]
+     [PdP.pdf]
+    [PdQ.pdf]
   ]
-  \end{forest}\\
+  [documenti interni
+    [verbali
+        [VI-XXXX-YY-ZZ.pdf]
+    ]
+    [NdP.pdf]
+  ]
+]
+\end{forest}\\
 
 \subsubsection{Registro delle modifiche}
 All’inizio del documento deve essere presente una tabella riassuntiva della cronologia delle versioni del documento dove sono specificate le modifiche apportate.

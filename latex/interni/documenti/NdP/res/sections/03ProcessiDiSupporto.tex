@@ -1,0 +1,113 @@
+\section{Processi di Supporto}
+
+\subsection{Documentazione}
+\subsubsection{Scopo}
+Sarà necessario documentare ogni fase e attività coinvolta nello sviluppo del progetto. Questa sezione illustrerà le regole e gli standard da seguire durante la produzione 
+dei documenti per l'intero ciclo di vita del software. \\
+Qui esamineremo approfonditamente i processi adottati per la stesura, la verifica, il mantenimento e l’approvazione di tutta la documentazione prodotta dal nostro team. \\
+Lo scopo è di fornire una descrizione accurata di tutte le regole, le convenzioni e i limiti che ci impegniamo a rispettare per ottenere una documentazione efficace, coerente e formale.\\
+
+\subsubsection{Documenti prodotti}
+\begin{itemize}
+    \item \textbf{Norme di progetto};
+    \item \textbf{Glossario};
+    \item \textbf{Piano di progetto};
+    \item \textbf{Piano di Qualifica};
+    \item \textbf{Analisi dei requisiti};
+    \item \textbf{Verbali}.
+\end{itemize}
+
+\subsubsection{Ciclo di vita di un documento}
+\begin{itemize}
+    \item \textbf{Creazione Struttura}:A partire da un template comune viene creata la struttura del documento inserendo il registro delle modifiche e l’indice dei contenuti;
+    \item \textbf{Stesura}: Durante questa fase i redattori producono le sezioni assegnate a loro dal Responsabile di Progetto aggiornando progressivamente il documento.;
+    \item \textbf{Approvazione}:Quando un redattore ha terminato le sue modifiche il Responsabile del progetto assegna ad un Verificatore il compito di esaminare ed approvare le modifiche.
+Il documento viene pubblicato se tutte le modifiche hanno ricevuto l’approvazione da parte dei Verificatori e successivamente dal Responsabile del Progetto.
+\end{itemize}
+
+\subsubsection{Struttura delle directory e dei file}
+I documenti saranno archiviati con la seguente struttura della directory: \\
+\begin{forest}
+    for tree={
+      font=\ttfamily,
+      grow'=0,
+      child anchor=west,
+      parent anchor=south,
+      anchor=west,
+      calign=first,
+      edge path={
+        \noexpand\path [draw, \forestoption{edge}]
+        (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.25pt] {} (.child anchor)\forestoption{edge label};
+      },
+      before typesetting nodes={
+        if n=1
+          {insert before={[,phantom]}}
+          {}
+      },
+      fit=band,
+      before computing xy={l=15pt},
+    }
+  [NomeDocumento
+    [NomeDoc.tex]
+    [NomeDoc.pdf]
+    [res
+      [sections
+          [01Introduzione.tex]
+          [02Sezione2.tex]
+          [03Sezione3.tex]
+      ]
+      [Immagini
+          [Immagine1.png]
+          [Immagine2.jpeg]
+      ]
+      [NomeDoc.tex]
+      [RegistroModifiche.tex]
+    ]
+    [config
+      [titlePageInput.tex]
+      [changeloginput.tex]
+    ]
+  ]
+  \end{forest}\\
+
+\subsubsection{Registro delle modifiche}
+All’inizio del documento deve essere presente una tabella riassuntiva della cronologia delle versioni del documento dove sono specificate le modifiche apportate.
+Si considerano esenti da questo registro solo i verbali ed il glossario.
+Nella tabella ogni riga corrisponde ad una modifica apportata, mentre le colonne sono le seguenti:
+\begin{itemize}
+    \item \textbf{Versione}: versione del documento dopo la modifica;
+    \item \textbf{Data}: data della modifica;
+    \item \textbf{Autore}: nome dell’autore della modifica o della azione apportata;
+    \item \textbf{Ruolo}: Redattore nel caso di modifiche del documento, Verificatore per chi verifica le modifiche apportate e Responsabile per l’approvazione finale da parte del Responsabile del Progetto;
+    \item \textbf{Descrizione}: breve descrizione della modifica apportata.
+\end{itemize}
+
+\subsubsection{Verbali}
+I verbali sono suddivisi in Interni ed Esterni e non sono soggetti a versionamento. \\
+Dovranno contenere le seguenti informazioni:
+\begin{itemize}
+    \item \textbf{Motivo della riunione};
+    \item \textbf{Luogo della riunione (se in presenza o da remoto)};
+    \item \textbf{Data, ora e durata della riunione};
+    \item \textbf{Partecipanti della riunione};
+    \item \textbf{Resoconto della riunione con le decisioni intraprese}.
+\end{itemize}
+
+\subsubsection{Strumenti utilizzati}
+Gli strumenti utilizzati per la stesura dei documenti sono:
+\begin{itemize}
+    \item \textbf{LATEX}: tutti i documenti prodotti dal gruppo verranno redatti usando il linguaggio di markup LateX;
+    \item \textbf{Visual Studio Code con l’estensione Latex Workshop}: il gruppo adotterà questo strumento per scrivere i documenti e per creare i file;
+    \item \textbf{Overleaf}: in casi di necessità si userà questo editor online, per scrivere il codice LateX in casi in cui il primo metodo non sia in quel momento disponibile;
+    \item \textbf{Draw.io}: sito online per la creazione di grafici UML;
+    \item \textbf{GanttProject}: programma usato per la realizzazione di diagrammi di Gantt.
+\end{itemize}
+Per semplificare le operazioni di verifica e di lettura della documentazione dovrà essere reso disponibile il documento completo in formato PDF.
+
+\subsection{Versionamento}
+I documenti dovranno supportare il versionamento, in modo da permettere l’accesso ad ogni singola versione prodotta durante il loro ciclo di vita. \\
+Il formato identificativo del versionamento dovrà seguire questa forma: \\
+v[X].[Y].[Z] \\
+Il valore "X" rappresenta la versione pubblicamente rilasciata e approvata dal responsabile del progetto. Questa numerazione inizia da zero e viene incrementata ad ogni nuova versione approvata. \\
+Il valore "Y" indica una revisione da parte del Verificatore effettuata per assicurarsi che, dopo l'implementazione di una modifica, il prodotto sia ancora integro e coerente. La numerazione inizia anch'essa da zero e viene azzerrata ogni volta che viene incrementato il valore "X". \\
+Il valore "Z" viene incrementato ad ogni modifica del prodotto. Anche questa numerazione inizia da zero e viene azzerata ogni volta che viene incrementato il valore "X" o "Y". \\

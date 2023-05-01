@@ -1,3 +1,122 @@
-\section{Processi primari}
+\section{Processi primari} 
 
-\subsection{Fornitura}
+\subsection{Fornitura} 
+\subsubsection{Descrizione}
+Date le richieste del proponente, i processi di fornitura hanno come scopo di determinare e descrivere le attività e i compiti che il fornitore si impegna a svolgere.
+Le seguenti indicazioni dovranno essere seguite durante tutto il ciclo di vita del progetto didattico.
+
+\subsubsection{Obiettivi} 
+Gli obiettivi principali che si cerca di raggiungere definendo i processi di fornitura sono: 
+\begin{enumerate}
+    \item Evitare la creazione di eventuali dubbi durante il progetto; 
+    \item definire i bisogni che il prodotto deve soddisfare; 
+    \item calcolare i costi per la realizzazione del prodotto; 
+    \item definire le procedure necessarie per gestire il progetto; 
+    \item ottenere il responso del committente e del proponente sulle decisioni prese e sulle attività svolte.
+\end{enumerate}
+Una volta individuate le attività da svolgere, queste, insieme alle tempistiche, 
+saranno definite nel documento \textit{Piano di Progetto}.
+
+
+\subsubsection{Inizio dei lavori} 
+La prima attività svolta è stata un'analisi dei capitolati delle aziende proponenti, lo studio di questi capitolati è stato esposto nei documenti \textit{Analisi dei capitolati}. \\
+Per presentare la nostra candidatura il gruppo ha effettuato uno studio di fattibilità che 
+prevede come informazioni principali la stima dei costi degli orari di ogni ruolo necessario, 
+insieme alla stima dei costi complessiva e la definizione degli impegni di ogni membro del gruppo. \\
+Una volta ricevuta l'aggiudicazione per il capitolato scelto il gruppo ha iniziato a definire il proprio \textit{Way Of Working}. \\
+Questo e normato è descritto attraverso questo documento, \textit{Norme di Progetto}. \\
+Come obiettivo principale il gruppo ha deciso di descrivere inizialmente i Processi di Supporto ed Organizzativi in quanto sono 
+importanti per definire gli strumenti e le metodologie necessarie per iniziare il lavoro. 
+
+
+\subsubsection{Repository} 
+Le attività da effettuare comprenderanno un lavoro condiviso e il codice prodotto sarà di pubblico dominio. \\
+Pertanto il gruppo ha deciso di utilizzare una repository pubblica su GitHub, piattaforma conosciuta da tutti i membri del gruppo. \\
+La visione dei documenti creati è pubblica e solo i membri del gruppo hanno i permessi necessari per contribuire all'interno del progetto. \\
+I file che sono soggetti a versionamento includeranno all'interno della loro struttura la numerazione della versione corrente e un riepilogo 
+delle versioni precedenti sotto forma di tabella. In questo modo, è possibile tenere traccia dei cambiamenti apportati nel tempo al file e 
+fornire un'indicazione chiara della sua storia.
+È stata creata un'organizzazione di nome Project Origin, i riferimenti sono \url{https://github.com/Project-Origin-2023}.
+Al suo interno esiste la repo \textit{docs} contenente tutta la documentazione di interesse al proponente e al committente.
+
+\subsection{Sviluppo} 
+\subsubsection{Scopo} 
+Il processo di sviluppo ha come obiettivo di descrivere le attività di analisi, di progettazione e di codifica per il prodotto software da sviluppare. \\
+L'obiettivo più importante è la realizzazione del prodotto finale, attraverso l'individuazione dei requisiti del prodotto, 
+la descrizione e l'individuazione degli eventuali vincoli da rispettare.
+
+
+\subsubsection{Analisi dei requisiti} 
+\paragraph{Scopo} 
+L'attività di analisi dei requisiti si pone come obiettivo la creazione di un documento contenente tutti i requisiti richiesti dal proponente.
+Lo scopo è di identificare i requisiti obbligatori e facilitare l'attività di pianificazione della mole di lavoro.
+
+\paragraph{Casi d'uso} 
+I casi d'uso descrivono l'interazione tra il sistema e uno o più attori. Ogni caso d'uso è univoco, e si distingue con un codice che segue la seguente sintassi: "UC[Codice] - [Titolo]",
+dove "UC" sta per "Use Case", "[Codice]" indica un numero intero univoco per ogni caso d'uso, e "[Titolo]" è il titolo del caso d'uso. 
+Ogni caso d'uso può includere informazioni aggiuntive come:
+\begin{itemize}
+    \item Scenario principale
+    \item Scenari alternativi
+    \item Pre-condizioni
+    \item Post-condizioni
+    \item Trigger
+    \item Attori principali
+    \item Attori secondari
+    \item Diagramma UML
+\end{itemize}
+
+\paragraph{Requisiti} 
+I requisiti sono ricavati attraverso l’analisi del Capitolato insieme a successive discussioni con il proponente e attraverso l’analisi dei casi d’uso.
+Possono essere individuati sia tramite discussioni approfondite all’interno del gruppo che attraverso discussioni con il proponente.
+I requisiti possono essere categorizzati in diverse tipologie : 
+\begin{itemize}
+    \item \textbf{Funzionali} : Requisiti dati dalle funzionalità che il prodotto deve presentare.
+    \item \textbf{Qualità} : Requisiti dati per descrivere la qualità che il prodotto deve avere.
+    \item \textbf{Vincolo} : Requisiti dati da vincoli tecnologici e strettamente legati all’implementazione del prodotto.
+\end{itemize}
+I requisiti possono essere categorizzati in base a diversi gradi di importanza:
+\begin{itemize}
+    \item \textbf{Desiderabile}
+    \item \textbf{Opzionale} 
+    \item \textbf{Obbligatorio}
+\end{itemize}
+
+\paragraph{Codifica dei requisiti}
+
+R[Tipologia][Use Case][Importanza] \\
+Di seguito sono elencate le sigle per la codifica dei requisiti: 
+\begin{itemize}
+    \item \textbf{F}: Funzionale; \textbf{Q}: Qualità; \textbf{V}: Vincolo; (\textbf{Tipologia})
+    \item \textbf{UC}[codice]; (vedi capitolo 2.2.2.2) (\textbf{Casi d'uso})
+    \item \textbf{O}: Obbligatorio; \textbf{D}: Desiderabile; \textbf{P}: Opzionale. (\textbf{Importanza})
+\end{itemize}
+
+\subsubsection{Progettazione} 
+I progettisti sono responsabili dell'attività di progettazione, la quale consiste nell'ideazione dell'architettura del sistema sulla base dei requisiti 
+identificati nell'Analisi dei Requisiti. \\
+Per raggiungere questo obiettivo, il processo di progettazione prevede la realizzazione di un Proof of Concept 
+per la \textbf{R}equirements and \textbf{T}echnology \textbf{B}aseline, seguito da una fase di approfondimento dei dettagli per la Product Baseline.
+
+\subsubsection{Codifica}
+\begin{itemize}
+    \item \textbf{Indentazione}: i blocchi di codice innestati e le varie linee di codice dovranno rispettare una determinata tabulazione al fine di rendere il codice più leggibile.
+    \item \textbf{Blocco di codice}: la delimitazione dei vari blocchi di codice tra parentesi graffe dovranno avere una struttura determinata dove le parentesi 
+    graffe saranno poste nella seguente maniera:
+    \begin{itemize}
+        \item \textbf{parentesi di apertura}: posta a distanza di 1 spazio rispetto alla dichiarazione del costrutto ma sempre nella stessa linea.
+        \item \textbf{parentesi di chiusura}: posta nella linea successiva dell’ultima riga di codice del blocco a cui si fa riferimento e indentata secondo il blocco. 
+    \end{itemize}
+    \item \textbf{Commenti}: i commenti saranno inseriti in lingua italiana, saranno indispensabili nelle porzioni di codice non non è immediata comprensibile. ogni qualvolta il codice 
+    venga aggiornato va ricontrollata la validità dei commenti ad esso associato.
+    \item \textbf{Nomi univoci}: È necessario utilizzare nomi univoci e significativi per ogni costruttore al fine di garantire la chiarezza e la facilità di identificazione delle diverse entità.
+\end{itemize}
+
+
+
+
+
+
+
+
+

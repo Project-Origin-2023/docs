@@ -1,4 +1,4 @@
-name: Copy File on Push.pdf
+name: Copy File on Push
 
 on:
   push:
@@ -15,11 +15,11 @@ jobs:
       - name: Copying file PdP.pdf
         run: cp ./latex/esterni/documenti/pianoDiProgetto/PdP.pdf ./documenti_esterni/
       - name: Copying file glossario.pdf
-        run: cp ./latex/esterni/documenti/glossario/glossario.pdf ./documenti_esterni/ 
+        run: cp ./latex/esterni/documenti/glossario/glossario.pdf ./documenti_esterni/
       - name: Copying file PdQ.pdf
-        run: cp ./latex/esterni/documenti/pianoDiQualifica/PdQ.pdf ./documenti_esterni/         
+        run: cp ./latex/esterni/documenti/pianoDiQualifica/PdQ.pdf ./documenti_esterni/
       - name: Copying file NdP.pdf
-        run: cp ./latex/interni/documenti/normeDiProgetto/NdP.pdf ./documenti_interni/ 
+        run: cp ./latex/interni/documenti/normeDiProgetto/NdP.pdf ./documenti_interni/
 
       - name: Commit Files
         run: |

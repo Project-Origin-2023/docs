@@ -19,7 +19,7 @@ jobs:
       - name: Copying file PdQ.pdf
         run: cp ./latex/esterni/documenti/pianoDiQualifica/PdQ.pdf ./documenti_esterni/         
       - name: Copying file NdP.pdf
-        run: cp ./latex/esterni/documenti/normeDiProgetto/NdP.pdf ./documenti_interni/ 
+        run: cp ./latex/interni/documenti/normeDiProgetto/NdP.pdf ./documenti_interni/ 
 
       - name: Commit Files
         run: |

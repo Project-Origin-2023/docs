@@ -1,4 +1,4 @@
-name: Copy File on Push PdP.pdf
+name: Copy File on Push.pdf
 
 on:
   push:
@@ -12,10 +12,14 @@ jobs:
       - name: Copy File
         uses: actions/checkout@v2
 
-      - name: Copying file
+      - name: Copying file PdP.pdf
         run: cp ./latex/esterni/documenti/pianoDiProgetto/PdP.pdf ./documenti_esterni/
-      - name: Copying file
+      - name: Copying file glossario.pdf
         run: cp ./latex/esterni/documenti/glossario/glossario.pdf ./documenti_esterni/ 
+      - name: Copying file PdQ.pdf
+        run: cp ./latex/esterni/documenti/pianoDiQualifica/PdQ.pdf ./documenti_esterni/         
+      - name: Copying file NdP.pdf
+        run: cp ./latex/esterni/documenti/normeDiProgetto/NdP.pdf ./documenti_interni/ 
 
       - name: Commit Files
         run: |
@@ -24,8 +28,10 @@ jobs:
 
           git add ./documenti_esterni/PdP.pdf
           git add ./documenti_esterni/glossario.pdf
+          git add ./documenti_esterni/PdQ.pdf
+          git add ./documenti_interni/NdP.pdf          
 
-          git commit -m "update"
+          git commit -m "updateOnPush"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:

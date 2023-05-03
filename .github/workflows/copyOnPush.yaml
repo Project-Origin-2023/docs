@@ -20,6 +20,8 @@ jobs:
         run: cp ./latex/esterni/documenti/pianoDiQualifica/PdQ.pdf ./documenti_esterni/
       - name: Copying file NdP.pdf
         run: cp ./latex/interni/documenti/normeDiProgetto/NdP.pdf ./documenti_interni/
+      - name: Copying file AdR.pdf
+        run: cp ./latex/esterni/documenti/analisiDeiRequisiti/AdR.pdf ./documenti_esterni/
 
       - name: Commit Files
         run: |
@@ -29,8 +31,9 @@ jobs:
           git add ./documenti_esterni/PdP.pdf
           git add ./documenti_esterni/glossario.pdf
           git add ./documenti_esterni/PdQ.pdf
-          git add ./documenti_interni/NdP.pdf          
-
+          git add ./documenti_interni/NdP.pdf
+          git add ./documenti_esterni/AdR.pdf
+          
           git commit -m "updateOnPush"
       - name: Push changes
         uses: ad-m/github-push-action@master

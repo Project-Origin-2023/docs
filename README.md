@@ -1,4 +1,4 @@
-<img src="./latex/template/images/logo.png" alt="ProjectOriginLogo" style="width:50%;">
+<img src="./latex/template/images/logo.png" alt="ProjectOriginLogo" style="width:50%; display:block; margin:auto;">
 
 # Personal Identity Wallet
 Progetto di Ingegneria del Software - Personal Identity Waller (2022-2023)

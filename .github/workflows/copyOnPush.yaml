@@ -20,6 +20,8 @@ jobs:
         run: find latex/documenti_interni/verbali/ -name "*.pdf" -exec cp {} documenti_interni/verbali/ \;
       - name: Copying files Documenti Esterni Verbali
         run: find latex/documenti_esterni/verbali/ -name "*.pdf" -exec cp {} documenti_esterni/verbali/ \;
+      - name: Copying files Documenti Esterni Candidatura
+        run: find latex/documenti_esterni/candidatura/ -name "*.pdf" -exec cp {} documenti_esterni/candidatura/ \;        
 
       - name: Commit Files
         run: |

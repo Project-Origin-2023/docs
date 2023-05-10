@@ -13,26 +13,26 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Copying file PdP.pdf
-        run: cp ./latex/esterni/documenti/pianoDiProgetto/PdP.pdf ./documenti_esterni/documenti/
+        run: cp ./latex/documenti_esterni/documenti/pianoDiProgetto/PdP.pdf ./documenti_esterni/documenti/
       - name: Copying file glossario.pdf
-        run: cp ./latex/esterni/documenti/glossario/glossario.pdf ./documenti_esterni/documenti/
+        run: cp ./latex/documenti_esterni/documenti/glossario/glossario.pdf ./documenti_esterni/documenti/
       - name: Copying file PdQ.pdf
-        run: cp ./latex/esterni/documenti/pianoDiQualifica/PdQ.pdf ./documenti_esterni/documenti/
+        run: cp ./latex/documenti_esterni/documenti/pianoDiQualifica/PdQ.pdf ./documenti_esterni/documenti/
       - name: Copying file NdP.pdf
-        run: cp ./latex/interni/documenti/normeDiProgetto/NdP.pdf ./documenti_interni/documenti/
+        run: cp ./latex/documenti_interni/documenti/normeDiProgetto/NdP.pdf ./documenti_interni/documenti/
       - name: Copying file AdR.pdf
-        run: cp ./latex/esterni/documenti/analisiDeiRequisiti/AdR.pdf ./documenti_esterni/documenti/
+        run: cp ./latex/documenti_esterni/documenti/analisiDeiRequisiti/AdR.pdf ./documenti_esterni/documenti/
 
       - name: Commit Files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
 
-          git add ./documenti_esterni/PdP.pdf
-          git add ./documenti_esterni/glossario.pdf
-          git add ./documenti_esterni/PdQ.pdf
-          git add ./documenti_interni/NdP.pdf
-          git add ./documenti_esterni/AdR.pdf
+          git add ./documenti_esterni/documenti/PdP.pdf
+          git add ./documenti_esterni/documenti/glossario.pdf
+          git add ./documenti_esterni/documenti/PdQ.pdf
+          git add ./documenti_interni/documenti/NdP.pdf
+          git add ./documenti_esterni/documenti/AdR.pdf
           
           git commit -m "updateOnPush"
       - name: Push changes

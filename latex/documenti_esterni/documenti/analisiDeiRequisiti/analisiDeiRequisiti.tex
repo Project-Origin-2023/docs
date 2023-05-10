@@ -2,12 +2,13 @@
 \usepackage[normalem]{ulem}
 \usepackage{eurosym}
 \usepackage[font=small,labelfont=bf]{caption}
+\usepackage{hyperref}
 
 % impostazioni generali
 \input{../../../template/package.tex}
 
 % dati della prima pagina
-\input{config/titlePageInput.tex} % per modificare la prima pagina editare questo file
+\input{config/titlePageInput.tex}  % per modificare la prima pagina editare questo file
 
 \makeindex
 
@@ -18,9 +19,8 @@
 
 \begin{document}
 
-% Prima pagina
+% Prima pagina 
 \input{../../../template/titlePage.tex}
-
 
 % Diario delle modifiche
 \input{../../../template/changelog.tex}
@@ -39,10 +39,12 @@
 % sezioni comuni 
 \input{res/sections/01Introduzione.tex}
 \pagebreak
-\input{res/sections/02ImpegnieScadenze.tex}
+\input{res/sections/02DescrizioneGenerale.tex}
 \pagebreak
-\input{res/sections/03AnalisiRischi.tex}
-
+\input{res/sections/03CasiD'uso.tex}
 
 
 \end{document}
+
+
+

@@ -9,14 +9,14 @@ Informatica, Università degli Studi di Padova
 
 ## Documenti interni
 
-- [Norma di Progetto](./documenti_interni/documenti/NdP.pdf)
+- [Norma di Progetto](./documenti_interni/documenti/normeDiProgetto.pdf)
 - [Glossario](./documenti_interni/documenti/glossario.pdf)
 
 ## Documenti esterni
 
-- [Analisi dei requisiti](./documenti_esterni/documenti/AdR.pdf)
-- [Piano di Progetto](./documenti_esterni/documenti/PdP.pdf)
-- [Piano di Qualifica](./documenti_esterni/documenti/PdQ.pdf)
+- [Analisi dei requisiti](./documenti_esterni/documenti/analisiDeiRequisiti.pdf)
+- [Piano di Progetto](./documenti_esterni/documenti/pianoDiProgetto.pdf)
+- [Piano di Qualifica](./documenti_esterni/documenti/pianoDiQualifica.pdf)
 
 # Crediti
 

@@ -34,49 +34,65 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 
 \subsection{Elenco dei casi d'uso}
 \subsubsection{UC01 - Richiesta di credenziali (documenti personali e certificati)}
-\textbf{Attori:} utente generico;\\
-\textbf{Descrizione:} un utente (Holder) deve essere in grado di navigare sul sito dell'emittente e richiedere una credenziale per il suo portafoglio digitale; \\
-\textbf{Pre-condizione:} l’utente deve richiedere delle credenziali;\\
-\textbf{Post-condizione:} l’utente è riuscito a richiedere le credenziali nel sito dell’ Issuer.
+\begin{itemize}
+\item \textbf{Attori:} utente generico;
+\item \textbf{Descrizione:} un utente (Holder) deve essere in grado di navigare sul sito dell'emittente e richiedere una credenziale per il suo portafoglio digitale;
+\item \textbf{Pre-condizione:} l’utente deve richiedere delle credenziali;
+\item \textbf{Post-condizione:} l’utente è riuscito a richiedere le credenziali nel sito dell’ Issuer.
+\end{itemize}
 
 \subsubsection{UC02 - Fornitura delle credenziali}
-\textbf{Attori:} utente generico, Issuer;\\
-\textbf{Descrizione:} un utente back-office (lato Issuer) deve essere in grado di emettere una credenziale per un Holder;\\
-\textbf{Pre-condizione:} l’Issuer deve emettere all’utente generico richiedente la credenziale;\\
-\textbf{Post-condizione:} l’Issuer ha fornito la credenziale all'utente generico richiedente. Il richiedente è in possesso della credenziale.
+\begin{itemize}
+\item \textbf{Attori:} utente generico, Issuer;
+\item \textbf{Descrizione:} un utente back-office (lato Issuer) deve essere in grado di emettere una credenziale per un Holder;
+\item \textbf{Pre-condizione:} l’Issuer deve emettere all’utente generico richiedente la credenziale;
+\item \textbf{Post-condizione:} l’Issuer ha fornito la credenziale all'utente generico richiedente. Il richiedente è in possesso della credenziale.
+\end{itemize}
 
 \subsubsection{UC03 - Ottenimento delle credenziali}
-\textbf{Attori:} utente generico;\\
-\textbf{Descrizione:} un utente (Holder) deve essere in grado di ottenere una credenziale dal sito web dell'Issuer;\\
-\textbf{Pre-condizione:} l’utente non è in possesso delle credenziali;\\
-\textbf{Post-condizione:} l’utente possiede all’interno del wallet le credenziali.
+\begin{itemize}
+\item \textbf{Attori:} utente generico;
+\item \textbf{Descrizione:} un utente (Holder) deve essere in grado di ottenere una credenziale dal sito web dell'Issuer;
+\item\textbf{Pre-condizione:} l’utente non è in possesso delle credenziali;
+\item \textbf{Post-condizione:} l’utente possiede all’interno del wallet le credenziali.
+\end{itemize}
 
 \subsubsection{UC04 - Visualizzazione delle credenziali}
-\textbf{Attori:} utente autenticato;\\
-\textbf{Descrizione:} un utente (Holder) deve essere in grado di visualizzare l'insieme delle credenziali ricevute tramite l'applicazione web;\\
-\textbf{Pre-condizione:} l’utente non ha ancora visualizzato le credenziali;\\
-\textbf{Post-condizione:} l’utente è riuscito a visualizzare le credenziali.
+\begin{itemize}
+\item \textbf{Attori:} utente autenticato;
+\item \textbf{Descrizione:} un utente (Holder) deve essere in grado di visualizzare l'insieme delle credenziali ricevute tramite l'applicazione web;
+\item \textbf{Pre-condizione:} l’utente non ha ancora visualizzato le credenziali;
+\item \textbf{Post-condizione:} l’utente è riuscito a visualizzare le credenziali.
+\end{itemize}
 
 \subsubsection{UC05 - Cancellazione delle credenziali}
-\textbf{Attori:} utente autenticato;\\
-\textbf{Descrizione:} un utente (Holder) deve essere in grado di rimuovere una credenziale dall'applicazione web;\\
-\textbf{Pre-condizione:} l’utente vuole rimuovere una credenziale dal wallet personale;\\
-\textbf{Post-condizione:} l’utente è riuscito a rimuovere con successo la credenziale dal wallet personale.
+\begin{itemize}
+\item \textbf{Attori:} utente autenticato;
+\item \textbf{Descrizione:} un utente (Holder) deve essere in grado di rimuovere una credenziale dall'applicazione web;
+\item \textbf{Pre-condizione:} l’utente vuole rimuovere una credenziale dal wallet personale;
+\item \textbf{Post-condizione:} l’utente è riuscito a rimuovere con successo la credenziale dal wallet personale.
+\end{itemize}
 
 \subsubsection{UC06 - Richiesta credenziali (presentazione)}
-\textbf{Attori:} Verifier, utente generico;\\
-\textbf{Descrizione:} un Verifier deve essere in grado di richiedere a un utente che sta navigando sul suo sito web di fornire una credenziale (presentazione) che è memorizzata nel portafoglio dell'utente;\\
-\textbf{Pre-condizione:} il Verifier vuole richiedere le credenziali dell’utente;\\
-\textbf{Post-condizione:} il Verifier è riuscito ad ottenere le credenziali dell’utente.
+\begin{itemize}
+\item \textbf{Attori:} Verifier, utente generico;
+\item \textbf{Descrizione:} un Verifier deve essere in grado di richiedere a un utente che sta navigando sul suo sito web di fornire una credenziale (presentazione) che è memorizzata nel portafoglio dell'utente;
+\item \textbf{Pre-condizione:} il Verifier vuole richiedere le credenziali dell’utente;
+\item \textbf{Post-condizione:} il Verifier è riuscito ad ottenere le credenziali dell’utente.
+\end{itemize}
 
 \subsubsection{UC07 - Fornitura delle credenziali (presentazione)}
-\textbf{Attori:} utente autenticato, Verifier;\\
-\textbf{Descrizione:} un utente (Holder) deve essere in grado di fornire al Verifier la credenziale (presentazione) richiesta;\\
-\textbf{Pre-condizione:} l’utente vuole fornire la credenziale presente nel wallet personale ad un'entità Verifier;\\
-\textbf{Post-condizione:} la credenziale dell’utente è stata fornita al Verifier.
+\begin{itemize}
+\item \textbf{Attori:} utente autenticato, Verifier;
+\item \textbf{Descrizione:} un utente (Holder) deve essere in grado di fornire al Verifier la credenziale (presentazione) richiesta;
+\item \textbf{Pre-condizione:} l’utente vuole fornire la credenziale presente nel wallet personale ad un'entità Verifier;
+\item \textbf{Post-condizione:} la credenziale dell’utente è stata fornita al Verifier.
+\end{itemize}
 
 \subsubsection{UC08 - Validazione credenziali (facoltativo)}
-\textbf{Attori:} Verifier;\\
-\textbf{Descrizione:} un Verifier deve essere in grado di validare la correttezza della credenziale (presentazione) ricevuta;\\
-\textbf{Pre-condizione:} il Verifier vuole validare la correttezza della credenziale dell’utente;\\
-\textbf{Post-condizione:} il Verifier è riuscito a validare la correttezza della credenziale dell’utente.
+\begin{itemize}
+\item \textbf{Attori:} Verifier;
+\item \textbf{Descrizione:} un Verifier deve essere in grado di validare la correttezza della credenziale (presentazione) ricevuta;
+\item \textbf{Pre-condizione:} il Verifier vuole validare la correttezza della credenziale dell’utente;
+\item \textbf{Post-condizione:} il Verifier è riuscito a validare la correttezza della credenziale dell’utente.
+\end{itemize}

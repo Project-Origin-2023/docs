@@ -23,9 +23,9 @@ jobs:
       - name: Moving files (se esistono) Documenti Esterni legati alla Candidatura nella sottocartella candidatura
         run: "[ ! -f  documenti_esterni/documenti/analisiDeiCapitolati.pdf ] || mv documenti_esterni/documenti/analisiDeiCapitolati.pdf documenti_esterni/documenti/candidatura/analisiDeiCapitolati.pdf;"
       - name: Moving files (se esistono) Documenti Esterni legati alla Candidatura nella sottocartella candidatura
-        run: "[ ! -f documenti_esterni/documenti/dichiarazioneImpegni.pdf ] || mv documenti_esterni/documenti/dichiarazioneImpegni.pdf documenti_esterni/documenti/candidatura/dichiarazioneImpegni.pdf \;" 
+        run: "[ ! -f documenti_esterni/documenti/dichiarazioneImpegni.pdf ] || mv documenti_esterni/documenti/dichiarazioneImpegni.pdf documenti_esterni/documenti/candidatura/dichiarazioneImpegni.pdf;" 
       - name: Moving files (se esistono) Documenti Esterni legati alla Candidatura nella sottocartella candidatura
-        run: "[ ! -f documenti_esterni/documenti/letteraCandidatura.pdf ] || mv documenti_esterni/documenti/letteraCandidatura.pdf documenti_esterni/documenti/candidatura/letteraCandidatura.pdf \;"
+        run: "[ ! -f documenti_esterni/documenti/letteraCandidatura.pdf ] || mv documenti_esterni/documenti/letteraCandidatura.pdf documenti_esterni/documenti/candidatura/letteraCandidatura.pdf;"
     
       - name: Commit Files
         run: |

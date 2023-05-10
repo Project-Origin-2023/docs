@@ -1,4 +1,4 @@
-<img src="./latex/template/images/logo.png" alt="ProjectOriginLogo" style="width:50%; display:block; margin:auto;">
+<img src="./latex/template/images/logo.png" alt="ProjectOriginLogo" style="width:30%; display:block; margin:auto;">
 
 # Personal Identity Wallet
 

@@ -13,16 +13,16 @@ I fornitori di PID sono entità fidate responsabili di:
     \item Rilasciare PID al portafoglio EUDI in un formato comune;
     \item Mettere a disposizione delle Relying Party informazioni per verificare la validità del PID.
 \end{itemize}
-I fornitori di PID possono ad esempio essere le stesse organizzazioni che oggi rilasciano documenti di identità ufficiali, mezzi di identità elettronica, fornitori di Wallet EUDI ecc. I fornitori di wallet EUDI possono o meno essere le stesse organizzazioni dei fornitori di PID.
+I fornitori di PID possono ad esempio essere le stesse organizzazioni che oggi rilasciano documenti di identità ufficiali, mezzi di identità elettronica, fornitori di Wallet EUDI ecc.. I fornitori di wallet EUDI possono o meno essere le stesse organizzazioni dei fornitori di PID.
 \subsection{Trusted List Providers}
 Elenco degli enti attendibili che deve fornire un servizio di registrazione per le entità pertinenti, mantenere un registro e consentire l'accesso di terze parti alle informazioni del registro.
 La lista può includere i seguenti fornitori:
 \begin{itemize}
-    \item Fornitori di Wallet EUDI
-    \item Fornitori di PID
-    \item Fornitori di (QEAA)
-    \item Fornitori di (QC)
-    \item Fornitori di (EAA)
+    \item Fornitori di Wallet EUDI;
+    \item Fornitori di PID;
+    \item Fornitori di (QEAA);
+    \item Fornitori di (QC);
+    \item Fornitori di (EAA).
 \end{itemize}
 \subsection{Qualified Electronic Attestation of Attributes Providers}
 I fornitori QEAA mantengono un'interfaccia per richiedere e fornire QEAA, inclusa un'interfaccia di autenticazione reciproca con i Wallet EUDI e potenzialmente un'interfaccia verso le fonti autentiche per verificare gli attributi.
@@ -60,16 +60,17 @@ Nel contesto dei Wallet EUDI, richiedono agli utenti del wallet EUDI gli attribu
         \item informazioni necessarie per identificare il PID Provider;
         \item informazioni necessarie per eseguire un controllo di integrità e autenticità dei dati;
         \item informazioni necessarie per eseguire i controlli dello stato di validità dell'attestato;
-        \item Deve rispettare il ISO/IEC 18013-5:2021 e il W3C Verifiable Credentials Data Model 1.1. e codificato in JSON
+        \item Deve rispettare il ISO/IEC 18013-5:2021 e il W3C Verifiable Credentials Data Model 1.1. e codificato in JSON.
     \end{itemize}
     Stesse informazioni devono essere garantite per i (Q)EAA.
     Tipi di funzionamento del EUDI Wallet:
     \begin{itemize}
-        \item Locale, Può funzionare in maniera supervisionata o non supervisionata tramite un contatto fisico (QRCode, NFC) e questo funzionamento può accadere anche senza connessione a internet. Per protocollo di comunicazione si dovranno seguire quelli dettagliati nel
+        \item Locale. Può funzionare in maniera supervisionata o non supervisionata tramite un contatto fisico (QRCode, NFC) e questo funzionamento può accadere anche senza connessione a internet.\\
+        Per protocollo di comunicazione si dovranno seguire quelli dettagliati nel
         ISO/IEC 18013-5:2021;
-        \item Remote, Può funzionare over the internet, con sistemi in cui il wallet è utilizzato per garantire sessioni di autenticazione e dove i certificati possono essere utilizzati e consumati dallo stesso sito che li richiede.
-        Per questo funzionamento come protocollo di comunicazione si dovrà utilizzare OpenID4VP, in particolare questo è un Attestation exchange protocol.
-        Per l'Issuer che forniscono certificati al Wallet si dovranno utilizzare il protocollo OpenID4VCI.
+        \item Remote. Può funzionare over the internet, con sistemi in cui il wallet è utilizzato per garantire sessioni di autenticazione e dove i certificati possono essere utilizzati e consumati dallo stesso sito che li richiede.
+        \\Per questo funzionamento come protocollo di comunicazione si dovrà utilizzare OpenID4VP, in particolare questo è un Attestation exchange protocol.
+        \\Per l'Issuer che forniscono certificati al Wallet si dovranno utilizzare il protocollo OpenID4VCI.
     \end{itemize}
 
     Possono essere scenari di utilizzo:

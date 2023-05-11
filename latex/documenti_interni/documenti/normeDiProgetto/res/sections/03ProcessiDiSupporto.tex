@@ -25,7 +25,7 @@ Lo scopo è di fornire una descrizione accurata di tutte le regole, le convenzio
 Il documento viene pubblicato se tutte le modifiche hanno ricevuto l’approvazione da parte dei Verificatori e successivamente dal Responsabile del Progetto.
 \end{itemize}
 \newpage
-\subsubsection{Struttura delle directory e dei file}
+\subsubsection{Struttura delle directory e dei file}\label{Dir}
 I documenti saranno archiviati con la seguente struttura della directory: \\
 
 \begin{forest}
@@ -49,22 +49,78 @@ I documenti saranno archiviati con la seguente struttura della directory: \\
     before computing xy={l=15pt},
   }
 [docs
-  [documenti esterni
-     [verbali
-        [VE\_XXXX\_YY\_ZZ.pdf]
-     ]
-    [PdP.pdf]
-    [PdQ.pdf]
-    [glossario.pdf]
+  [documenti\_esterni
+      [verbali
+        [VE\_YYYY\_MM\_DD.pdf]
+      ]
+      [documenti
+        [PdP.pdf]
+      ]
   ]
-  [documenti interni
+  [documenti\_interni
     [verbali
-        [VI\_XXXX\_YY\_ZZ.pdf]
+      [VI\_YYYY\_MM\_DD.pdf]
     ]
-    [NdP.pdf]
+    [documenti
+      [NdP.pdf]
+    ]
+  ]
+  [latex
+    [documenti\_esterni
+        [verbali
+          [VE\_YYYY\_MM\_DD
+            [VE\_YYYY\_MM\_DD.pdf]
+            [VE\_YYYY\_MM\_DD.tex]
+          ]
+        ]
+        [documenti
+          [PdP
+            [PdP.pdf]
+            [PdP.tex]
+          ]
+        ]
+    ]
+    [documenti\_interni
+      [verbali
+        [VI\_YYYY\_MM\_DD
+          [VI\_YYYY\_MM\_DD.pdf]
+          [VI\_YYYY\_MM\_DD.tex]
+        ]
+      ]
+      [documenti
+        [NdP
+          [NdP.pdf]
+          [NdP.tex]
+        ]
+      ]
+    ]
   ]
 ]
 \end{forest}\\
+
+I documenti saranno redatti in formato Latex e la loro stesura averrà all'interno della cartella docs/latex.
+Saranno suddivisi nelle rispettive cartelle documenti\_esterni e documenti\_interni e per ciascuna categoria ripartiti
+nelle cartelle verbali e documenti.\\
+Un documento è archiviato nella sua rispettiva cartella nomeDocumento dove al suo interno si può trovare il file Latex
+nomeDocumento.tex, nomeDocumento.pdf con il file compilato, la cartella res contenente file di risorse del documento come allegati
+e le sezioni utilizzate, ed infine la cartella config contenente la caonfigurazione specifica del documento che instanzia il template.\\
+La cartella docs/template contiene i file creati appositamente per avere un template utilizzabile per tutti i documenti.\\
+Per facilitare la lettura e separare i file .tex e le loro rispettive dipendenze si è deciso di creare una struttura directory
+parallela contenente solo i file PDF.\\
+Le rispettive cartelle sono docs/documenti\_esterni e docs/documenti\_interni anchesse per ciascuna ripartite in documenti e verbali.\\
+Un documento sarà quindi archiviato per esempio come docs/documenti\_interni/documenti/nomeDocumento.pdf.\\
+Si è deciso di mantenere i documenti in formato PDF sia nella cartella latex che nelle cartelle docs/documenti\_esterni e docs/documenti\_interni.\\
+Per ovviare al ovvio problema della inconsistenza dei file PDF ed evitare che qualcuno legga un documento non aggiornato si è attuato una azione che 
+mantiene la consistenza e la coerenza dei file PDF.\\
+Si è utilizzata lo strumento GitHub Actions, in particolare esiste uno script contenuto nella cartella .github/workflows/copyOnPush.yaml che ad ogni commit copia e sovrascrive
+i file PDF dalla cartella latex nelle rispettive cartelle parallele.\\
+Utilizzando questo strumento si ha sempre i file aggiornati e non è necessario copiarli manualmente dalla cartella latex nelle cartelle dedicate solo
+ai file PDF.\\
+Si evidenzia che per quanto riguarda i file legati alla candidatura iniziale essi sono stati ragruppati, dallo script di GitHub Actions, dentro
+una sottocartella candidatura.
+Questo avviene solamente nella cartella parallela dove si possono visualizzare solo i PDF.\\
+Tutti i file Latex devono stare alla stessa altezza della gerarchia, questo per non creare problemi legati alla incompatibilità 
+con i percorsi URL nel file di template.
 
 \subsubsection{Registro delle modifiche}\label{Registro}
 All’inizio del documento deve essere presente una tabella riassuntiva della cronologia delle versioni del documento dove sono specificate le modifiche apportate.

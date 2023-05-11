@@ -28,11 +28,11 @@ jobs:
       - name: Moving letteraCandidatura.pdf nella sottocartella candidatura
         run: "[ -f 'documenti_esterni/documenti/letteraCandidatura.pdf' ] && mv 'documenti_esterni/documenti/letteraCandidatura.pdf' documenti_esterni/documenti/candidatura/;"
       
-      - name: Moving valutazioneEuropeaEID.pdf nella sottocartella candidatura
+      - name: Moving valutazioneEuropeaEID.pdf nella sottocartella documenti_tecnici
         run: "[ -f 'documenti_interni/documenti/valutazioneEuropeaEID.pdf' ] && mv 'documenti_interni/documenti/valutazioneEuropeaEID.pdf' documenti_interni/documenti/documenti_tecnici/;"
-      - name: Moving ricercaRequisitiSPID.pdf nella sottocartella candidatura
+      - name: Moving ricercaRequisitiSPID.pdf nella sottocartella documenti_tecnici
         run: "[ -f 'documenti_interni/documenti/ricercaRequisitiSPID.pdf' ] && mv 'documenti_interni/documenti/ricercaRequisitiSPID.pdf' documenti_interni/documenti/documenti_tecnici/;"
-      - name: Moving architetturaEUDI.pdf nella sottocartella candidatura
+      - name: Moving architetturaEUDI.pdf nella sottocartella documenti_tecnici
         run: "[ -f 'documenti_interni/documenti/architetturaEUDI.pdf' ] && mv 'documenti_interni/documenti/architetturaEUDI.pdf' documenti_interni/documenti/documenti_tecnici/;"
     
       - name: Commit Files

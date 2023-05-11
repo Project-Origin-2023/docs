@@ -20,12 +20,20 @@ jobs:
         run: find latex/documenti_interni/verbali/ -name "*.pdf" -exec cp {} documenti_interni/verbali/ \;
       - name: Copying files Documenti Esterni Verbali
         run: find latex/documenti_esterni/verbali/ -name "*.pdf" -exec cp {} documenti_esterni/verbali/ \;
-      - name: Moving  files (se esistono) Documenti Esterni legati alla Candidatura nella sottocartella candidatura
+      
+      - name: Moving analisiDeiCapitolati.pdf nella sottocartella candidatura
         run: "[ -f  'documenti_esterni/documenti/analisiDeiCapitolati.pdf' ] && mv 'documenti_esterni/documenti/analisiDeiCapitolati.pdf' documenti_esterni/documenti/candidatura/;"
-      - name: Moving  files (se esistono) Documenti Esterni legati alla Candidatura nella sottocartella candidatura
+      - name: Moving dichiarazioneImpegni.pdf nella sottocartella candidatura
         run: "[ -f 'documenti_esterni/documenti/dichiarazioneImpegni.pdf' ] && mv 'documenti_esterni/documenti/dichiarazioneImpegni.pdf' documenti_esterni/documenti/candidatura/;" 
-      - name: Moving  files (se esistono) Documenti Esterni legati alla Candidatura nella sottocartella candidatura
+      - name: Moving letteraCandidatura.pdf nella sottocartella candidatura
         run: "[ -f 'documenti_esterni/documenti/letteraCandidatura.pdf' ] && mv 'documenti_esterni/documenti/letteraCandidatura.pdf' documenti_esterni/documenti/candidatura/;"
+      
+      - name: Moving valutazioneEuropeaEID.pdf nella sottocartella candidatura
+        run: "[ -f 'documenti_interni/documenti/valutazioneEuropeaEID.pdf' ] && mv 'documenti_interni/documenti/valutazioneEuropeaEID.pdf' documenti_interni/documenti/documenti_tecnici/;"
+      - name: Moving ricercaRequisitiSPID.pdf nella sottocartella candidatura
+        run: "[ -f 'documenti_interni/documenti/ricercaRequisitiSPID.pdf' ] && mv 'documenti_interni/documenti/ricercaRequisitiSPID.pdf' documenti_interni/documenti/documenti_tecnici/;"
+      - name: Moving architetturaEUDI.pdf nella sottocartella candidatura
+        run: "[ -f 'documenti_interni/documenti/architetturaEUDI.pdf' ] && mv 'documenti_interni/documenti/architetturaEUDI.pdf' documenti_interni/documenti/documenti_tecnici/;"
     
       - name: Commit Files
         run: |

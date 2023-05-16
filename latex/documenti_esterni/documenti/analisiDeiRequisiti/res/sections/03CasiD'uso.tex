@@ -25,8 +25,6 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \subsection{Attori}
 \textbf{Attori principali:}
 \begin{itemize}
-    \item\textbf{Utente generico:} si riferisce all’utente che non ha ancora eseguito il login al sistema;
-    \item\textbf{Utente autenticato:} si riferisce all’utente che ha effettuato il login al sistema;
     \item\textbf{Holder;}
     \item\textbf{Issuer;}
     \item\textbf{Verifier.}
@@ -40,6 +38,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Descrizione:} Un utente (Holder) deve essere in grado di navigare sul sito dell'emittente (Issuer) e presentare una richiesta per avere una credenziale;
 \item \textbf{Pre-condizione:} L’utente (Holder) deve richiedere delle credenziali;
 \item \textbf{Post-condizione:} L’utente (Holder) è riuscito a presentare la richiesta per le credenziali nel sito dell’ Issuer ed ora la sua richiesta deve essere esaminata.
+\item \textbf{Scenario principale:} Credential issuing
 \end{itemize}
 
 \subsubsection{UC02 - Fornitura delle credenziali per Wallet}
@@ -48,6 +47,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Descrizione:} Un utente amministratore back-office (Issuer) deve essere in grado di approvare o rifiutare l'emissione di una credenziale per un utente (Holder);
 \item \textbf{Pre-condizione:} L’Issuer deve esaminare ed approvare la richiesta del Holder;
 \item \textbf{Post-condizione:} L’Issuer ha approvato la richiesta del Holder e ha fornito la credenziale. Ora l'Holder ha la possibilità di ottenere la credenziale sul proprio Wallet.
+\item \textbf{Scenario principale:} Credential issuing
 \end{itemize}
 
 \subsubsection{UC03 - Ottenimento delle credenziali per Wallet}
@@ -56,6 +56,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Descrizione:} Un utente (Holder) deve essere in grado di ottenere una credenziale sul proprio Wallet;
 \item\textbf{Pre-condizione:} La credenziale è stata approvata e fornita dal Issuer ma l'Holder non è in possesso delle credenziali sul proprio Wallet;
 \item \textbf{Post-condizione:} l'Holder possiede all’interno del proprio Wallet la credenziale.
+\item \textbf{Scenario principale:} Credential issuing
 \end{itemize}
 
 \subsubsection{UC04 - Visualizzazione delle credenziali}
@@ -64,6 +65,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Descrizione:} Un utente (Holder) deve essere in grado di visualizzare l'insieme delle proprie credenziali ricevute sul suo Wallet;
 \item \textbf{Pre-condizione:} L’utente (Holder) non ha ancora visualizzato le credenziali;
 \item \textbf{Post-condizione:} L’utente (Holder) è riuscito a visualizzare le credenziali.
+\item \textbf{Scenario principale:} Credential management
 \end{itemize}
 
 \subsubsection{UC05 - Cancellazione delle credenziali}
@@ -72,6 +74,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Descrizione:} Un utente (Holder) deve essere in grado di rimuovere una credenziale dal proprio Wallet;
 \item \textbf{Pre-condizione:} L’utente (Holder) vuole rimuovere una credenziale dal Wallet personale;
 \item \textbf{Post-condizione:} L’utente (Holder) è riuscito a rimuovere con successo la credenziale dal Wallet personale.
+\item \textbf{Scenario principale:} Credential management
 \end{itemize}
 
 \subsubsection{UC06 - Richiesta credenziali per presentazione}
@@ -80,6 +83,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Descrizione:} Un Verifier deve essere in grado di richiedere a un utente (Holder) che sta navigando sul suo sito web di fornire una credenziale (presentazione) che è memorizzata nel Wallet del Holder;
 \item \textbf{Pre-condizione:} Il Verifier vuole richiedere una credenziale al utente (Holder);
 \item \textbf{Post-condizione:} Il Verifier ha presentato una richiesta di una credenziale al utente (Holder) ed ora l'Holder può fornire la propria credenziale.
+\item \textbf{Scenario principale:} Credential consuming
 \end{itemize}
 
 \subsubsection{UC07 - Fornitura delle credenziali per presentazione}
@@ -88,5 +92,6 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Descrizione:} Un utente (Holder) deve essere in grado di fornire al Verifier la credenziale (presentazione) richiesta;
 \item \textbf{Pre-condizione:} L’utente vuole fornire la credenziale presente nel Wallet personale al Verifier;
 \item \textbf{Post-condizione:} La credenziale dell’utente è stata fornita al Verifier.
+\item \textbf{Scenario principale:} Credential consuming
 \end{itemize}
 

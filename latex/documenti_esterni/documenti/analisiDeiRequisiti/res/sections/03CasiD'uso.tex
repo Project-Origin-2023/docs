@@ -2,96 +2,127 @@
 \subsection{Introduzione}
 In questa sezione sono presentati i casi d'uso che risultano rilevanti per il prodotto Personal Identity Wallet. 
 Essi sono stati individuati e definiti attraverso l'analisi del capitolato d'appalto, gli incontri con il proponente e le riunioni interne del team Project Origin.
- Ciascun caso d'uso rappresenta un insieme di scenari che hanno lo stesso obiettivo finale per un utente generico del sistema, definito attore.
- Le norme e le convenzioni adottate per la stesura di ogni caso d'uso sono descritte in dettaglio all'interno del documento Norme di Progetto.
+Ciascun caso d'uso rappresenta un insieme di scenari che hanno lo stesso obiettivo finale per un utente generico del sistema, definito \textbf{\textit{holder}}.
+Le norme e le convenzioni adottate per la stesura di ogni caso d'uso sono descritte in dettaglio all'interno del documento Norme di Progetto.
  \subsection{Codice identificativo}
-Ciascun caso d'uso viene categorizzato utilizzando la seguente notazione:\\ 
+Ciascun caso d'uso viene categorizzato utilizzando la seguente notazione:
 \begin{center}\begin{verbatim}
-    CU{XX}.{YY}
+    CU{ID} - {Nome}
 \end{verbatim}\end{center}
 Ogni caso d’uso è inoltre definito secondo la seguente struttura:
 \begin{itemize}
-    \item ID: il codice del caso d’uso secondo la convenzione specificata precedentemente;
-    \item Nome:  specifica il titolo del caso d’uso;
-    \item Attori:  indica gli attori principali (ad esempio l’utente generico) e secondari (ad esempio entità di autenticazione esterne) del caso d’uso;
-    \item Descrizione:  riporta una breve descrizione del caso d’uso;
-    \item Precondizione:  specifica le condizioni che sono identificate come vere prima del verificarsi degli eventi del caso d’uso;
-    \item Postcondizione:  specifica  le  condizioni  che  sono  identificate  come  vere  dopo  il verificarsi degli eventi del caso d’uso;
-    \item Scenario  principale:  rappresenta  il  flusso  degli  eventi,  a  volte  attraverso  l'uso di  una  lista  numerata,  specificando  per  ciascun  evento:  titolo,  descrizione,  attori coinvolti e casi d’uso generati;
-    \item Inclusioni:  usate per non descrivere più volte lo stesso flusso di eventi, inserendo il comportamento comune in un caso d’uso a parte;
-    \item Estensioni:  descrivono i casi d’uso che non fanno parte del flusso principale degli eventi, allo stesso modo di quanto descritto in “Scenario principale”.
+    \item \textbf{ID}: il codice del caso d’uso secondo la convenzione specificata precedentemente;
+    \item \textbf{Nome}:  specifica il titolo del caso d’uso;
+    \item \textbf{Attori}:  indica gli attori principali (ad esempio l’utente generico) e secondari (ad esempio entità di autenticazione esterne) del caso d’uso;
+    \item \textbf{Precondizioni}:  specifica le condizioni che sono identificate come vere prima del verificarsi degli eventi del caso d’uso;
+    \item \textbf{Postcondizioni}:  specifica  le  condizioni  che  sono  identificate  come  vere  dopo  il verificarsi degli eventi del caso d’uso;
+    \item \textbf{Scenario  principale}:  rappresenta  il  flusso  degli  eventi,  a  volte  attraverso  l'uso di  una  lista  numerata;
+    %\item \textbf{Inclusioni}:  usate per non descrivere più volte lo stesso flusso di eventi, inserendo il comportamento comune in un caso d’uso a parte;
 \end{itemize}
 Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  casi  d'uso riportante lo stesso titolo e codice.
 \subsection{Attori}
-\textbf{Attori principali:}
 \begin{itemize}
     \item\textbf{Holder;}
     \item\textbf{Issuer;}
     \item\textbf{Verifier.}
 \end{itemize}
 
-
 \subsection{Elenco dei casi d'uso}
 \subsubsection{UC01 - Richiesta di credenziali per Wallet}
 \begin{itemize}
-\item \textbf{Attori:} Holder, Issuer;
-\item \textbf{Descrizione:} Un utente (Holder) deve essere in grado di navigare sul sito dell'emittente (Issuer) e presentare una richiesta per avere una credenziale;
-\item \textbf{Pre-condizione:} L’utente (Holder) deve richiedere delle credenziali;
-\item \textbf{Post-condizione:} L’utente (Holder) è riuscito a presentare la richiesta per le credenziali nel sito dell’ Issuer ed ora la sua richiesta deve essere esaminata.
-\item \textbf{Scenario principale:} Credential issuing
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario}: Issuer. 
+\item \textbf{Precondizioni:} L’utente (\textit{holder}) non è in possesso delle credenziali.
+\item \textbf{Postcondizioni:} L’utente (\textit{holder}) è riuscito a presentare la richiesta per la credenziale nel sito dell’ \textit{issuer} ed ora la sua richiesta deve essere esaminata.
+\item \textbf{Scenario principale}: 
+    \begin{enumerate}
+        \item L' \textit{holder} deve richiedere delle credenziali; 
+        \item l' \textit{holder} naviga nel sito dell' \textit{issuer}; 
+        \item l' \textit{holder} presenta richiesta della credenziale che necessita; 
+        \item l' \textit{holder} attende che la sua richiesta venga esaminata dall'\textit{issuer}.
+    \end{enumerate}
 \end{itemize}
 
-\subsubsection{UC02 - Fornitura delle credenziali per Wallet}
+\subsubsection{UC02 - Rilascio delle credenziali per Wallet}
 \begin{itemize}
-\item \textbf{Attori:} Issuer, Holder;
-\item \textbf{Descrizione:} Un utente amministratore back-office (Issuer) deve essere in grado di approvare o rifiutare l'emissione di una credenziale per un utente (Holder);
-\item \textbf{Pre-condizione:} L’Issuer deve esaminare ed approvare la richiesta del Holder;
-\item \textbf{Post-condizione:} L’Issuer ha approvato la richiesta del Holder e ha fornito la credenziale. Ora l'Holder ha la possibilità di ottenere la credenziale sul proprio Wallet.
-\item \textbf{Scenario principale:} Credential issuing
+\item \textbf{Attore principale:} Issuer.
+\item \textbf{Precondizioni:} L’ \textit{issuer} riceve una richiesta di credenziale.
+\item \textbf{Postcondizioni:} L’ \textit{issuer} ha approvato la richiesta ed ha fornito la credenziale.
+\item \textbf{Scenario principale:}
+    \begin{enumerate}
+        \item L' \textit{issuer} riceve una richiesta per rilasciare una credenziale; 
+        \item l' \textit{issuer} approva la richiesta; 
+    \end{enumerate}
 \end{itemize}
 
 \subsubsection{UC03 - Ottenimento delle credenziali per Wallet}
 \begin{itemize}
-\item \textbf{Attori:} Holder, Issuer;
-\item \textbf{Descrizione:} Un utente (Holder) deve essere in grado di ottenere una credenziale sul proprio Wallet;
-\item\textbf{Pre-condizione:} La credenziale è stata approvata e fornita dal Issuer ma l'Holder non è in possesso delle credenziali sul proprio Wallet;
-\item \textbf{Post-condizione:} l'Holder possiede all’interno del proprio Wallet la credenziale.
-\item \textbf{Scenario principale:} Credential issuing
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario:} Issuer.
+\item \textbf{Precondizioni:} La credenziale è stata fornita dal \textit{issuer}, l' \textit{holder} non è in possesso delle credenziali sul proprio Wallet.
+\item \textbf{Postcondizioni:} l' \textit{holder} possiede all’interno del proprio Wallet la credenziale.
+\item \textbf{Scenario principale:} 
+    \begin{enumerate}
+        \item L' \textit{holder} non è in possesso della credenziale;
+        \item l' \textit{holder} salva la credenziale approvata dall' \textit{issuer} sul propio Wallet personale.
+    \end{enumerate}
 \end{itemize}
+\begin{center}
+    \includegraphics[scale = 0.65]{./res/img/credentialIssuing.png}
+\end{center}
 
 \subsubsection{UC04 - Visualizzazione delle credenziali}
 \begin{itemize}
-\item \textbf{Attori:} Holder;
-\item \textbf{Descrizione:} Un utente (Holder) deve essere in grado di visualizzare l'insieme delle proprie credenziali ricevute sul suo Wallet;
-\item \textbf{Pre-condizione:} L’utente (Holder) non ha ancora visualizzato le credenziali;
-\item \textbf{Post-condizione:} L’utente (Holder) è riuscito a visualizzare le credenziali.
-\item \textbf{Scenario principale:} Credential management
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Precondizioni:} L’ \textit{holder} non ha ancora visualizzato la credenziale.
+\item \textbf{Postcondizioni:} L’ \textit{holder} è riuscito a visualizzare la credenziale.
+\item \textbf{Scenario principale:} 
+    \begin{enumerate}
+        \item L' \textit{holder} non ha visualizzato la credenziale; 
+        \item l' \textit{holder} seleziona la credenziale nel proprio Wallet;
+        \item l' \textit{holder} visualizza la credenziale.
+    \end{enumerate}
 \end{itemize}
 
 \subsubsection{UC05 - Cancellazione delle credenziali}
 \begin{itemize}
-\item \textbf{Attori:} Holder;
-\item \textbf{Descrizione:} Un utente (Holder) deve essere in grado di rimuovere una credenziale dal proprio Wallet;
-\item \textbf{Pre-condizione:} L’utente (Holder) vuole rimuovere una credenziale dal Wallet personale;
-\item \textbf{Post-condizione:} L’utente (Holder) è riuscito a rimuovere con successo la credenziale dal Wallet personale.
-\item \textbf{Scenario principale:} Credential management
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Precondizioni:} L’ \textit{holder} vuole rimuovere una credenziale dal Wallet personale.
+\item \textbf{Postcondizioni:} L’ \textit{holder} è riuscito a rimuovere con successo la credenziale dal Wallet personale.
+\item \textbf{Scenario principale:} 
+    \begin{enumerate}
+        \item L' \textit{holder} ha accesso al prprio Wallet personale; 
+        \item l' \textit{holder} seleziona la credenziale nel proprio Wallet;
+        \item l' \textit{holder} elimina la credenziale.
+    \end{enumerate}
 \end{itemize}
+\begin{center}
+    \includegraphics[scale = 0.65]{./res/img/credentialManagement.png}
+\end{center}
 
-\subsubsection{UC06 - Richiesta credenziali per presentazione}
+\subsubsection{UC06 - Richiesta credenziali per verifica}
 \begin{itemize}
-\item \textbf{Attori:} Verifier, Holder;
-\item \textbf{Descrizione:} Un Verifier deve essere in grado di richiedere a un utente (Holder) che sta navigando sul suo sito web di fornire una credenziale (presentazione) che è memorizzata nel Wallet del Holder;
-\item \textbf{Pre-condizione:} Il Verifier vuole richiedere una credenziale al utente (Holder);
-\item \textbf{Post-condizione:} Il Verifier ha presentato una richiesta di una credenziale al utente (Holder) ed ora l'Holder può fornire la propria credenziale.
-\item \textbf{Scenario principale:} Credential consuming
+\item \textbf{Attore principale:} Verifier.
+\item \textbf{Attore secondario:} Holder; 
+\item \textbf{Precondizioni:} Il \textit{verifier} deve richiedere una credenziale all' \textit{holder};
+\item \textbf{Postcondizioni:} Il \textit{verifier} ha presentato una richiesta di una credenziale all' \textit{holder}.
+\item \textbf{Scenario principale:} 
+    \begin{enumerate}
+        \item Il \textit{verifier} fa richiesta ad un \textit{holder} di fornirgli una credenziale salvata nel suo Wallet.
+    \end{enumerate}
 \end{itemize}
 
-\subsubsection{UC07 - Fornitura delle credenziali per presentazione}
+\subsubsection{UC07 - Fornitura delle credenziali per verifica}
 \begin{itemize}
-\item \textbf{Attori:} Holder, Verifier;
-\item \textbf{Descrizione:} Un utente (Holder) deve essere in grado di fornire al Verifier la credenziale (presentazione) richiesta;
-\item \textbf{Pre-condizione:} L’utente vuole fornire la credenziale presente nel Wallet personale al Verifier;
-\item \textbf{Post-condizione:} La credenziale dell’utente è stata fornita al Verifier.
-\item \textbf{Scenario principale:} Credential consuming
+\item \textbf{Attore principale:} Holder. 
+\item \textbf{Attore secondario:} Verifier.
+\item \textbf{Precondizioni:} L’ \textit{holder} vuole fornire la credenziale presente nel Wallet personale al \textit{verifier}.
+\item \textbf{Postcondizioni:} La credenziale dell’ \textit{holder} è stata fornita al \textit{verifier}.
+\item \textbf{Scenario principale:} 
+    \begin{enumerate}
+        \item L' \textit{holder} fornisce al \textit{verifier} una credenziale che gli è stata richiesta.
+    \end{enumerate}
 \end{itemize}
-
+\begin{center}
+    \includegraphics[scale = 0.65]{./res/img/credentialConsuming.png}
+\end{center}

@@ -1,0 +1,35 @@
+\section{Requisiti}
+\subsection{Introduzione}
+In questa sezione sono elencati i casi d'uso rilevanti per la realizzazione del prodotto Personal Identity Wallet.
+\subsection{Elenco dei requisiti}
+\subsubsection*{Requisiti funzionali} %al posto di subsubsection si possono mettere dei textbf centrati, come le tabelle
+    \begin{longtable}{|c|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Descrizione} & \textbf{Riferimento} \\
+        \hline
+        %requisiti funzionali
+        RF01-O & L'utente richiede le credenziali& UC01\\
+        RF02-O & L'utente ottiene le credenziali& UC03\\
+        RF03-O & L'utente memorizza le credenziali nel wallet\glo{}& UC03\\
+        RF04-O & L'utente consuma le credenziali presso un ente & UC07\\
+        RF05-0 & L'issuer\glo{} fornisce credenziali all'utente & UC02\\
+        RF06-O & Un ente chiede all'utente di fornire delle credenziali& UC06\\
+        RF07-O & L'utente visualizza le credenziali memorizzate nel wallet & UC04\\
+        RF08-O & L'utente elimina le credenziali memorizzate nel wallet & UC05\\
+        \hline
+    \end{longtable}
+\subsubsection*{Requisiti non funzionali}
+    \begin{longtable}{|c|c|}
+        \hline
+        \textbf{Codice} & \textbf{Descrizione} \\
+        \hline
+        %requisiti non funzionali
+        RN01-O & Le credenziali devono rispettare il formato JSON W3C\\
+        RN02-O & Le credenziali devono essere scambiate con il protocollo OpenID4VC tra issuer e holder\\
+        RN03-O & Le credenziali devono essere scambiate con il protocollo OpenID4VP tra holder e verifier\\
+        %requisito sull'usabilità?
+        RN04-O & Le credenziali possono essere consumate solo dall'effettivo holder\\
+        RN05-O & Le credenziali non possono essere modificate\\
+        RN06-O & Le credenziali non possono essere intercettate\\
+        \hline
+    \end{longtable}

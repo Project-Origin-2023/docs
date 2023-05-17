@@ -34,7 +34,11 @@ jobs:
         run: "[ -f 'documenti_interni/documenti/ricercaRequisitiSPID.pdf' ] && mv 'documenti_interni/documenti/ricercaRequisitiSPID.pdf' documenti_interni/documenti/documenti_tecnici/;"
       - name: Moving architetturaEUDI.pdf nella sottocartella documenti_tecnici
         run: "[ -f 'documenti_interni/documenti/architetturaEUDI.pdf' ] && mv 'documenti_interni/documenti/architetturaEUDI.pdf' documenti_interni/documenti/documenti_tecnici/;"
-    
+      - name: Moving ricercaOpenID.pdf nella sottocartella documenti_tecnici
+        run: "[ -f 'documenti_interni/documenti/ricercaOpenID.pdf' ] && mv 'documenti_interni/documenti/ricercaOpenID.pdf' documenti_interni/documenti/documenti_tecnici/;"
+      - name: Moving W3CDataModel.pdf nella sottocartella documenti_tecnici
+        run: "[ -f 'documenti_interni/documenti/W3CDataModel.pdf' ] && mv 'documenti_interni/documenti/W3CDataModel.pdf' documenti_interni/documenti/documenti_tecnici/;"
+      
       - name: Commit Files
         run: |
           git config --local user.email "action@github.com"

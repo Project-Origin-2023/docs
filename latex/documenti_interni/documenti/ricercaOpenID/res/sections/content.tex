@@ -2,20 +2,18 @@
 
 \subsection{Terminologia}
 \begin{itemize}
-    \item \textbf{Verifiable Credential (VC)}: Definizione che si collega alla definizione di W3C Verifiable Credential Data Model\\
-    Si definisce VC una credenziale che può essere verificata attraverso procedure crittografiche;
+    \item \textbf{Verifiable Credential (VC)}: Definizione che si collega alla definizione di W3C Verifiable Credential Data Model; si definisce VC una credenziale che può essere verificata attraverso procedure crittografiche.
     \item \textbf{End-User}: Utente (Holder).
-    \item \textbf{Wallet}: Entità che riceve, archivia, presenta e organizza credenziali del Utente.
+    \item \textbf{Wallet}: Entità che riceve, archivia, presenta e organizza credenziali dell'Utente.
     \item \textbf{Verifier}: Entità che verifica e consuma la credenziale di un utente per fornirgli un servizio.
-    \item \textbf{Credential Issuer}: Entità che fornisce una credenziale al utente.
+    \item \textbf{Credential Issuer}: Entità che fornisce una credenziale all'utente.
 \end{itemize}
 
 \subsection{OpenID for Verifiable Credential Issuance (OID4VCI)}
 OpenID per fornitura di credenziali verificabili (OID4VCI) è uno standard che definisce una API usata per fornire credenziali verificabili (Verifiable Credentials).
-\\Le Verifiable Credentials seguono uno schema ben definito e sono collegate ad un certo utente (Holder) attraverso un collegamento (Binding) crittografico.
-\\Questo assicura la possibilità di presentare la credenziale ad un verifier senza chiamare l'issuer per ulteriori verifiche.
-\\L'accesso a questa API è autorizzata attraverso la OAuth 2.0 che il Wallet usa per autorizzarsi e ricevere Verifiable Credentials.
-\\L'utilizzo della OAuth 2.0 garantisce sicurezza, semplicità e flessibilità.
+\\Le Verifiable Credentials seguono uno schema ben definito e sono collegate ad un certo utente (Holder) attraverso un collegamento crittografico (Binding). 
+Questo assicura la possibilità di presentare la credenziale ad un Verifier senza chiamare l'Issuer per ulteriori verifiche.
+\\L'accesso a questa API è autorizzata attraverso la OAuth 2.0 che il Wallet usa per autorizzarsi e ricevere Verifiable Credentials. L'utilizzo della OAuth 2.0 garantisce sicurezza, semplicità e flessibilità.
 
 \subsubsection{Credential Issuer}
 API legate alla fornitura delle credenziali da parte del Credential Issuer.
@@ -28,15 +26,15 @@ API legate alla fornitura delle credenziali da parte del Credential Issuer.
 
 \subsubsection{Authorization Code Flow}
 \begin{center}
-	\includegraphics[scale = 0.2]{./res/images/AuthorizationCodeFlow.jpg}
+	\includegraphics[scale = 0.3]{./res/images/AuthorizationCodeFlow.jpg}
 \end{center}
 
 \subsubsection{Credential Offer}
 
 
-L'Issuer invia Una Offerta di credenziale attraverso il protocollo HTTP GET oppure attraverso HTTP redirect, e lo invia al Credential offer Endpoint.
+L'Issuer invia una Offerta di credenziale attraverso il protocollo HTTP GET oppure attraverso HTTP redirect, e lo invia al Credential offer Endpoint.
 L'offerta di una credenziale è un oggetto JSON identificato da un URI.
-L'Issuer può anche fornire un Codice QR che che può essere scannerizzato con il Wallet del Holder.
+L'Issuer può anche fornire un Codice QR che che può essere scannerizzato con il Wallet dell'Holder.
 I parametri nel Credential Offer sono credential\_issuer, credentials, credentials\_supported.
 Un esempio può essere:
 \begin{lstlisting}[language=json,firstnumber=1]
@@ -101,12 +99,12 @@ grant_type=authorization_code
 \end{lstlisting}
 
 \subsubsection{Credential Endpoint}
-Una volta ottenuto l'Access Token si può fare richiesta al Credential Endpoint per ottenere la credenziale desiderata.\\
-Si può richiedere la stessa credenziali molteplici volte per associarla a diversi DIDs (Decentralized Identifiers).\\
-Se l'Access Token permette il reperimento di credenziali multiple è discrezione implementativa quali e in che ordine richiederle.\\
-La credenziale necessita di essere abbinata crittograficamente al Enduser Identifier.\\
-Questo abbinamento permette al Verifier di essere sicuro che chi presenta la credenziale è la stessa persona che ne ha fatto richiesta.\\
-Un esempio di una richiesta di credenziale può essere la seguente:
+Una volta ottenuto l'Access Token si può fare richiesta al Credential Endpoint per ottenere la credenziale desiderata.
+Si può richiedere la stessa credenziali molteplici volte per associarla a diversi DIDs (Decentralized Identifiers).
+\\Se l'Access Token permette il reperimento di credenziali multiple è discrezione implementativa quali e in che ordine richiederle.
+La credenziale necessita di essere abbinata crittograficamente al Enduser Identifier.
+Questo abbinamento permette al Verifier di essere sicuro che chi presenta la credenziale è la stessa persona che ne ha fatto richiesta.
+\\Un esempio di una richiesta di credenziale può essere la seguente:
 \begin{lstlisting}[language=json,firstnumber=1]
 POST /credential HTTP/1.1
 Host: server.example.com
@@ -129,9 +127,9 @@ Authorization: BEARER czZCaGRSa3F0MzpnWDFmQmF0M2JW
 }
 \end{lstlisting}
 
-Una volta che il client invia la richiesta per la credenziale l'Issuer può inviarla istantaneamente oppure per diversi motivi
-fornirla in un secondo momento, in questo ultimo caso fornirà sul momento un acceptance\_token che il client userà successivamente per accettare
-la credenziale.\\
+Una volta che il Client invia la richiesta per la credenziale l'Issuer può inviarla istantaneamente oppure per diversi motivi
+fornirla in un secondo momento, in questo ultimo caso fornirà sul momento un acceptance\_token che il Client userà successivamente per accettare
+la credenziale.
 
 \subsubsection{Credential Issuer metadata}
 Di seguito un esempio di un metadata di un issuer, dal quale si può capire il tipo di credenziali che fornisce e dettagli tecnici per averla.
@@ -192,27 +190,26 @@ Di seguito un esempio di un metadata di un issuer, dal quale si può capire il t
 \end{lstlisting}
 
 \subsubsection{Sicurezza}
-Per garantire una maggiore sicurezza l'Issuer ha bisogno di sapere a quale Wallet fornisce le credenziali.\\
-In particolare ha bisogno della certezza che il sudetto wallet è sotto una certa regolamentazione statale o commerciale e ha parametri di sicurezza
-in grado di proteggere le sue chiavi private.\\
-In questa maniera l'Issuer non fornisce le credenziali a qualcuno che non ne è il propietario.\\
+Per garantire una maggiore sicurezza l'Issuer ha bisogno di sapere a quale Wallet fornisce le credenziali.
+In particolare ha bisogno della certezza che il sudetto wallet sia sotto una certa regolamentazione statale o commerciale e che abbia parametri di sicurezza
+in grado di proteggere le sue chiavi private. In questa maniera l'Issuer non fornisce le credenziali a qualcuno che non ne è il propietario.\\
 Un'altra considerazione utile è che le comunicazioni dovrebebro avvenire sotto il protoccolo TLS.
 
 \subsection{OpenID for Verifiable Presentations (OID4VP)}
-Questo standard definisce i meccanismi, basati sul OAuth 2.0 che permettono la presentazione di credenziali verificate ad un Verifier.\\
+Questo standard definisce i meccanismi, basati sul OAuth 2.0 che permettono la presentazione di credenziali verificate ad un Verifier.
 
 \subsubsection{Schema di Presentazione di una credenziale Same Device Flow}
 Di seguito uno schema di interazione tra l'Holder e il Verifier, in cui interagiscono il Wallet e la parte che richiede una
 certificazione del Verifier, entrambe sullo stesso Device.
 \begin{center}
-	\includegraphics[scale = 0.2]{./res/images/PresentationSameDevice.jpg}
+	\includegraphics[scale = 0.3]{./res/images/PresentationSameDevice.jpg}
 \end{center}
 
 \subsubsection{Schema di presentazione di una credenziale Cross Device Flow}
 Di seguito uno schema di interazione tra l'Holder con il proprio Wallet sul proprio device e il Verifer su un'altro device.\\
 
 \begin{center}
-	\includegraphics[scale = 0.2]{./res/images/PresentationCrossDevice.jpg}
+	\includegraphics[scale = 0.3]{./res/images/PresentationCrossDevice.jpg}
 \end{center}
 
 \subsubsection{Authorization Request}
@@ -252,9 +249,9 @@ Di seguito un esempio:
 Durante la richiesta di Autorizzazione se è completata con successo il Verifier fornisce un VP Token al Holder.
 \\
 \subsubsection{Response}
-Successivamente alla Authorization Request è fornito da parte del Verifier un VP Token.\\
+Successivamente alla Authorization Request è fornito da parte del Verifier un VP Token.
 Può essere ritornato al Authorization Response.
-Di seguito un esempio di un VP Token Response:
+\\Di seguito un esempio di un VP Token Response:
 \begin{lstlisting}[language=json,firstnumber=1]
 {
     "@context": [
@@ -308,8 +305,7 @@ Di seguito un esempio di un VP Token Response:
 
 \subsubsection{Response Mode direct\_post}
 Esiste una modalità denominata Response Mode direct\_post che permette al Wallet di inviare Authorization Request 
-direttamente ad un endpoint del Verifier via parametro HTTP POST.\\
-Questo metodo si usa quando Holder e Verifer sono su device diversi.
+direttamente ad un endpoint del Verifier via parametro HTTP POST. Questo metodo si usa quando Holder e Verifer sono su device diversi.
 
 \subsubsection{Firma e Crittografia della Response}
 L'Authorization Response contenente la VP Token può avere una Segnature cioè una firma e può essere crittograffata
@@ -318,12 +314,11 @@ Se si attuano queste pratiche attraverso la crittografia si può prevenire la le
 i dati al suo interno sinao originali.
 
 \subsubsection{VP Token Validation}
-Un Verifier deve validare un VP Token.\\
-Deve garantire ntegrità, autenticità e binding del holder con qualsiasi presentazione che sta cercando di fornire.\\
+Un Verifier deve validare un VP Token. Deve garantire integrità, autenticità e binding dell'Holder con qualsiasi presentazione che sta cercando di fornire.
 Verificare che la presentazione rispetti i formatti richiesti.
 
 \subsubsection{Wallet Metadata}
-Il Verifier può accedere ad informazioni come il formato delle credenziali, tipo di proof, ed in generali gli algoritmi supportati.
+Il Verifier può accedere ad informazioni come il formato delle credenziali, tipo di proof, ed in generale gli algoritmi supportati.
 
 \subsection{Libraries}
 \subsubsection{Waltid ssikit}
@@ -341,7 +336,7 @@ Questa libreria è stata realizzata con Rocket utilizzando il linguaggio di prog
 Oltre al suo dettaglio implementativo offre degli endpoint raggiungibile tramite chiamate HTTP, 
 una volta fatto il deploy si può interaggire infatti attraverso chiamate HTTP.
 Offre una utile demo di un Issuer.
-Ha una licenza di tipo  Apache License, Version 2.0.
+\\Ha una licenza di tipo  Apache License, Version 2.0.
 
 \subsubsection{Spheron}
 Questa libreria ha diverse implementazioni.
@@ -351,8 +346,8 @@ Per quanto riguarda il primo modo rispetta lo standard OpenID4VCI, ed un dettagl
 Tramite questa libreria si possono implementare tutti i 3 gli attori, sia Wallet, Issuer e Verifer.
 Tramite il suo SSI SDK si può implementare anche OID4VC ed OID4VP.
 Questa libreria è realizzata utilizzando Typescript, e questo è un dettaglio implementativo buono tenendo in considerazione
-che il gruppo dovrà realizzare una WebApp.\\
-Offre una discreta documentazione insieme anche a strumenti di testing.\\
+che il gruppo dovrà realizzare una WebApp.
+Offre una discreta documentazione insieme anche a strumenti di testing.
 
 
 

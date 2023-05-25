@@ -13,15 +13,15 @@ Due tra i più importanti sono stati architetturaEUDI.pdf e ricercaOpenID.pdf.\\
 Dalle precendenti discussioni fatte, dai meeting fatti con l'azienda e da una analisi dei documenti precendenti siamo giunti alla 
 conclusione che per utilizzare lo standard OpenIDVC/VP dobbiamo uttilizzare una libreria preesistente.\\
 Nonostante la documentazione dello standard sia abbondante preferiamo non implementare lo standard con una libreria scritta da noi.\\
-I vantaggi di utilizzare una libreria prefatto sono l'avere la sicurezza di rispettare a pieno lo standard e il velocizzare questo dettaglio implementativo che altrimenti ci richiederebbe una quantità di tempo maggiore.\\
+I vantaggi di utilizzare una libreria esistente sono l'avere la sicurezza di rispettare a pieno lo standard e il velocizzare questo dettaglio implementativo che altrimenti ci richiederebbe una quantità di tempo maggiore.\\
 Come documentato nel documento ricercaOpenID.pdf nel capitolo 4, tra le librerie che abbiamo trovato quella che ci ha colpito maggiormente è
-Waltid ssikit, si rimanda al suindicato documento per riferimenti e dettagli.\\
+Waltid ssikit, si rimanda al spotraindicato documento per riferimenti e dettagli.\\
 Il motivo maggiore che ci ha fatto scegliere questa libreria è una buona documentazione offerta, e la possibilità di fare il deploy di un container docker in grado successivamente di
 gestire in autonomia le richieste che gli si fanno.\\
 Abbiamo evidenziato che tra le varie metodologie proposte per utilizzare la libreria quella che utilizzeremo sarà la REST API.
 Con questa libreria riusciamo ad implementare il Wallet, la parte del Issuer e la parte del Verifier.\\
 Utilizzando questa libreria tuttavia ci vengono dei dubbi legati al fatto che attraverso un unico Server all'interno di un unico container docker si riescono a fornire tutte le 
-interfacce legate alle certificazioni per tutti i 3 gli attori del progetto, quindi il dubbio che ci viene è se conviene fare il deploy di questo
+interfacce legate alle certificazioni per tutti e 3 gli attori del progetto, quindi il dubbio che ci viene è se conviene fare il deploy di questo
 SSID KIT 3 volte, oppure possiamo mantenerne solo uno, tuttavia rinunciando al concetto di decentralizzazione evidenziato nella ricerca
 della architetturaEUDI.pdf.\\
 Un'altro dubbio che ci viene è che questa libreria sia ad un livello troppo alto, e ai fini didattici e del progetto non ci convenga magari 
@@ -33,8 +33,8 @@ Nel caso fosse stato necessario realizzare
 una app mobile ci sarebbero state altre soluzioni possibilmente realizzabili, come librerie implementabili per linguaggi di programmazione come Kotlin, implementabili tramite Maven/Grandle.\\
 
 \subsubsection{Struttura architetturale componenti}
-Abbiamo analizzato e documentato tramite analisi del capitolato, ricerca dei requisiti e altri documenti tecnici la struttura che i componenti architetturali finali dvranno avere.\\
-Ai fini del prodotto finito e anche per la PoC (Proof Of Concept) il lavoro sarà consegnato tramite container docker pronte per fare il deploy.\\
+Abbiamo analizzato e documentato tramite analisi del capitolato, ricerca dei requisiti e altri documenti tecnici la struttura che i componenti architetturali finali dovranno avere.\\
+Ai fini del prodotto finito e anche per la PoC (Proof Of Concept) il lavoro sarà consegnato tramite container docker pronto per fare il deploy.\\
 Utilizzando lo strumento di container di docker si utilizzerà una virtualizzazione che ci permetterà di essere indipendenti dal sistema operativo utilizzato, ci garantirà maggiore compatibilità tra i componenti e ci fornirà una più semplice metodologia per fare il deploy del nostro prodotto.\\
 Saranno realizzate le seguenti componenti, di seguito nel testo ci si riferirà a loro tramite l'acronimo iniziale nella seguente lista:
 \begin{itemize}
@@ -43,7 +43,7 @@ Saranno realizzate le seguenti componenti, di seguito nel testo ci si riferirà 
 	\item \textbf{VUIC}: Verifier demo user interaction component 
 	\item \textbf{Wallet}: Wallet front-end webapp
 \end{itemize}
-Tutte le seguenti informazioni sono solo proposte ed osservazioni, le decisioni finali per il PoC e per il progetto dovranno ancora essere prese in base alle seguenti osservazioni e a successivi coloqui con la azienda.\\
+Tutte le seguenti informazioni sono solo proposte ed osservazioni, le decisioni finali per il PoC e per il progetto dovranno ancora essere prese in base alle seguenti osservazioni e a successivi colloqui con la azienda.\\
 \\
 Tenendo in considerazione il documento analisiDeiRequisiti.pdf, capitolo 3.4, come evidenziato dagli Use Case UC01/2/3 la realizzazione
 del component BOC e IUIC dovranno avere un database accessibile in comune.\\
@@ -55,7 +55,7 @@ Questa decisione rispecchia anche un utilizzo reale dato che un eventuale Issuer
 per entrambe le piattaforme e sarà responsabile anche per il database utilizzato da entrambe.\\
 \\
 Per la realizzazione del VUIC si è pensato alla realizzazione di una semplice webapp, dato che questo componenente è semplicemente una demo una volta presentata una credenziale
-non ci saranno funzioni e servizzi che il Verifier potrà fornire, quindi è suficiente una webapp che riceverà la credenziale di presentazione fornita e darà un messaggio di successo nella operazione.
+non ci saranno funzioni e servizi che il Verifier potrà fornire, quindi è sufficiente una webapp che riceverà la credenziale di presentazione fornita e darà un messaggio di successo nella operazione.
 \\
 Per la realizzazione del Wallet sarà necessario una webapp.\\
 Per garantire gli Use Case UC04/5 sarà necessario utillizzare un sistema per memorizzare le credenziali.\\
@@ -64,7 +64,7 @@ Come specificato da direttive nella archittetturaEUDI a noi ci sembra più natur
 Sarà hostata solo la webapp, non saranno presenti database su nessun server e tutte le credenziali saranno memorizzate all'interno del LocalStorage del Browser.\\
 
 \subsubsection{Tecnologie Da Utilizzare}
-Per la realizzazione delle webapp suindicate si è fatta una ricerca su eventuali framework da utilizzare.\\
+Per la realizzazione delle webapp sopra citate si è fatta una ricerca su eventuali framework da utilizzare.\\
 Due framework che abbiamo analizzato sono stati Svelte e React.\\
 I punti a favore di Svelte sono:
 \begin{itemize}
@@ -89,7 +89,7 @@ adatta online, oppure il seguire un linguaggio tipizzato per la realizzazione di
 \\
 Esistono successivamente anche altri framework, che analizzeremo a breve.\\
 Abbiamo escluso a priori Angular in quanto nonostante sia molto maturo e usato ampiamente in ambito business ha una curva di apprendimento molto lenta e 
-date le basi da cui i membri del gruppo partono, non ci permette la buona riuscita del progetto.\\\\
+date le basi da cui i membri del gruppo partono, non ci permetterebbe la buona riuscita del progetto.\\\\
 Per quanto riguarda i database da realizzare bisogna fare una scelta implementativa molto importante legata al tipo di BDMS.\\
 Una soluzione classica che tutti i membri del gruppo sarebbero in grado di fare sarebbe l'implementare un DBMS SQL come per esempio postgressSQL oppure MySQL.\\
 Facendo questa scelta bisognerebbe creare anche un backend con cui reperire le informazioni dal DB e fornirle in forma di API al frontend.\\

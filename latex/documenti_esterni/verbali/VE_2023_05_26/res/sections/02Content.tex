@@ -1,7 +1,5 @@
 \section{Ordine del giorno}
 \begin{enumerate}
-\item Casi d'uso
-\item Analisi dei requisiti
 \item Libreria
 \item Entità
 \item Database
@@ -10,54 +8,58 @@
 \item Link
 \end{enumerate}
 
+\subsection{Libreria}
+Durante le prime fasi di consultazione con l'azienda, è stata sollevata una domanda riguardante l'utilizzo delle librerie REST API. 
+La scelta di utilizzare REST API come metodologia di interazione per la nostra web app è considerata ragionevole. 
+Trattandosi di una libreria ampiamente adottata, inclusa l'implementazione da parte di Infocert in progetti validi, si può affermare che si tratta di 
+una soluzione matura e affidabile. Approviamo quindi l'utilizzo di REST API per la nostra applicazione, trasformando il server in un'entità che espone 
+un'interfaccia basata su questa tecnologia. \\Per quanto riguarda la libreria \textit{Walt.id} potrebbe non essere completamente pronta all'uso immediato, 
+ma risponde in modo completo all'OpenID. Pertanto, abbiamo deciso di utilizzarla senza la necessità di implementare una soluzione personalizzata. 
+Non c'è nulla di sbagliato in questa scelta, in quanto ha valore didattico: non abbiamo l'obiettivo di sviluppare tutto da zero. 
+Infatti, \textit{InfoCert} è più interessata all'implementazione delle parti più rilevanti, piuttosto che alle componenti già disponibili come questa libreria.
+REST API e  la libreria\textit{Walt.id} sono state approvate.
 
-\subsection{Casi d'uso (Cardin)}
-Durante la riunione con Cardin, una delle prime domande riguardava i casi d'uso, sono stati chiariti i ruoli dell'attore primario e secondario.
-Vengono definiti i ruoli degli attori primari e secondari e si discute dell'identificazione dell'issuer come sistema o essere umano, influenzando la rappresentazione dei casi d'uso.
-L'attore secondario è un sistema esterno che non interagisce attivamente con il sistema principale, ma fornisce assistenza o viene sollecitato dal sistema. Rimane esterno al sistema e non può modificarne le caratteristiche. Il suo ruolo principale è di supportare l'attore primario nell'adempimento delle sue funzioni e si sottolinea la necessità di trovare un nome più appropriato per l'attore secondario.
-\\In particolare sono stati esaminati UC01, UC02, UC03 e UC04:
-\begin{itemize}
-  \item L'issuer viene identificato come una piattaforma nei casi d'uso UC01 e UC03, indicando una rappresentazione come applicazione nel diagramma dei casi d'uso. 
-  \item Nel caso d'uso UC02, l'issuer è un essere umano, richiedendo una rappresentazione come persona nel diagramma dei casi d'uso.
-  \item Per quanto riguarda UC04, si consiglia di espandere gli esempi dei casi d'uso, introducendo ulteriori sotto funzionalità come UC04.1, al fine di fornire una comprensione più dettagliata delle azioni e delle responsabilità associate a ciascuna funzionalità.
-\end{itemize}
+\subsection{Entità}
+Durante la riunione è emersa la discussione sulla scelta tra creare tre entità distinte all'interno dello stesso container o effettuare un unico deploy 
+del server con gli attori che comunicano all'interno dello stesso container. Tale scelta implica una valutazione del concetto di decentralizzazione.
+Secondo il parere di \textit{InfoCert}, la soluzione più logica è quella di avere tre agenti diversi con tre endpoint diversi, 
+utilizzando \textit{Docker Compose} per orchestrare l'ambiente di sviluppo. Questo approccio offre una maggiore chiarezza e coerenza nella rappresentazione 
+delle diverse entità e dei relativi endpoint. Sebbene sia possibile emulare il flusso di comunicazione con un unico server, 
+si ritiene che non sia conveniente adottare questa soluzione. L'approccio di avere entità distinte sembra essere più appropriato in termini di gestione, 
+manutenzione e comprensione del sistema.
 
+\subsection{Database}
+Durante la discussione, è stata considerata la possibilità di utilizzare due web app separate, una per la gestione delle richieste e l'altra per fornire 
+le risposte. Inoltre, si è discusso dell'utilizzo di un database comune tra la web app BOC (Business Operations Center) e IUIC 
+(Infocert User Interface Component). Dal punto di vista concettuale, l'idea di avere un database comune sembra essere adeguata. 
+Tuttavia, dal punto di vista pratico, potrebbe essere più conveniente e efficiente collassare tutto in un unico front-end, semplificando così 
+l'architettura e semplificando la gestione dei dati. È importante notare che, nonostante l'uso di un unico database, le credenziali e i tipi di accesso 
+tra la web app BOC e IUIC possono essere diversi. Ciò significa che le autorizzazioni e le restrizioni di accesso devono essere attentamente gestite 
+per garantire la sicurezza e la privacy dei dati. Dato che il database non è una componente strategica, si consiglia di optare per la soluzione più semplice, 
+utilizzando un DBMS SQL.
 
-
-\subsection{Analisi dei requisiti (Cardin)}
-L'analisi dei requisiti attuale, che occupa solo 9 pagine, viene considerata insufficiente. Si raccomanda di espandere l'analisi dei requisiti per fornire una copertura più completa delle necessità del sistema.\\ Un'analisi dettagliata consentirà di identificare e documentare in modo esauriente tutti i requisiti funzionali e non funzionali, stabilendo una solida base per lo sviluppo del sistema.
-È importante dedicare l'attenzione necessaria all'analisi e all'espansione dei requisiti per identificarli, analizzarli e documentarli correttamente, fornendo una visione chiara e completa del sistema proposto.
-
-
-\subsection{Libreria (InfoCert)}
-Durante le prime fasi di consultazione con l'azienda, è stata sollevata una domanda riguardante l'utilizzo delle librerie REST API. La scelta di utilizzare REST API come metodologia di interazione per la nostra web app è considerata ragionevole. Trattandosi di una libreria ampiamente adottata, inclusa l'implementazione da parte di Infocert in progetti validi, si può affermare che si tratta di una soluzione matura e affidabile. Approviamo quindi l'utilizzo di REST API per la nostra applicazione, trasformando il server in un'entità che espone un'interfaccia basata su questa tecnologia.
-\\Per quanto riguarda la libreria "wald id" potrebbe non essere completamente pronta all'uso immediato, ma risponde in modo completo all'OpenID. Pertanto, abbiamo deciso di utilizzarla senza la necessità di implementare una soluzione personalizzata. Non c'è nulla di sbagliato in questa scelta, in quanto ha valore didattico: non abbiamo l'obiettivo di sviluppare tutto da zero. Infatti, Infocert è più interessata all'implementazione delle parti più rilevanti, piuttosto che alle componenti già disponibili come questa libreria.
-REST API e  la libreria wald id sono state approvate.
-
-
-
-\subsection{Entità (InfoCert) }
-Durante la riunione è emersa la discussione sulla scelta tra creare tre entità distinte all'interno dello stesso container o effettuare un unico deploy del server con gli attori che comunicano all'interno dello stesso container.Tale scelta implica una valutazione del concetto di decentralizzazione.
-Secondo il parere di Infocert, la soluzione più logica è quella di avere tre agenti diversi con tre endpoint diversi, utilizzando Docker Compose per orchestrare l'ambiente di sviluppo. Questo approccio offre una maggiore chiarezza e coerenza nella rappresentazione delle diverse entità e dei relativi endpoint.
-Sebbene sia possibile emulare il flusso di comunicazione con un unico server, si ritiene che non sia conveniente adottare questa soluzione. L'approccio di avere entità distinte sembra essere più appropriato in termini di gestione, manutenzione e comprensione del sistema.
-
-
-\subsection{Database (InfoCert)}
-Durante la discussione, è stata considerata la possibilità di utilizzare due web app separate, una per la gestione delle richieste e l'altra per fornire le risposte. Inoltre, si è discusso dell'utilizzo di un database comune tra la web app BOC (Business Operations Center) e IUIC (Infocert User Interface Component).
-Dal punto di vista concettuale, l'idea di avere un database comune sembra essere adeguata. Tuttavia, dal punto di vista pratico, potrebbe essere più conveniente e efficiente collassare tutto in un unico front-end, semplificando così l'architettura e semplificando la gestione dei dati.
-È importante notare che, nonostante l'uso di un unico database, le credenziali e i tipi di accesso tra la web app BOC e IUIC possono essere diversi. Ciò significa che le autorizzazioni e le restrizioni di accesso devono essere attentamente gestite per garantire la sicurezza e la privacy dei dati.
-Dato che il database non è una componente strategica, si consiglia di optare per la soluzione più semplice, utilizzando un DBMS SQL.
-
-\subsection{Framework (InfoCert)}
-Durante la discussione, è stato valutato il framework da utilizzare e si è giunti alla conclusione che React rappresenta una buona scelta intermedia, ed è stata approvata come tale. Inoltre, si è deciso di evitare l'utilizzo di TypeScript. Inoltre, è stato menzionato l'utilizzo di React Native come una soluzione vantaggiosa, in quanto permette di simulare l'applicazione su diverse piattaforme.
+\subsection{Framework}
+Durante la discussione, è stato valutato il framework da utilizzare e si è giunti alla conclusione che React rappresenta una buona scelta intermedia, 
+ed è stata approvata come tale. Si è deciso anche di evitare l'utilizzo di TypeScript. Inoltre, è stato menzionato l'utilizzo di React Native come 
+una soluzione vantaggiosa, in quanto permette di simulare l'applicazione su diverse piattaforme.
 Il gruppo ha considerato l'adozione di React Native per lo sviluppo dell'applicazione mobile proposta dall'azienda.
-\subsection{Credenziali (InfoCert)}
-Durante le discussioni, si è affrontato il tema del salvataggio del wallet, ovvero delle credenziali, in locale. Sono state prese in considerazione due opzioni: memorizzare le credenziali nel local storage del browser all'interno della web app o salvare le credenziali nel cloud utilizzando un server fornito dal sistema.
-Considerando che la web app in realtà è una web view, è stato ritenuto più realistico utilizzare un server per memorizzare le credenziali anziché affidarsi esclusivamente al local storage del browser. In questo scenario, si è proposto di utilizzare WaldID come server anziché come libreria, sfruttando i suoi servizi REST.
-Tuttavia, è stata riconosciuta la necessità di considerare attentamente i tempi e le risorse necessarie per implementare questa soluzione. Sebbene sia importante mantenere la proprietà delle credenziali, l'archiviazione delle stesse su un server può risultare utile in caso di smarrimento o problemi vari. Tuttavia, è importante valutare le difficoltà tecniche associate, come il backup, il ripristino, l'importazione e l'esportazione dei dati.
-Pertanto, è stata suggerita l'adozione di un'architettura "ibrida" che combinasse entrambe le opzioni. Sebbene questa soluzione non sia perfetta, offre un compromesso più utilizzabile, consentendo il salvataggio delle credenziali nel server e offrendo la possibilità di utilizzare il local storage del browser come backup o soluzione alternativa in determinati scenari.
 
-\subsection{Link (InfoCert)}
+\subsection{Credenziali}
+Durante le discussioni, si è affrontato il tema del salvataggio del wallet, ovvero delle credenziali, in locale. Sono state prese in considerazione due 
+opzioni: 
+\begin{itemize}
+  \item memorizzare le credenziali nel local storage del browser all'interno della web app; 
+  \item salvare le credenziali nel cloud utilizzando un server fornito dal sistema. 
+\end{itemize} 
+Considerando che la web app in realtà è una web view, è stato ritenuto più realistico utilizzare un server per memorizzare le 
+credenziali anziché affidarsi esclusivamente al local storage del browser. In questo scenario, si è proposto di utilizzare \textit{Walt.id} 
+come server anziché come libreria, sfruttando i suoi servizi REST. Tuttavia, è stata riconosciuta la necessità di considerare attentamente i tempi 
+e le risorse necessarie per implementare questa soluzione. Sebbene sia importante mantenere la proprietà delle credenziali, l'archiviazione delle 
+stesse su un server può risultare utile in caso di smarrimento o problemi vari. Inoltre, è importante valutare le difficoltà tecniche associate, 
+come il backup, il ripristino, l'importazione e l'esportazione dei dati. Pertanto, è stata suggerita l'adozione di un'architettura "ibrida" 
+che combinasse entrambe le opzioni. Sebbene questa soluzione non sia perfetta, offre un compromesso più utilizzabile, 
+consentendo il salvataggio delle credenziali nel server e offrendo la possibilità di utilizzare il local storage del browser come backup 
+o soluzione alternativa in determinati scenari.
 
-Durante la riunione, l'azienda ha suggerito di guardare la demo di WaltID attraverso un link fornito.\\
-\href{https://issuer.walt.id/}{walt.id}\\
+\subsection{Link}
+Durante la riunione, l'azienda ha suggerito di guardare la demo di \textit{Walt.id}, in cui si può simulare holder, issuer e verifier.

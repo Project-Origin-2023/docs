@@ -58,7 +58,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Postcondizioni:} L'utente (\textit{holder}) una volta inserite le credenziali è riuscito a fare l'accesso al Wallet ed è entrato nel sistema.
 \item \textbf{Scenario principale:} Login è andato a buon fine e l'utente  (\textit{holder} si trova all'interno del sistema Wallet.
 \item \textbf{Scenario alternativo}: Login non riuscito l'utente (\textit{holder} ha fornito delle credenziali (email e password) non valide.
-\item \item \textbf{estensione:} UC4-Visualizzazione Errore.
+\item \textbf{estensione:} UC4-Visualizzazione Errore.
 \end{itemize}
 
 \subsubsection{UC3 - Logout dal Wallet}
@@ -228,6 +228,11 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
         \item naviga nella lista delle credenziali presente nel proprio Wallet;
         \item una volta scelta la credenziale Pid da visualizzare può consultarla singolarmente in particolare i seguenti campi:
         \begin{itemize}
+            \item id;
+            \item issuer;
+            \item issuanceDate (data di richiesta);
+            \item issued (data di rilascio);
+            \item validFrom (data di validità);
             \item personalId;
             \item dateOfBirth;
             \item familyname;
@@ -251,9 +256,18 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
         \item naviga nella lista delle credenziali presente nel proprio Wallet;
         \item una volta scelta la credenziale Pid da visualizzare può consultarla singolarmente in particolare i seguenti campi:
         \begin{itemize}
+            \item id;
+            \item issuer;
+            \item type;
+            \item issuanceDate (data di richiesta);
+            \item issued (data di rilascio);
+            \item validFrom (data di validità);
+            \item exipirationDate (data di scadenza);
+            \item status (può essere valido, scaduto, revocato, sospesa);
             \item personalId;
             \item familyName;
             \item firstName;
+            \item Attributi attestati;
         \end{itemize}
     \end{enumerate}
 \end{itemize}

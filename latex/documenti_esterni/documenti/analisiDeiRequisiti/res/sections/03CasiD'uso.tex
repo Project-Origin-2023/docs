@@ -151,16 +151,12 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 
 \subsubsection{UC6 - Rilascio credenziale}
 \begin{itemize}
-    \item \textbf{Attore principale:} Issuer (fisico).
-    \item \textbf{Attore secondario:} Issuer (sistema), Holder 
+    \item \textbf{Attore principale:} Issuer (admin).
+    \item \textbf{Attore secondario:} Issuer (sistema).
     \item \textbf{Precondizioni:} L'issuer non ha ancora verificato la richiesta della credenziale del Holder, la richiesta ha come esito 'In Verifica'
     \item \textbf{Postcondizioni:} L'issuer ha esaminato la richiesta di rilascio della credenziale del Holder, ora la richiesta ha come esito 'Accettata' oppure 'Rifiutata'
     \item \textbf{Scenario principale:} La richiesta viene esaminata ed ha come esito 'Accettata'
     \item \textbf{Scenario alternativo:} La richiesta viene esaminata ed ha come esito 'Rifiutata'
-    \item \textbf{Estensioni:}
-\begin{itemize}
-\item  UC9 - Visualizzazione errore rilascio
-\end{itemize}
 \end{itemize}
 
 \subsubsection{UC7 - Verifica esito richiesta credenziale} 
@@ -171,6 +167,10 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \item \textbf{Postcondizioni:} L'Holder ha verificato l'esito della sua richiesta, lo stato della richiesta gli è conosciuto.
     \item \textbf{Scenario principale:} L’Holder fornisce al Issuer (sistema) un ID Richiesta ed una password (fornitagli al momento della richeista della credenziale UC5).\\
     La sua richiesta può avere 3 stati, 'In Verifica', 'Approvata', 'Rifiutata'.
+    \item \textbf{Estensioni:}
+    \begin{itemize}
+    \item  UC9 - Visualizzazione errore rilascio
+    \end{itemize}
 \end{itemize}
 
 \subsubsection{UC8 - Ottenimento credenziale}
@@ -187,7 +187,8 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 
 \subsubsection{UC9 - Visualizzazione errore di rilascio}
 \begin{itemize}
-    \item \textbf{Attore principale:} Issuer (sistema).
+    \item \textbf{Attore principale:} Holder.
+    \item  \textbf{Attore secondario:} Issuer (sistema).
     \item \textbf{Precondizioni:} Il caso d'uso da cui estende si trova in una situazione di errore.
     \item \textbf{Postcondizioni:} Viene visualizzato un errore a schermo. 
     \item \textbf{Scenario principale:} Viene visualizzato un messaggio d’errore che riguarda il rilascio di una credenziale.
@@ -315,7 +316,8 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 
 \subsubsection{UC15 - Visualizzazione errore di verifica}
 \begin{itemize}
-    \item \textbf{Attore principale:} Verifier.
+    \item \textbf{Attore principale:} Holder.
+    \item \textbf{Attore secondario:} Verifier.
     \item \textbf{Precondizioni:} Il caso d'uso da cui estende si trova in una situazione di errore.
     \item \textbf{Postcondizioni:} Viene visualizzato un errore a schermo. 
     \item \textbf{Scenario principale:} Viene visualizzato un messaggio d’errore che riguarda la fornitura di una credenziale per la verifica.

@@ -17,94 +17,270 @@ Ogni caso d’uso è inoltre definito secondo la seguente struttura:
     \item \textbf{Precondizioni}:  specifica le condizioni che sono identificate come vere prima del verificarsi degli eventi del caso d’uso;
     \item \textbf{Postcondizioni}:  specifica  le  condizioni  che  sono  identificate  come  vere  dopo  il verificarsi degli eventi del caso d’uso;
     \item \textbf{Scenario  principale}:  rappresenta  il  flusso  degli  eventi,  a  volte  attraverso  l'uso di  una  lista  numerata;
-    %\item \textbf{Inclusioni}:  usate per non descrivere più volte lo stesso flusso di eventi, inserendo il comportamento comune in un caso d’uso a parte;
+    \item \textbf{Scenario alternativo}: rappresenta il flusso alternativo degli eventi, a volte attraversdo l'uso di una lista numerata;
+    \item \textbf{estensioni}: usate per estendere i casi d'uso attraverso un aumento delle funzioanalità di essi;
+    \item \textbf{Inclusioni}:  usate per non descrivere più volte lo stesso flusso di eventi, inserendo il comportamento comune in un caso d’uso a parte;
 \end{itemize}
 Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  casi  d'uso riportante lo stesso titolo e codice.
 \subsection{Attori}
 \begin{itemize}
     \item\textbf{Holder.}
-    \item\textbf{Issuer.}
+    \item\textbf{Issuer (sistema).}
+    \item\textbf{Issuer (Admin)}
     \item\textbf{Verifier.}
+    \item\textbf{Wallet.}
 \end{itemize}
 
 \subsection{Elenco dei casi d'uso}
-\subsubsection{UC01 - Richiesta di credenziali per Wallet}
+\subsubsection{UC1 - Registrazione al Wallet}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
-\item \textbf{Attore secondario}: Issuer. 
-\item \textbf{Precondizioni:} L’utente (\textit{holder}) non è in possesso delle credenziali.
-\item \textbf{Postcondizioni:} L’utente (\textit{holder}) è riuscito a presentare la richiesta per la credenziale nel sito dell’ \textit{issuer} ed ora la sua richiesta deve essere esaminata.
-\item \textbf{Scenario principale}: 
-    \begin{enumerate}
-        \item L' \textit{holder} deve richiedere delle credenziali; 
-        \item l' \textit{holder} naviga nel sito dell' \textit{issuer}; 
-        \item l' \textit{holder} presenta richiesta della credenziale che necessita; 
-        \item l' \textit{holder} attende che la sua richiesta venga esaminata dall'\textit{issuer}.
-    \end{enumerate}
-\end{itemize}
-
-\subsubsection{UC02 - Rilascio delle credenziali per Wallet}
+\item \textbf{Attore secondario}: Wallet. 
+\item \textbf{Precondizioni:} L’utente (\textit{holder}) fornisce i seguenti dati per effettuare la registrazione:
 \begin{itemize}
-\item \textbf{Attore principale:} Issuer.
-\item \textbf{Precondizioni:} L’ \textit{issuer} riceve una richiesta di credenziale.
-\item \textbf{Postcondizioni:} L’ \textit{issuer} ha approvato la richiesta ed ha fornito la credenziale.
-\item \textbf{Scenario principale:}
-    \begin{enumerate}
-        \item L' \textit{issuer} riceve una richiesta per rilasciare una credenziale; 
-        \item l' \textit{issuer} approva la richiesta; 
-    \end{enumerate}
+    \item familyName;
+    \item firstName;
+    \item email;
+    \item password;
+    \item conferma password.
+\end{itemize}
+\item \textbf{Postcondizioni:} L’utente (\textit{holder}) risulta registrato alla piattaforma del Wallet.
+\item \textbf{Scenario principale:} L'utente (\textit{holder}) ha eseguito con successo la registrazione.
+\item \textbf{Scenario alternativo:} L'utente (\textit{holder}) non è riuscito ad eseguire la registrazione.
+\item \textbf{estensione:} UC4-Visualizzazione Errore.
 \end{itemize}
 
-\subsubsection{UC03 - Ottenimento delle credenziali per Wallet}
+\subsubsection{UC2 - Login al Wallet}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
-\item \textbf{Attore secondario:} Issuer.
-\item \textbf{Precondizioni:} La credenziale è stata fornita dall' \textit{issuer}, l' \textit{holder} non è in possesso delle credenziali sul proprio Wallet.
-\item \textbf{Postcondizioni:} l' \textit{holder} possiede all’interno del proprio Wallet la credenziale.
-\item \textbf{Scenario principale:} 
-    \begin{enumerate}
-        \item L' \textit{holder} non è in possesso della credenziale;
-        \item l' \textit{holder} salva la credenziale approvata dall' \textit{issuer} sul propio Wallet personale.
-    \end{enumerate}
+\item \textbf{Attore secondario}: Wallet. 
+\item \textbf{Precondizioni:} L'utente (\textit{holder}) inserisce le credenziali di accesso ovvero email e password.
+\item \textbf{Postcondizioni:} L'utente (\textit{holder}) una volta inserite le credenziali è riuscito a fare l'accesso al Wallet ed è entrato nel sistema.
+\item \textbf{Scenario principale:} Login è andato a buon fine e l'utente  (\textit{holder} si trova all'interno del sistema Wallet.
+\item \textbf{Scenario alternativo}: Login non riuscito l'utente (\textit{holder} ha fornito delle credenziali (email e password) non valide.
+\item \item \textbf{estensione:} UC4-Visualizzazione Errore.
 \end{itemize}
+
+\subsubsection{UC3 - Logout dal Wallet}
+\begin{itemize}
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario:} Wallet.
+\item \textbf{Precondizioni:} L'utente (\textit{holder}) vuole effettuare il logout dalla piattaforma Wallet.
+\item \textbf{Postcondizioni:} L' \textit{holder} è uscito dal sistema Wallet e si trova nella schermata di login.
+\item \textbf{Scenario principale:} L'utente (\textit{holder}) è riuscito ad eseguire il logout dal Wallet. 
+\end{itemize}
+
+\subsubsection{UC4 - Visualizzazione Errore}
+\begin{itemize}
+\item \textbf{Attore principale:} Wallet.
+\item \textbf{Precondizioni:} Il caso d'uso da cui estende si trova in una situazione di errore.
+\item \textbf{Postcondizioni:} Viene visualizzato un errore a schermo. 
+\item \textbf{Scenario principale:} Viene visualizzato un messaggio d’errore che può riguardare sia il login che la registrazione in base al caso d’uso a cui l’estensione si riferisce.
+\end{itemize}
+
 \begin{center}
-    \includegraphics[scale = 0.65]{./res/img/credentialIssuing.png}
+   % \includegraphics[scale = 0.65]{./res/img/}
 \end{center}
 
-\subsubsection{UC04 - Visualizzazione delle credenziali}
+\subsubsection{UC5 - Richiesta credenziale}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
-\item \textbf{Precondizioni:} L’ \textit{holder} non ha ancora visualizzato la credenziale.
-\item \textbf{Postcondizioni:} L’ \textit{holder} è riuscito a visualizzare la credenziale.
+\item \textbf{Attore secondario:} Issuer (sistema). 
+\item \textbf{Precondizioni:} L’ \textit{Holder} non è in possesso delle credenziali. 
+\item \textbf{Postcondizioni:} L’ \textit{Holder} è riuscito a presentare la richiesta per la credenziale nel sito dell'\textit(issuer) ed ora la sua richiesta deve essere esaminata.
 \item \textbf{Scenario principale:} 
     \begin{enumerate}
-        \item L' \textit{holder} non ha visualizzato la credenziale; 
-        \item l' \textit{holder} seleziona la credenziale nel proprio Wallet;
-        \item l' \textit{holder} visualizza la credenziale.
+        \item L' \textit{holder} deve richiedere una credenziale; 
+        \item l' \textit{holder} naviga nel sito dell \textit{issuer};
+        \item l' \textit{holder} presenta una richiesta della credenziale che necessita;
+        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Rihiesa ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
+        \item l' \textit{holder} attende che la sua richiesta venga esaminata dall'\textit{issuer.}
+    \end{enumerate}
+\item \textbf{Incusioni:}
+    \begin{itemize}
+    \item UC5.1- Richiesta PID;
+    \item UC5.2 - Richiesta EAA;
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{UC5.1 - Richiesta PID}
+\begin{itemize}
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario:} Issuer (sistema). 
+\item \textbf{Precondizioni:} L’ \textit{holder} non è in possesso della credenziale identificativa PID.
+\item \textbf{Postcondizioni:} L’ \textit{holder} è riuscito a presentare la richiesta per la credenziale identificativa PID nel sito dell'\textit(issuer) ed ora la sua richiesta deve essere esaminata.
+\item \textbf{Scenario principale:} 
+    \begin{enumerate}
+        \item L' \textit{holder} deve richiedere una credenziale PID; 
+        \item l' \textit{holder} naviga nel sito dell \textit{issuer};
+        \item l' \textit{holder} presenta una richiesta della credenziale PID fornendo i seguenti dati:
+        \begin{itemize}
+            \item personalId;
+            \item dateOfBirth;
+            \item familyname;
+            \item firstName;
+            \item gender;
+            \item nameAndfamilyNameAtBirth;
+            \item placeOfBirth.
+        \end{itemize}
+        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Rihiesa ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
+        \item l' \textit{holder} attende che la sua richiesta venga esaminata dall'\textit{Issuer (admin)}
     \end{enumerate}
 \end{itemize}
 
-\subsubsection{UC05 - Cancellazione delle credenziali}
+\subsubsection{UC5.2 - Richiesta EAA}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
-\item \textbf{Precondizioni:} L’ \textit{holder} vuole rimuovere una credenziale dal Wallet personale.
-\item \textbf{Postcondizioni:} L’ \textit{holder} è riuscito a rimuovere con successo la credenziale dal Wallet personale.
+\item \textbf{Attore secondario:} Issuer (sistema).
+\item \textbf{Precondizioni:} L’ \textit{holder} non è in possesso della credenziale EAA.
+\item \textbf{Postcondizioni:} L’ \textit{holder} è riuscito a presentare la richiesta per la credenziale identificativa EAA nel sito dell'\textit(issuer) ed ora la sua richiesta deve essere esaminata.
 \item \textbf{Scenario principale:} 
     \begin{enumerate}
-        \item L' \textit{holder} ha accesso al prprio Wallet personale; 
-        \item l' \textit{holder} seleziona la credenziale nel proprio Wallet;
-        \item l' \textit{holder} elimina la credenziale.
+        \item L' \textit{holder} deve richiedere una credenziale EAA; 
+        \item l' \textit{holder} naviga nel sito dell' \textit{issuer};
+        \item l' \textit{holder} presenta una richiesta della credenziale EAA fornendo i seguenti dati:
+        \begin{itemize}
+            \item personalId;
+            \item familyName;
+            \item firstName;
+        \end{itemize}
+        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Rihiesa ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
+        \item l' \textit{holder} attende che la sua richiesta venga esaminata dall'\textit{Issuer (admin)}
     \end{enumerate}
 \end{itemize}
-\begin{center}
-    \includegraphics[scale = 0.65]{./res/img/credentialManagement.png}
-\end{center}
 
-\subsubsection{UC06 - Richiesta credenziali per verifica}
+\subsubsection{UC6 - Rilascio credenziale}
+\begin{itemize}
+    \item \textbf{Attore principale:} Issuer (fisico).
+    \item \textbf{Attore secondario:} Issuer (sistema), Holder 
+    \item \textbf{Precondizioni:} L'issuer non ha ancora verificato la richiesta della credenziale del Holder, la richiesta ha come esito 'In Verifica'
+    \item \textbf{Postcondizioni:} L'issuer ha esaminato la richiesta di rilascio della credenziale del Holder, ora la richiesta ha come esito 'Accettata' oppure 'Rifiutata'
+    \item \textbf{Scenario principale:} La richiesta viene esaminata ed ha come esito 'Accettata'
+    \item \textbf{Scenario alternativo:} La richiesta viene esaminata ed ha come esito 'Rifiutata'
+    \item \textbf{Estensioni:}
+\begin{itemize}
+\item  UC9 - Visualizzazione errore rilascio
+\end{itemize}
+\end{itemize}
+
+\subsubsection{UC7 - Verifica esito richiesta credenziale} 
+\begin{itemize}
+    \item \textbf{Attore principale:} Holder.
+    \item \textbf{Attore secondario:} Issuer (sistema).
+    \item \textbf{Precondizioni:} L'Holder non ha verificato l'esito della sua richiesta, lo stato della richiesta gli è sconosciuto.
+    \item \textbf{Postcondizioni:} L'Holder ha verificato l'esito della sua richiesta, lo stato della richiesta gli è conosciuto.
+    \item \textbf{Scenario principale:} L’Holder fornisce al Issuer (sistema) un ID Richiesta ed una password (fornitagli al momento della richeista della credenziale UC5).\\
+    La sua richiesta può avere 3 stati, 'In Verifica', 'Approvata', 'Rifiutata'.
+\end{itemize}
+
+\subsubsection{UC8 - Ottenimento credenziale}
+\begin{itemize}
+    \item \textbf{Attore principale:} Holder.
+    \item \textbf{Attore secondario:} Issuer (sistema), Wallet.
+    \item \textbf{Precondizioni:} L'Holder ha verificato l'esito della sua richiesta, la sua richiesta è stata esaminata e non ha come esito 'In Verifica', la credenziale non è all'interno del proprio wallet.
+    \item \textbf{Postcondizioni:} L'Holder ha la credenziale all'interno del proprio wallet.
+    \item \textbf{Scenario principale:} La richiesta della credenziale ha come esito 'Approvata',
+    L’Holder aggiunge la credenziale sul proprio wallet accetandola.\\
+    La credenziale richiesta è aggiunta al wallet.
+    \item \textbf{Scenario alternativo:} La richiesta della credenziale ha come esito 'Rifiutata', l'Holder non può aggiungerla al proprio wallet e la richiesta deve essere rifatta.
+\end{itemize}
+
+\subsubsection{UC9 - Visualizzazione errore di rilascio}
+\begin{itemize}
+    \item \textbf{Attore principale:} Issuer (sistema).
+    \item \textbf{Precondizioni:} Il caso d'uso da cui estende si trova in una situazione di errore.
+    \item \textbf{Postcondizioni:} Viene visualizzato un errore a schermo. 
+    \item \textbf{Scenario principale:} Viene visualizzato un messaggio d’errore che riguarda il rilascio di una credenziale.
+\end{itemize}
+
+\subsubsection{UC10 - Visualizzazione credenziali}
+\begin{itemize}
+    \item \textbf{Attore principale:} Holder.
+    \item \textbf{Attore secondario:} Wallet.
+    \item \textbf{Precondizioni:} l'\textit{holder} vuole visualizzare le credenziali presenti nel Wallet. 
+    \item \textbf{Postcondizioni:} l'\textit{holder} riesce a visualizzare correttamente tutta la lista delle credenziali presenti nel suo wallet.. 
+    \item \textbf{Scenario principale:} Viene visualizzata una lista con tutte le credenziali presenti all'interno del Wallet personale. 
+\end{itemize}
+
+\subsubsection{UC11 - Visualizzazione singola credenziale}
+\begin{itemize}
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario:} Wallet. 
+\item \textbf{Precondizioni:} L’ \textit{holder} vuole visualizzare una credenziale dalla lista delle credenziali contenute all'interno del proprio wallet personale. 
+\item \textbf{Postcondizioni:} L’ \textit{holder} è riuscito a visualizzare la singola credenziale di interesse presente nel wallet personale.
+\item \textbf{Scenario principale:} 
+\item \textbf{Incusioni:}
+    \begin{itemize}
+    \item UC11.1- Visualizzazione PID;
+    \item UC11.2 - Visualizzazione EAA;
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{UC11.1 - visualizzazione PID}
+\begin{itemize}
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario:} Wallet. 
+\item \textbf{Precondizioni:} L’ \textit{holder} vuole visualizzare la credenziale identificativa PID.
+\item \textbf{Postcondizioni:} L’ \textit{holder} visualizza correttamente la credenziale identificativa PID presente nel proprio wallet.
+\item \textbf{Scenario principale:} 
+    \begin{enumerate}
+        \item L' \textit{holder} vuole visualizzare credenziale PID; 
+        \item naviga nella lista delle credenziali presente nel proprio Wallet;
+        \item una volta scelta la credenziale Pid da visualizzare può consultarla singolarmente in particolare i seguenti campi:
+        \begin{itemize}
+            \item personalId;
+            \item dateOfBirth;
+            \item familyname;
+            \item firstName;
+            \item gender;
+            \item nameAndfamilyNameAtBirth;
+            \item placeOfBirth.
+        \end{itemize}
+    \end{enumerate}
+\end{itemize}
+
+\subsubsection{UC11.2 - Visualizzazione EAA}
+\begin{itemize}
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario:} Wallet.
+\item \textbf{Precondizioni:} L’ \textit{holder} vuole visualizzare la credenziale EAA.
+\item \textbf{Postcondizioni:} L’ \textit{holder} riesce a visualizzare correttamente la credenziale EAA presente all'interno del proprio wallet
+\item \textbf{Scenario principale:} 
+    \begin{enumerate}
+        \item L' \textit{holder} vuole visualizzare credenziale EAA; 
+        \item naviga nella lista delle credenziali presente nel proprio Wallet;
+        \item una volta scelta la credenziale Pid da visualizzare può consultarla singolarmente in particolare i seguenti campi:
+        \begin{itemize}
+            \item personalId;
+            \item familyName;
+            \item firstName;
+        \end{itemize}
+    \end{enumerate}
+\end{itemize}
+
+
+\subsubsection{UC12 - Cancellazione credenziale}
+\begin{itemize}
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario:} Wallet.
+\item \textbf{Precondizioni:} L' \textit{holder} vuole rimuovere una credenziale dal suo \textit{Wallet}.
+\item \textbf{Postcondizioni:} L' \textit{holder} ha cancellato la credenziale dal suo \textit{Wallet}.
+\item \textbf{Scenario principale:} 
+    \begin{enumerate}
+    \item L'\textit{holder} si trova sulla schermata di una crenziale che vuole cancellare; 
+    \item clicca sul pulsante "elimina"; 
+    \item clicca sul pulsante "conferma"; 
+    \item la credenziale è stata cancellata permanentemente.
+    \end{enumerate}
+\end{itemize}
+
+
+
+\subsubsection{UC13 - Richiesta credenziali per verifica}
 \begin{itemize}
 \item \textbf{Attore principale:} Verifier.
-\item \textbf{Attore secondario:} Holder; 
-\item \textbf{Precondizioni:} Il \textit{verifier} deve richiedere una credenziale all' \textit{holder};
+\item \textbf{Attore secondario:} Holder.
+\item \textbf{Precondizioni:} Il \textit{verifier} deve richiedere una credenziale all' \textit{holder}.
 \item \textbf{Postcondizioni:} Il \textit{verifier} ha presentato una richiesta di una credenziale all' \textit{holder}.
 \item \textbf{Scenario principale:} 
     \begin{enumerate}
@@ -112,17 +288,22 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \end{enumerate}
 \end{itemize}
 
-\subsubsection{UC07 - Fornitura delle credenziali per verifica}
+\subsubsection{UC14 - Fornitura delle credenziali per verifica}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder. 
 \item \textbf{Attore secondario:} Verifier.
 \item \textbf{Precondizioni:} L’ \textit{holder} vuole fornire la credenziale presente nel Wallet personale al \textit{verifier}.
 \item \textbf{Postcondizioni:} La credenziale dell’ \textit{holder} è stata fornita al \textit{verifier}.
-\item \textbf{Scenario principale:} 
-    \begin{enumerate}
-        \item L' \textit{holder} fornisce al \textit{verifier} la credenziale che gli è stata richiesta.
-    \end{enumerate}
+\item \textbf{Scenario principale:} L' \textit{holder} fornisce con successo la credenziale che gli è stata richiesta dal \textit{verifier}.
+\item \textbf{Scenario alternativo:} L' \textit{holder} fornisce delle credenziali NON valide e richiama un caso di errore.
+\item \textbf{Estensione:} UC15 - Visualizzazione errore di verifica.
 \end{itemize}
-\begin{center}
-    \includegraphics[scale = 0.65]{./res/img/credentialConsuming.png}
-\end{center}
+
+\subsubsection{UC15 - Visualizzazione errore di verifica}
+\begin{itemize}
+    \item \textbf{Attore principale:} Verifier.
+    \item \textbf{Precondizioni:} Il caso d'uso da cui estende si trova in una situazione di errore.
+    \item \textbf{Postcondizioni:} Viene visualizzato un errore a schermo. 
+    \item \textbf{Scenario principale:} Viene visualizzato un messaggio d’errore che riguarda la fornitura di una credenziale per la verifica.
+\end{itemize}
+%

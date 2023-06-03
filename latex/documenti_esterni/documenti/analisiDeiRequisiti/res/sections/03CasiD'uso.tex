@@ -57,7 +57,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Precondizioni:} L'utente (\textit{holder}) inserisce le credenziali di accesso ovvero email e password.
 \item \textbf{Postcondizioni:} L'utente (\textit{holder}) una volta inserite le credenziali è riuscito a fare l'accesso al Wallet ed è entrato nel sistema.
 \item \textbf{Scenario principale:} Login è andato a buon fine e l'utente  (\textit{holder} si trova all'interno del sistema Wallet.
-\item \textbf{Scenario alternativo}: Login non riuscito l'utente (\textit{holder} ha fornito delle credenziali (email e password) non valide.
+\item \textbf{Scenario alternativo}: Login non riuscito l'utente (\textit{holder}) ha fornito delle credenziali (email e password) non valide.
 \item \textbf{estensione:} UC4-Visualizzazione Errore.
 \end{itemize}
 
@@ -93,7 +93,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
         \item L' \textit{holder} deve richiedere una credenziale; 
         \item l' \textit{holder} naviga nel sito dell \textit{issuer};
         \item l' \textit{holder} presenta una richiesta della credenziale che necessita;
-        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Rihiesa ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
+        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Richiesta ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
         \item l' \textit{holder} attende che la sua richiesta venga esaminata dall'\textit{issuer.}
     \end{enumerate}
 \item \textbf{Incusioni:}
@@ -123,7 +123,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
             \item nameAndfamilyNameAtBirth;
             \item placeOfBirth.
         \end{itemize}
-        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Rihiesa ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
+        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Richiesta ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
         \item l' \textit{holder} attende che la sua richiesta venga esaminata dall'\textit{Issuer (admin)}
     \end{enumerate}
 \end{itemize}
@@ -144,7 +144,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
             \item familyName;
             \item firstName;
         \end{itemize}
-        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Rihiesa ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
+        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Richiesta ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
         \item l' \textit{holder} attende che la sua richiesta venga esaminata dall'\textit{Issuer (admin)}
     \end{enumerate}
 \end{itemize}
@@ -153,10 +153,10 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \begin{itemize}
     \item \textbf{Attore principale:} Issuer (admin).
     \item \textbf{Attore secondario:} Issuer (sistema).
-    \item \textbf{Precondizioni:} L'issuer non ha ancora verificato la richiesta della credenziale del Holder, la richiesta ha come esito 'In Verifica'
-    \item \textbf{Postcondizioni:} L'issuer ha esaminato la richiesta di rilascio della credenziale del Holder, ora la richiesta ha come esito 'Accettata' oppure 'Rifiutata'
-    \item \textbf{Scenario principale:} La richiesta viene esaminata ed ha come esito 'Accettata'
-    \item \textbf{Scenario alternativo:} La richiesta viene esaminata ed ha come esito 'Rifiutata'
+    \item \textbf{Precondizioni:} L'issuer non ha ancora verificato la richiesta della credenziale del Holder, la richiesta ha come esito 'In Verifica'.
+    \item \textbf{Postcondizioni:} L'issuer ha esaminato la richiesta di rilascio della credenziale del Holder, ora la richiesta ha come esito 'Accettata' oppure 'Rifiutata'.
+    \item \textbf{Scenario principale:} La richiesta viene esaminata ed ha come esito 'Accettata'.
+    \item \textbf{Scenario alternativo:} La richiesta viene esaminata ed ha come esito 'Rifiutata'.
 \end{itemize}
 
 \subsubsection{UC7 - Verifica esito richiesta credenziale} 
@@ -199,7 +199,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \item \textbf{Attore principale:} Holder.
     \item \textbf{Attore secondario:} Wallet.
     \item \textbf{Precondizioni:} l'\textit{holder} vuole visualizzare le credenziali presenti nel Wallet. 
-    \item \textbf{Postcondizioni:} l'\textit{holder} riesce a visualizzare correttamente tutta la lista delle credenziali presenti nel suo wallet.. 
+    \item \textbf{Postcondizioni:} l'\textit{holder} riesce a visualizzare correttamente tutta la lista delle credenziali presenti nel suo wallet. 
     \item \textbf{Scenario principale:} Viene visualizzata una lista con tutte le credenziali presenti all'interno del Wallet personale. 
 \end{itemize}
 
@@ -250,7 +250,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Attore principale:} Holder.
 \item \textbf{Attore secondario:} Wallet.
 \item \textbf{Precondizioni:} L’ \textit{holder} vuole visualizzare la credenziale EAA.
-\item \textbf{Postcondizioni:} L’ \textit{holder} riesce a visualizzare correttamente la credenziale EAA presente all'interno del proprio wallet
+\item \textbf{Postcondizioni:} L’ \textit{holder} riesce a visualizzare correttamente la credenziale EAA presente all'interno del proprio wallet.
 \item \textbf{Scenario principale:} 
     \begin{enumerate}
         \item L' \textit{holder} vuole visualizzare credenziale EAA; 

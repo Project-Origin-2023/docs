@@ -2,6 +2,7 @@
 *.idx
 *.out
 *.synctex.gz
+*.synctex(busy)
 *.toc
 *.txt
 *.log

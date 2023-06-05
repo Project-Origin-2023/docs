@@ -18,16 +18,16 @@ Ogni caso d’uso è inoltre definito secondo la seguente struttura:
     \item \textbf{Postcondizioni}:  specifica  le  condizioni  che  sono  identificate  come  vere  dopo  il verificarsi degli eventi del caso d’uso;
     \item \textbf{Scenario  principale}:  rappresenta  il  flusso  degli  eventi,  a  volte  attraverso  l'uso di  una  lista  numerata;
     \item \textbf{Scenario alternativo}: rappresenta il flusso alternativo degli eventi, a volte attraversdo l'uso di una lista numerata;
-    \item \textbf{estensioni}: usate per estendere i casi d'uso attraverso un aumento delle funzioanalità di essi;
-    \item \textbf{Inclusioni}:  usate per non descrivere più volte lo stesso flusso di eventi, inserendo il comportamento comune in un caso d’uso a parte;
+    \item \textbf{Estensioni}: usate per estendere i casi d'uso attraverso un aumento delle funzioanalità di essi;
+    \item \textbf{Inclusioni}:  usate per non descrivere più volte lo stesso flusso di eventi, inserendo il comportamento comune in un caso d’uso a parte.
 \end{itemize}
 Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  casi  d'uso riportante lo stesso titolo e codice.
 \subsection{Attori}
 \begin{itemize}
-    \item\textbf{Holder.}
+    \item\textbf{Holder}: l’Holder è, in generale, un’entità (che può essere un individuo, ma non solo), che potrà gestire le proprie credenziali d’accesso e visualizzarle nel proprio portafoglio digitale. L’Holder utlizzerà questa applicazione per poter richiedere e presentare le proprie credenziali d’accesso comunicando con gli altri due attori, cioè l’Issuer e il Verifier;
     \item\textbf{Issuer (sistema).}
-    \item\textbf{Issuer (Admin)}
-    \item\textbf{Verifier.}
+    \item\textbf{Issuer (Admin).}
+    \item\textbf{Verifier}: il Verifier è l’entità che ha lo scopo di richiedere e verificare le credenziali fornite dall’Holder per permettere l’accesso a determinate aree o servizi che richiedono utenti verificati. Il Verifier verifica le credenziali d’accesso dell’Holder utilizzando un’infrastruttura chiamata Verifiable Data Registry;
     \item\textbf{Wallet.}
 \end{itemize}
 

@@ -163,7 +163,11 @@ Queste componenti sono avverabili singolarmente o tutte assieme attraverso i seg
 \begin{verbatim}
     sh deployWallet.sh
 \end{verbatim} 
-\item Lo script scaricherà le dipendenze necessarie alla webapp attraverso il commando npm start e avvierà l’ambiente di sviluppo react native attraverso il commando 
+\item Lo script si posizionerà all'interno della cartella ./wallet, scaricherà le dipendenze necessarie alla webapp attraverso il commando 
+\begin{verbatim}
+    npm install 
+\end{verbatim}
+    e avvierà l’ambiente di sviluppo react native attraverso il commando 
 \begin{verbatim}
     npm start.
 \end{verbatim}
@@ -180,10 +184,14 @@ Queste componenti sono avverabili singolarmente o tutte assieme attraverso i seg
 \begin{verbatim}
     sh deployIssuerapp.sh
 \end{verbatim}
-\item Lo script scaricherà le dipendenze necessarie alla webapp attraverso npm install e successivamente sarà quindi avviato l’ambiente di sviluppo del framework react attraverso il commando 
+\item Lo script si posizionerà all'interno della cartella ./issuerapp, scaricherà le dipendenze necessarie alla webapp attraverso 
+\begin{verbatim}
+    npm install 
+\end{verbatim}
+    e successivamente sarà quindi avviato l’ambiente di sviluppo del framework react attraverso il commando 
 \begin{verbatim}
     npm start 
-\end{verbatim} 
+\end{verbatim}
 sarà visibile al endpoint http/localhsot:19001 il frontend della applicazione.
 \item Lo script avvierà anche l’istanza di node.js che esegue funzionalità serverside e sarà disponibile al endpoint http://localhost:19101
 \end{itemize}
@@ -198,11 +206,15 @@ sarà visibile al endpoint http/localhsot:19001 il frontend della applicazione.
 \begin{verbatim}
     sh deployVerifier.sh
 \end{verbatim}
-\item Lo script scaricherà le dipendenze necessarie attraverso il commando 
+\item Lo script si posizionerà all'interno della cartella ./verifierapp, scaricherà le dipendenze necessarie attraverso il commando 
 \begin{verbatim}
     npm install
 \end{verbatim}
- e avvierà l’ambiente di sviluppo del framework react con npm start.
+ e avvierà l’ambiente di sviluppo del framework react con 
+\begin{verbatim}
+    npm start.
+\end{verbatim}
+
 \item Sarà quindi visualizzabile al endpoint http/localhsot:19002 il frontend della applicazione.
 \end{itemize}
 
@@ -221,31 +233,48 @@ sarà visibile al endpoint http/localhsot:19001 il frontend della applicazione.
 
 \paragraph{Considerazioni sulle componenti e sui processi}
 La parte dell’\textit{Issuer} è composto oltre che da un interfaccia web frontend di react anche da una parte serverside in node.js.
-\textit{Wallet}, essendo come sopra citato realizzata con react native,  ad ogni modifica del codice la pagina per la visualizzazione web deve essere aggiornata, richiedendo quindi al ambiente di sviluppo di rifare la build della webapp.
-\textit{Issuerapp} e \textit{Verifierapp} sono realizzate con react e, tramite un sistema di watcher,  le modifiche al codice vengono riconosciute automaticamente, la webapp viene ricompilata e la pagina del browser viene aggiornata in automatico con le modifiche apportate.
-Avviando le webapp utilizzando gli script, in base al caso utilizzato, implica che si avrà un singolo processo in foregroung e gli altri saranno in background.
-Può essere necessario avviarli manualmente e non utilizzando gli script. Per esempio l’\textit{Issuer} ha la parte serverside in node.js ed essa ad ogni modifica deve essere fatto il deploy nuovamente, per fare questo si ricorda l’utilizzo dei comandi npm start per il frontend ed node index.js per la parte serverside.
-Per riavviare il nodo serverside si preme Ctrl+C e si riavvia con il commando node index.js.
-Si ricorda che avendo dei processi in background essi devono essere spenti se si vogliono riaprire delle nuove istanze di essi, questo perchè occupano già le porte delle webapp.
+\textit{Wallet}, essendo come sopra citato realizzata con react native,  ad ogni modifica del codice la pagina per la visualizzazione web deve essere aggiornata, richiedendo quindi al ambiente di sviluppo di rifare la build della webapp.\\
+\textit{Issuerapp} e \textit{Verifierapp} sono realizzate con react e, tramite un sistema di watcher,  le modifiche al codice vengono riconosciute automaticamente, la webapp viene ricompilata e la pagina del browser viene aggiornata in automatico con le modifiche apportate.\\
+Avviando le webapp utilizzando gli script, in base al caso utilizzato, implica che si avrà un singolo processo in foregroung e gli altri saranno in background.\\
+Può essere necessario avviarli manualmente e non utilizzando gli script. Per esempio l’\textit{Issuer} ha la parte serverside in node.js ed essa ad ogni modifica deve essere fatto il deploy nuovamente, per fare questo si ricorda l’utilizzo per il frontend del commando
+\begin{verbatim}
+    npm start 
+\end{verbatim}
+e per la parte serverside del commando 
+\begin{verbatim}
+    node index.js 
+\end{verbatim}  
+Per riavviare il nodo serverside si preme Ctrl+C sul terminale e si riavvia con il commando 
+\begin{verbatim}
+    node index.js
+\end{verbatim}
+Si ricorda che avendo dei processi in background essi devono essere spenti se si vogliono riaprire delle nuove istanze di essi, questo perchè occupano già le porte delle webapp.\\
 Per spegnere tutte le istanze delle webapp si utilizza il commando 
 \begin{verbatim}
     killall node
 \end{verbatim}
 
-\paragraph{Lavoro su Docker di API e server}
+\paragraph{Lavoro su Docker}
 Per quanto riguarda i container docker nel nostro progetto utilizzeremo le seguenti componenti:
 \begin{itemize}
     \item 3 istanziazioni di Walt id:
     \begin{itemize}
-        \item Verifier
-        \item Wallet
-        \item Issuer
+        \item verifierapi con endpoint http://localhost:19012
+        \item walletapi con endpoint http://localhost:19010
+        \item issuerapi con endpoint http://localhost:19011
     \end{itemize}
-    \item Un database per l’issuer, il DBMS è prostgresql
+    \item Un database per l’issuer, dbissuerapp, il DBMS è prostgresql
     \item Un tool di amministrazione del database che serve allo sviluppo detto adminer
 \end{itemize}
-Il database è configurato sulla porta standard 5432, all’interno della rete di docker ha come ip fisso 10.5.0.5 ed è disponibile anche da localhost.
+Il database è configurato sulla porta standard 5432, all’interno della rete di docker ha come ip fisso 10.5.0.5 ed è disponibile anche da localhost.\\
 La porta in entrambi i casi è la 5432.
+Le credenziali di accesso al DB dbissuerapp sono:
+\begin{itemize}
+    \item username: admin
+    \item password: admin
+    \item db: issuerapp
+    \item server: localhost:5432
+\end{itemize}
 
 \paragraph{Comandi componenti Docker}
 Per fare il deploy di queste componenti docker:
@@ -261,16 +290,20 @@ Per fare il deploy di queste componenti docker:
 \end{itemize}
 
 \paragraph{Considerazioni componenti Docker}
-Il comando docker-compose prende le configurazioni all’interno del file docker-compose up -d e crea le istanze dei container con le nuove configurazioni. Se il container non subisce modifiche esso non viene intaccato dal commando, se non esiste viene creato, se presenta modifiche viene ricreato.
-Il funzionamento dei container si basa su un'immagine e una istanza di essa detto container, può essere necessario in alcuni momenti legati al mantenimento di eliminare anche le immagini per ricreare un ambiente di sviluppo con la giusta configurazione.
+Il comando 
+\begin{verbatim}
+    docker-compose up -d
+\end{verbatim} 
+prende le configurazioni all’interno del file docker-compose.yaml e crea le istanze dei container con le nuove configurazioni.\\
+Se il container non subisce modifiche esso non viene intaccato dal commando, se non esiste viene creato, se presenta modifiche viene ricreato.\\
+Il funzionamento dei container si basa su un'immagine e una istanza di essa detto container, può essere necessario in alcuni momenti legati al mantenimento di eliminare anche le immagini per ricreare un ambiente di sviluppo con la giusta configurazione.\\
 La memoria di archiviazione nei container può avvenire in due maniere:
 \begin{itemize}
     \item se il container presenta volumi, i file saranno memorizzati in locale,
     \item se non presenta volumi saranno memorizzati nella istanza del container.
 \end{itemize} 
 Una volta ricreato il container si perdono anche i file memorizzati al suo interno, a meno che essi non siano memorizzati in un volume oppure all’interno di una copia dell’immagine.
-
-Una volta terminato lo sviluppo in vista del POC il progetto (composto dai file htm,css e jsl) verrà trasportato in un container docker adibito a server http (es. Apache), la parte serverside del Issuerapp sarà trasportata su un container di Node.js
+Una volta terminato lo sviluppo in vista del POC il progetto (composto dai file htm,css e js) verrà trasportato in un container docker adibito a server http (es. Apache), la parte serverside del Issuerapp sarà trasportata su un container di Node.js
 
 
 

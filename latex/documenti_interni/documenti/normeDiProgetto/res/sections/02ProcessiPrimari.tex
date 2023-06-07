@@ -8,7 +8,7 @@ Le seguenti indicazioni dovranno essere seguite durante tutto il ciclo di vita d
 \subsubsection{Obiettivi} 
 Gli obiettivi principali che si cerca di raggiungere definendo i processi di fornitura sono: 
 \begin{enumerate}
-    \item Evitare la creazione di eventuali dubbi durante il progetto; 
+    \item evitare la creazione di eventuali dubbi durante il progetto; 
     \item definire i bisogni che il prodotto deve soddisfare; 
     \item calcolare i costi per la realizzazione del prodotto; 
     \item definire le procedure necessarie per gestire il progetto; 
@@ -24,7 +24,7 @@ Per presentare la nostra candidatura il gruppo ha effettuato uno studio di fatti
 prevede come informazioni principali la stima dei costi degli orari di ogni ruolo necessario, 
 insieme alla stima dei costi complessiva e la definizione degli impegni di ogni membro del gruppo. \\
 Una volta ricevuta l'aggiudicazione per il capitolato\glo scelto il gruppo ha iniziato a definire il proprio \textit{Way Of Working}. \\
-Quest'ultimo è descritto attraverso questo documento, \textit{Norme di Progetto}. \\
+Quest'ultimo è descritto attraverso questo documento \textit{Norme di Progetto}. \\
 Come obiettivo principale il gruppo ha deciso di descrivere inizialmente i Processi di Supporto ed Organizzativi in quanto sono 
 importanti per definire gli strumenti e le metodologie necessarie per iniziare il lavoro. 
 
@@ -36,7 +36,7 @@ La visione dei documenti creati è pubblica e solo i membri del gruppo hanno i p
 I file che sono soggetti a versionamento includeranno all'interno della loro struttura la numerazione della versione corrente e un riepilogo 
 delle versioni precedenti sotto forma di tabella. In questo modo, è possibile tenere traccia dei cambiamenti apportati nel tempo al file e 
 fornire un'indicazione chiara della sua storia.
-È stata creata un'organizzazione di nome Project Origin, i riferimenti sono \url{https://github.com/Project-Origin-2023}.
+È stata creata un'organizzazione di nome Project Origin. I riferimenti sono \url{https://github.com/Project-Origin-2023}.
 Al suo interno esiste la repo \textit{docs} contenente tutta la documentazione di interesse al proponente e al committente.
 
 \subsubsection{Pianificazione}\label{pianificazione}
@@ -138,22 +138,22 @@ per la \textbf{R}equirements and \textbf{T}echnology \textbf{B}aseline, seguito 
 
 
 \paragraph{Introduzione a Docker e container}
-Docker è un programma che permette di creare sistemi virtualizzati e che useremo per creare ambienti di sviluppo isolati, minimali e facilmente distribuibili. Questi singoli ambienti vengono chiamati container e hanno l’obiettivo di  semplificare il deploy delle applicazioni. A differenza dei classici modi di virtualizzare i sistemi operativi , docker si basa su “OS-Level virtualization” una funzionalità fornita dal kernel linux che si occupa di orchestrate l’isolamento e le limitazioni delle risorse.
+Docker è un programma che permette di creare sistemi virtualizzati e che useremo per creare ambienti di sviluppo isolati, minimali e facilmente distribuibili. Questi singoli ambienti vengono chiamati container e hanno l’obiettivo di  semplificare il deploy delle applicazioni. A differenza dei classici modi di virtualizzare i sistemi operativi , docker si basa su “OS-Level virtualization”, una funzionalità fornita dal kernel linux che si occupa di gestire l’isolamento e le limitazioni delle risorse.
 Risulta pertanto l’ambiente perfetto per lo sviluppo dei servizi di nostro interesse legati all’uso di api e comunicazione tra di essi. 
 
 \paragraph{Lavoro in locale con le componenti}
-Nel nostro progetto abbiamo deciso di sviluppare le applicazioni web in react; in particolare issuerapp  e verifierapp saranno implementate in react mentre wallet sarà implementato in react native in maniera tale da avere un applicazione per i dispositivi mobile oltre che una webpp.
+Nel nostro progetto abbiamo deciso di sviluppare le applicazioni web in react, in particolare issuerapp  e verifierapp saranno implementate in react mentre wallet sarà implementato in react native in maniera tale da avere un'applicazione per i dispositivi mobile oltre che una webpp. \\
 Per queste componenti abbiamo deciso di lavorare in locale:
 \begin{itemize}
-\item Issuerapp,
-\item Verifierapp,
+\item Issuerapp;
+\item Verifierapp;
 \item Wallet.
 \end{itemize}
 Questa scelta è stata attuata al fine di garantire maggiori performance durante lo sviluppo, semplificare la modalità di modifica ed avere una visualizzazione in tempo reale delle modifiche fatte sul browser. 
-Queste applicazioni se ospitate su docker infatti necessitavano ad ogni modifica del codice un deploy e un ricaricamento della pagina web per visualizzare l’effettivo avvenimento; andando così ad impattare a lungo termine le tempistiche di sviluppo.
+Quando queste 3 applicazioni vengono ospitate su Docker, ogni volta che viene modificato il codice, è necessario attuare un deploy e ricaricare la pagina web per visualizzare le modifiche fatte. Questo comporta un rallentamento del processo di sviluppo nel tempo andando così ad influire sulla tempistica complessiva dello sviluppo del prodotto. 
 Queste componenti sono avverabili singolarmente o tutte assieme attraverso i seguenti comandi:
 \begin{itemize}
-\item Avvio singolo di wallet:
+\item Avvio singolo di Wallet:
 \begin{itemize}
 \item Aprire il terminale e posizionarsi sulla cartella tramite il seguente comando: 
 \begin{verbatim}
@@ -163,15 +163,15 @@ Queste componenti sono avverabili singolarmente o tutte assieme attraverso i seg
 \begin{verbatim}
     sh deployWallet.sh
 \end{verbatim} 
-\item Lo script si posizionerà all'interno della cartella ./wallet, scaricherà le dipendenze necessarie alla webapp attraverso il commando 
+\item Lo script si posizionerà all'interno della cartella ./wallet, scaricherà le dipendenze necessarie alla webapp attraverso il comando:
 \begin{verbatim}
     npm install 
 \end{verbatim}
-    e avvierà l’ambiente di sviluppo react native attraverso il commando 
+    e avvierà l’ambiente di sviluppo React Native attraverso il comando:
 \begin{verbatim}
-    npm start.
+    npm start
 \end{verbatim}
-\item L’app sarà disponibile al endpoint http://localhost:19000
+\item L’app sarà disponibile all'endpoint http://localhost:19000
 \end{itemize}
 
 \item Avviso singolo di issuer:
@@ -184,16 +184,16 @@ Queste componenti sono avverabili singolarmente o tutte assieme attraverso i seg
 \begin{verbatim}
     sh deployIssuerapp.sh
 \end{verbatim}
-\item Lo script si posizionerà all'interno della cartella ./issuerapp, scaricherà le dipendenze necessarie alla webapp attraverso 
+\item Lo script si posizionerà all'interno della cartella ./issuerapp, scaricherà le dipendenze necessarie alla webapp attraverso: 
 \begin{verbatim}
     npm install 
 \end{verbatim}
-    e successivamente sarà quindi avviato l’ambiente di sviluppo del framework react attraverso il commando 
+    e successivamente sarà quindi avviato l’ambiente di sviluppo del framework React attraverso il comando:
 \begin{verbatim}
     npm start 
 \end{verbatim}
-sarà visibile al endpoint http/localhsot:19001 il frontend della applicazione.
-\item Lo script avvierà anche l’istanza di node.js che esegue funzionalità serverside e sarà disponibile al endpoint http://localhost:19101
+Sarà visibile all'endpoint http/localhsot:19001 il frontend dell'applicazione.
+\item Lo script avvierà anche l’istanza di node.js che esegue funzionalità serverside e sarà disponibile all'endpoint http://localhost:19101
 \end{itemize}
 
 \item Avvio singolo di verifier:
@@ -206,16 +206,16 @@ sarà visibile al endpoint http/localhsot:19001 il frontend della applicazione.
 \begin{verbatim}
     sh deployVerifier.sh
 \end{verbatim}
-\item Lo script si posizionerà all'interno della cartella ./verifierapp, scaricherà le dipendenze necessarie attraverso il commando 
+\item Lo script si posizionerà all'interno della cartella ./verifierapp, scaricherà le dipendenze necessarie attraverso il comando: 
 \begin{verbatim}
     npm install
 \end{verbatim}
- e avvierà l’ambiente di sviluppo del framework react con 
+ e avvierà l’ambiente di sviluppo del framework React con:
 \begin{verbatim}
-    npm start.
+    npm start
 \end{verbatim}
 
-\item Sarà quindi visualizzabile al endpoint http/localhsot:19002 il frontend della applicazione.
+\item Sarà quindi visualizzabile all'endpoint http/localhsot:19002 il frontend dell'applicazione.
 \end{itemize}
 
 \item Avvio delle 3 componenti simultaneamente:
@@ -232,30 +232,31 @@ sarà visibile al endpoint http/localhsot:19001 il frontend della applicazione.
 \end{itemize}
 
 \paragraph{Considerazioni sulle componenti e sui processi}
-La parte dell’\textit{Issuer} è composto oltre che da un interfaccia web frontend di react anche da una parte serverside in node.js.
-\textit{Wallet}, essendo come sopra citato realizzata con react native,  ad ogni modifica del codice la pagina per la visualizzazione web deve essere aggiornata, richiedendo quindi al ambiente di sviluppo di rifare la build della webapp.\\
-\textit{Issuerapp} e \textit{Verifierapp} sono realizzate con react e, tramite un sistema di watcher,  le modifiche al codice vengono riconosciute automaticamente, la webapp viene ricompilata e la pagina del browser viene aggiornata in automatico con le modifiche apportate.\\
-Avviando le webapp utilizzando gli script, in base al caso utilizzato, implica che si avrà un singolo processo in foregroung e gli altri saranno in background.\\
-Può essere necessario avviarli manualmente e non utilizzando gli script. Per esempio l’\textit{Issuer} ha la parte serverside in node.js ed essa ad ogni modifica deve essere fatto il deploy nuovamente, per fare questo si ricorda l’utilizzo per il frontend del commando
+La parte dell’\textit{Issuer} è composto, oltre che da un interfaccia web frontend di React, anche da una parte serverside in node.js.\\
+\textit{Wallet} essendo, come sopra citato, realizzata con React Native, ad ogni modifica del codice, la pagina per la visualizzazione web deve essere aggiornata, richiedendo quindi all'ambiente di sviluppo di rifare la build della webapp.\\
+\textit{Issuerapp} e \textit{Verifierapp} sono realizzate con React e, tramite un sistema di watcher,  le modifiche al codice vengono riconosciute automaticamente. La webapp viene ricompilata e la pagina del browser viene aggiornata in automatico con le modifiche apportate.\\
+Avviando le webapp utilizzando gli script, in base al caso utilizzato, implica che si avrà un singolo processo in foreground e gli altri saranno in background.\\
+Può essere necessario avviarli manualmente e non utilizzando gli script. Per esempio l’\textit{Issuer} ha la parte serverside in node.js ed essa, ad ogni modifica, deve essere fatto il deploy nuovamente.\\ 
+Per fare questo si ricorda l’utilizzo per il frontend del comando:
 \begin{verbatim}
     npm start 
 \end{verbatim}
-e per la parte serverside del commando 
+e per la parte serverside del comando: 
 \begin{verbatim}
     node index.js 
 \end{verbatim}  
-Per riavviare il nodo serverside si preme Ctrl+C sul terminale e si riavvia con il commando 
+Per riavviare il nodo serverside si preme Ctrl+C sul terminale e si riavvia con il comando: 
 \begin{verbatim}
     node index.js
 \end{verbatim}
-Si ricorda che avendo dei processi in background essi devono essere spenti se si vogliono riaprire delle nuove istanze di essi, questo perchè occupano già le porte delle webapp.\\
-Per spegnere tutte le istanze delle webapp si utilizza il commando 
+Si ricorda che si avranno dei processi in background che dovranno essere spenti se si vogliono riaprire delle nuove istanze di essi (questo perchè occupano già le porte delle webapp).\\
+Per spegnere tutte le istanze delle webapp si utilizza il comando:
 \begin{verbatim}
     killall node
 \end{verbatim}
 
 \paragraph{Lavoro su Docker}
-Per quanto riguarda i container docker nel nostro progetto utilizzeremo le seguenti componenti:
+Per quanto riguarda i container docker, nel nostro progetto utilizzeremo le seguenti componenti:
 \begin{itemize}
     \item 3 istanziazioni di Walt id:
     \begin{itemize}
@@ -263,11 +264,11 @@ Per quanto riguarda i container docker nel nostro progetto utilizzeremo le segue
         \item walletapi con endpoint http://localhost:19010
         \item issuerapi con endpoint http://localhost:19011
     \end{itemize}
-    \item Un database per l’issuer, dbissuerapp, il DBMS è prostgresql
-    \item Un tool di amministrazione del database che serve allo sviluppo detto adminer
+    \item Un database per l’issuer chiamato dbissuerapp. Viene usato PostgreSQL per il  DBMS;
+    \item Un tool di amministrazione del database che serve allo sviluppo (chiamato adminer).
 \end{itemize}
-Il database è configurato sulla porta standard 5432, all’interno della rete di docker ha come ip fisso 10.5.0.5 ed è disponibile anche da localhost.\\
-La porta in entrambi i casi è la 5432.
+Il database è configurato sulla porta standard 5432 e all’interno della rete di docker ha come ip fisso 10.5.0.5 . E' disponibile anche da localhost.\\
+La porta in entrambi i casi è 5432.
 Le credenziali di accesso al DB dbissuerapp sono:
 \begin{itemize}
     \item username: admin
@@ -290,20 +291,20 @@ Per fare il deploy di queste componenti docker:
 \end{itemize}
 
 \paragraph{Considerazioni componenti Docker}
-Il comando 
+Il comando:
 \begin{verbatim}
     docker-compose up -d
 \end{verbatim} 
 prende le configurazioni all’interno del file docker-compose.yaml e crea le istanze dei container con le nuove configurazioni.\\
-Se il container non subisce modifiche esso non viene intaccato dal commando, se non esiste viene creato, se presenta modifiche viene ricreato.\\
-Il funzionamento dei container si basa su un'immagine e una istanza di essa detto container, può essere necessario in alcuni momenti legati al mantenimento di eliminare anche le immagini per ricreare un ambiente di sviluppo con la giusta configurazione.\\
+Se il container non subisce modifiche esso non viene modificato dal comando. Se il container non esiste viene creato. Se presenta modifiche viene ricreato.\\
+Il funzionamento dei container si basa su un'immagine e un'istanza di essa detto container. Può essere necessario in alcuni momenti legati al mantenimento di eliminare anche le immagini per ricreare un ambiente di sviluppo con la giusta configurazione.\\
 La memoria di archiviazione nei container può avvenire in due maniere:
 \begin{itemize}
-    \item se il container presenta volumi, i file saranno memorizzati in locale,
+    \item se il container presenta volumi, i file saranno memorizzati in locale;
     \item se non presenta volumi saranno memorizzati nella istanza del container.
 \end{itemize} 
 Una volta ricreato il container si perdono anche i file memorizzati al suo interno, a meno che essi non siano memorizzati in un volume oppure all’interno di una copia dell’immagine.
-Una volta terminato lo sviluppo in vista del POC il progetto (composto dai file htm,css e js) verrà trasportato in un container docker adibito a server http (es. Apache), la parte serverside del Issuerapp sarà trasportata su un container di Node.js
+Una volta terminato lo sviluppo in vista del POC, il progetto (composto dai file htm,css e js) verrà trasportato in un container docker adibito a server http (es. Apache) mentre la parte serverside dell'Issuerapp sarà trasportata su un container di Node.js.
 
 
 
@@ -312,15 +313,15 @@ Una volta terminato lo sviluppo in vista del POC il progetto (composto dai file 
 
 \subsubsection{Codifica}
 \begin{itemize}
-    \item \textbf{Indentazione}: I blocchi di codice innestati e le varie linee di codice dovranno rispettare una determinata tabulazione al fine di rendere il codice più leggibile.
+    \item \textbf{Indentazione}: I blocchi di codice innestati e le varie linee di codice dovranno rispettare una determinata tabulazione al fine di rendere il codice più leggibile;
     \item \textbf{Blocco di codice}: La delimitazione dei vari blocchi di codice tra parentesi graffe dovranno avere una struttura determinata dove le parentesi 
     graffe saranno poste nella seguente maniera:
     \begin{itemize}
-        \item \textbf{Parentesi di apertura}: Posta a distanza di 1 spazio rispetto alla dichiarazione del costrutto ma sempre nella stessa linea.
+        \item \textbf{Parentesi di apertura}: Posta a distanza di 1 spazio rispetto alla dichiarazione del costrutto ma sempre nella stessa linea;
         \item \textbf{Parentesi di chiusura}: Posta nella linea successiva dell’ultima riga di codice del blocco a cui si fa riferimento e indentata secondo il blocco. 
     \end{itemize}
     \item \textbf{Commenti}: I commenti saranno inseriti in lingua italiana, saranno indispensabili nelle porzioni di codice dove non è immediata la comprensibile. Ogni qualvolta il codice 
-    venga aggiornato va ricontrollata la validità dei commenti ad esso associato.
+    venga aggiornato va ricontrollata la validità dei commenti ad esso associato;
     \item \textbf{Nomi univoci}: È necessario utilizzare nomi univoci e significativi per ogni costruttore al fine di garantire la chiarezza e la facilità di identificazione delle diverse entità.
 \end{itemize}
 

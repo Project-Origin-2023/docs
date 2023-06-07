@@ -150,7 +150,7 @@ Per queste componenti abbiamo deciso di lavorare in locale:
 \item Wallet.
 \end{itemize}
 Questa scelta è stata attuata al fine di garantire maggiori performance durante lo sviluppo, semplificare la modalità di modifica ed avere una visualizzazione in tempo reale delle modifiche fatte sul browser. 
-Quando queste 3 applicazioni vengono ospitate su Docker, ogni volta che viene modificato il codice, è necessario attuare un deploy e ricaricare la pagina web per visualizzare le modifiche fatte. Questo comporta un rallentamento del processo di sviluppo nel tempo andando così ad influire sulla tempistica complessiva dello sviluppo del prodotto. 
+Queste applicazioni, se ospitate su Docker, ogni volta che viene modificato il codice, è necessario attuare un deploy e ricaricare la pagina web per visualizzare le modifiche fatte. Questo comporta un rallentamento del processo di sviluppo nel tempo andando così ad influire sulla tempistica complessiva dello sviluppo del prodotto. 
 Queste componenti sono avverabili singolarmente o tutte assieme attraverso i seguenti comandi:
 \begin{itemize}
 \item Avvio singolo di Wallet:
@@ -265,7 +265,7 @@ Per quanto riguarda i container docker, nel nostro progetto utilizzeremo le segu
         \item issuerapi con endpoint http://localhost:19011
     \end{itemize}
     \item Un database per l’issuer chiamato dbissuerapp. Viene usato PostgreSQL per il  DBMS;
-    \item Un tool di amministrazione del database che serve allo sviluppo (chiamato adminer).
+    \item Un tool di amministrazione del database che serve allo sviluppo (chiamato adminer). Il suo endpoint è http://localhost:8080.
 \end{itemize}
 Il database è configurato sulla porta standard 5432 e all’interno della rete di docker ha come ip fisso 10.5.0.5 . E' disponibile anche da localhost.\\
 La porta in entrambi i casi è 5432.
@@ -276,7 +276,7 @@ Le credenziali di accesso al DB dbissuerapp sono:
     \item db: issuerapp
     \item server: localhost:5432
 \end{itemize}
-
+Per collegarsi con adminer, essendo in una sottorete di docker, bisogna utilizzare l'indirizzo ip fisso 10.5.0.5 .
 \paragraph{Comandi componenti Docker}
 Per fare il deploy di queste componenti docker:
 \begin{itemize}

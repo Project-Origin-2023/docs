@@ -82,11 +82,58 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
   \includegraphics[scale = 0.65]{./res/img/UC1.PNG}
 \end{center}
 
-\subsubsection{UC5 - Richiesta credenziale}
+\subsubsection{UC5 - Registrazione all'Issuer}
+\begin{itemize}
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario}: Issuer (sistema). 
+\item \textbf{Precondizioni:} L’utente (\textit{holder}) fornisce i seguenti dati per effettuare la registrazione:
+\begin{itemize}
+    \item familyName;
+    \item firstName;
+    \item email;
+    \item password;
+    \item conferma password.
+\end{itemize}
+\item \textbf{Postcondizioni:} L’utente (\textit{holder}) risulta registrato alla piattaforma dell'Issuer.
+\item \textbf{Scenario principale:} L'utente (\textit{holder}) ha eseguito con successo la registrazione alla piattaform Issuer.
+\item \textbf{Scenario alternativo:} L'utente (\textit{holder}) non è riuscito ad eseguire la registrazione.
+\item \textbf{estensione:} UC7-Visualizzazione Errore.
+\end{itemize}
+
+\subsubsection{UC6 - Login all'Issuer}
+\begin{itemize}
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario}: Issuer (sistema). 
+\item \textbf{Precondizioni:} L'utente (\textit{holder}) inserisce le credenziali di accesso ovvero email e password.
+\item \textbf{Postcondizioni:} L'utente (\textit{holder}) una volta inserite le credenziali è riuscito a fare l'accesso al Issuer ed è entrato nel sistema.
+\item \textbf{Scenario principale:} Login è andato a buon fine e l'utente  (\textit{holder} si trova all'interno del sistema Issuer.
+\item \textbf{Scenario alternativo}: Login non riuscito l'utente (\textit{holder}) ha fornito delle credenziali (email e password) non valide.
+\item \textbf{estensione:} UC7-Visualizzazione Errore Issuer.
+\end{itemize}
+
+\subsubsection{UC7 - Logout dal Wallet}
+\begin{itemize}
+\item \textbf{Attore principale:} Holder.
+\item \textbf{Attore secondario:} Issuer (sistema).
+\item \textbf{Precondizioni:} L'utente (\textit{holder}) vuole effettuare il logout dalla piattaforma Issuer.
+\item \textbf{Postcondizioni:} L' \textit{holder} è uscito dal sistema Issuer e si trova nella schermata di login.
+\item \textbf{Scenario principale:} L'utente (\textit{holder}) è riuscito ad eseguire il logout dall'Issuer. 
+\end{itemize}
+
+\subsubsection{UC8 - Visualizzazione Errore Issuer}
+\begin{itemize}
+\item \textbf{Attore principale:} Wallet.
+\item \textbf{Precondizioni:} Il caso d'uso da cui estende si trova in una situazione di errore.
+\item \textbf{Postcondizioni:} Viene visualizzato un errore a schermo. 
+\item \textbf{Scenario principale:} Viene visualizzato un messaggio d’errore che può riguardare sia il login che la registrazione in base al caso d’uso a cui l’estensione si riferisce.
+\end{itemize}
+
+\subsubsection{UC9 - Richiesta credenziale}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
 \item \textbf{Attore secondario:} Issuer (sistema). 
 \item \textbf{Precondizioni:} L’ \textit{Holder} non è in possesso delle credenziali. 
+\item l'\textit{holder} si registra e/o esegue il login nel portale \textit{Issuer};
 \item \textbf{Postcondizioni:} L’ \textit{Holder} è riuscito a presentare la richiesta per la credenziale nel sito dell'\textit(issuer) ed ora la sua richiesta deve essere esaminata.
 \item \textbf{Scenario principale:} 
     \begin{enumerate}
@@ -98,12 +145,12 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \end{enumerate}
 \item \textbf{Incusioni:}
     \begin{itemize}
-    \item UC5.1- Richiesta PID;
-    \item UC5.2 - Richiesta EAA;
+    \item UC9.1- Richiesta PID;
+    \item UC9.2 - Richiesta EAA;
     \end{itemize}
 \end{itemize}
 
-\subsubsection{UC5.1 - Richiesta PID}
+\subsubsection{UC9.1 - Richiesta PID}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
 \item \textbf{Attore secondario:} Issuer (sistema). 
@@ -113,6 +160,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \begin{enumerate}
         \item L' \textit{holder} deve richiedere una credenziale PID; 
         \item l' \textit{holder} naviga nel sito dell \textit{issuer};
+        \item l'\textit{holder} si registra e/o esegue il login nel portale \textit{Issuer};
         \item l' \textit{holder} presenta una richiesta della credenziale PID fornendo i seguenti dati:
         \begin{itemize}
             \item personalId;
@@ -123,12 +171,11 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
             \item nameAndfamilyNameAtBirth;
             \item placeOfBirth.
         \end{itemize}
-        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Richiesta ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
-        \item l' \textit{holder} attende che la sua richiesta venga esaminata dall'\textit{Issuer (admin)}
+        \item l' \textit{holder} ,una volta effettuato il login nel portale dell'Issuer, attende che la sua richiesta venga esaminata dall'\textit{Issuer (admin)}
     \end{enumerate}
 \end{itemize}
 
-\subsubsection{UC5.2 - Richiesta EAA}
+\subsubsection{UC9.2 - Richiesta EAA}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
 \item \textbf{Attore secondario:} Issuer (sistema).
@@ -138,18 +185,18 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \begin{enumerate}
         \item L' \textit{holder} deve richiedere una credenziale EAA; 
         \item l' \textit{holder} naviga nel sito dell' \textit{issuer};
+        \item l'\textit{holder} si registra e/o esegue il login nel portale \textit{Issuer};
         \item l' \textit{holder} presenta una richiesta della credenziale EAA fornendo i seguenti dati:
         \begin{itemize}
             \item personalId;
             \item familyName;
             \item firstName;
         \end{itemize}
-        \item l' \textit{Issuer (sistema)} fornisce al Holder un Id Richiesta ed una password che l'holder può utilizzare per verificare l'esito della propria richiesta.
-        \item l' \textit{holder} attende che la sua richiesta venga esaminata dall'\textit{Issuer (admin)}
+        \item l' \textit{holder} ,una volta effettuato il login nel portale dell'Issuer, attende che la sua richiesta venga esaminata dall'\textit{Issuer (admin)}
     \end{enumerate}
 \end{itemize}
 
-\subsubsection{UC6 - Rilascio credenziale}
+\subsubsection{UC10 - Rilascio credenziale}
 \begin{itemize}
     \item \textbf{Attore principale:} Issuer (admin).
     \item \textbf{Attore secondario:} Issuer (sistema).
@@ -159,7 +206,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \item \textbf{Scenario alternativo:} La richiesta viene esaminata ed ha come esito 'Rifiutata'.
 \end{itemize}
 
-\subsubsection{UC7 - Verifica esito richiesta credenziale} 
+\subsubsection{UC11 - Verifica esito richiesta credenziale} 
 \begin{itemize}
     \item \textbf{Attore principale:} Holder.
     \item \textbf{Attore secondario:} Issuer (sistema).
@@ -173,7 +220,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \end{itemize}
 \end{itemize}
 
-\subsubsection{UC8 - Ottenimento credenziale}
+\subsubsection{UC12 - Ottenimento credenziale}
 \begin{itemize}
     \item \textbf{Attore principale:} Holder.
     \item \textbf{Attore secondario:} Issuer (sistema), Wallet.
@@ -185,7 +232,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \item \textbf{Scenario alternativo:} La richiesta della credenziale ha come esito 'Rifiutata', l'Holder non può aggiungerla al proprio wallet e la richiesta deve essere rifatta.
 \end{itemize}
 
-\subsubsection{UC9 - Visualizzazione errore di rilascio}
+\subsubsection{UC13 - Visualizzazione errore di rilascio}
 \begin{itemize}
     \item \textbf{Attore principale:} Holder.
     \item  \textbf{Attore secondario:} Issuer (sistema).
@@ -198,7 +245,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \includegraphics[scale = 0.65]{./res/img/UC2.PNG}
 \end{center}
 
-\subsubsection{UC10 - Visualizzazione credenziali}
+\subsubsection{UC14 - Visualizzazione credenziali}
 \begin{itemize}
     \item \textbf{Attore principale:} Holder.
     \item \textbf{Attore secondario:} Wallet.
@@ -208,7 +255,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \end{itemize}
 
 
-\subsubsection{UC11 - Visualizzazione singola credenziale}
+\subsubsection{UC15 - Visualizzazione singola credenziale}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
 \item \textbf{Attore secondario:} Wallet. 
@@ -217,12 +264,12 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Scenario principale:} 
 \item \textbf{Incusioni:}
     \begin{itemize}
-    \item UC11.1- Visualizzazione PID;
-    \item UC11.2 - Visualizzazione EAA;
+    \item UC15.1- Visualizzazione PID;
+    \item UC15.2 - Visualizzazione EAA;
     \end{itemize}
 \end{itemize}
 
-\subsubsection{UC11.1 - visualizzazione PID}
+\subsubsection{UC15.1 - visualizzazione PID}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
 \item \textbf{Attore secondario:} Wallet. 
@@ -250,7 +297,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \end{enumerate}
 \end{itemize}
 
-\subsubsection{UC11.2 - Visualizzazione EAA}
+\subsubsection{UC15.2 - Visualizzazione EAA}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
 \item \textbf{Attore secondario:} Wallet.
@@ -279,7 +326,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \end{itemize}
 
 
-\subsubsection{UC12 - Cancellazione credenziale}
+\subsubsection{UC16 - Cancellazione credenziale}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder.
 \item \textbf{Attore secondario:} Wallet.
@@ -298,7 +345,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \includegraphics[scale = 0.65]{./res/img/UC3.PNG}
   \end{center}
 
-\subsubsection{UC13 - Richiesta credenziali per verifica}
+\subsubsection{UC17 - Richiesta credenziali per verifica}
 \begin{itemize}
 \item \textbf{Attore principale:} Verifier.
 \item \textbf{Attore secondario:} Holder.
@@ -310,7 +357,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \end{enumerate}
 \end{itemize}
 
-\subsubsection{UC14 - Fornitura delle credenziali per verifica}
+\subsubsection{UC18 - Fornitura delle credenziali per verifica}
 \begin{itemize}
 \item \textbf{Attore principale:} Holder. 
 \item \textbf{Attore secondario:} Verifier.
@@ -321,7 +368,7 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
 \item \textbf{Estensione:} UC15 - Visualizzazione errore di verifica.
 \end{itemize}
 
-\subsubsection{UC15 - Visualizzazione errore di verifica}
+\subsubsection{UC19 - Visualizzazione errore di verifica}
 \begin{itemize}
     \item \textbf{Attore principale:} Holder.
     \item \textbf{Attore secondario:} Verifier.

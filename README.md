@@ -2,7 +2,7 @@
 
 # Personal Identity Wallet
 
-Progetto di Ingegneria del Software - Personal Identity Waller (2022-2023)
+Progetto di Ingegneria del Software - Personal Identity Wallet (2022-2023)
 Informatica, Università degli Studi di Padova
 
 # Link ai Documenti

@@ -1,0 +1,58 @@
+\section{Ordine del giorno}
+\begin{enumerate}
+\item Discussione in vista riunione Prof. Cardin
+\item Discussione in vista della riunione con l'azienda 
+\item Scelte decisionali POC
+\end{enumerate}
+
+\subsection{Discussione in vista riunione Prof. Cardin}
+Il gruppo si è coordinato e ha discusso su possibili dubbi e perplessità, da porre al professore, riguardo i casi d'uso e i diagrammi UMl che li rappresentano.
+\begin{itemize}
+    \item Possibile collegamento diagramma UML tra attore e visualizzazione errore;
+    \item possibilità di scorporare errore per campi dati, errori login;
+    \item UC17 sistema credential verifing; suddivisione richiesta in base al tipo (PID EAA). Possibilità di implementare generalizzazione in questi use case.
+\end{itemize}
+
+\subsection{Discussione in vista della riunione con l'azienda}
+Il gruppo ha discuso su possibili domande da porre all'azienda in vista della riunione fissata per 09/06/2023.
+\begin{itemize}
+\item Implementazione 3 componenti architetturali web app con deploy sviluppo in locale;
+\item scelta della realizzazione del wallet in react native;
+\item scelta dell'implementazione back-end in node.js;
+\item scelta implementazione database in DBMS postgresql;
+\item in base a questo verbale chiedere se le specifiche del POC sono sufficienti e la possibile correttezza della sua realizzazione.
+\end{itemize}
+\subsection{Scelte decisionali POC}
+
+La codifica del POC non deve essere normata tuttavia dovrà essere una base solida per lo sviluppo del prodotto finale. La sua codifica infatti fungerà da linea guisa architettura delle componenti che dovranno essere realizzate. Il POC verrà reso disponibile al committente quanto al professore. Tutto il codice del POC sarà presente nella repo GitHub: \url{https://github.com/Project-Origin-2023/Personal-Identity-Wallet}; essa sarà la stessa del prodotto finale e tramite l’utilizzo della sezione “history” e di uno specifico tag, sarà possibile rivedere tale POC successivamente. In tale repo saranno fornite delle istruzioni chiare e degli script di come eseguire il deploy in locale o, in alternativa, online per il periodo necessario. Nello specifico questo avverrà in base ai requisiti di sistema da noi forniti per l’esecuzione e il corretto deplori del POC; nel caso non dovessero essere soddisfatti ci impegniamo a fornire un host online per visualizzarne il funzionamento. 
+Data la natura del POC di evidenziare la padronanza dei requisiti tecnologici da noi scelti,  le funzionalità implementate saranno solo una parte rispetto quelle richieste e stilate nel documento \textit{Analisi dei requisiti}. In alcuni casi invece queste funzionalità saranno implementate ma in maniera automatizzata per snellire la mole di lavoro mantenendone la finalità. 
+Si pronostica la realizzazione dei seguenti requisiti
+\begin{itemize}
+ \item Webapp Issuerapp
+\begin{itemize}
+\item Registrazione/Login 
+\item Richiesta Credenziale PID
+(Le seguenti dimostrano utilizzo delle tecnologie di react, node.js, database postgres)
+\item Richiesta credenziale preapprovata automaticamente
+\item Generazione della credenziale
+(Ci evita la creazione della parte di Issuer admin con la sua piattaforma di dashboard amministrattiva per il PoC)
+\item Visualizzazione delle proprie richieste da parte del user
+\item Ottenimento della credenziale sul proprio wallet
+(dimostrazione utilizzo libreria walt.id)
+\end{itemize}
+
+\item Wallet
+\begin{itemize}
+\item Registrazione/Login
+\item Deploy solo per il web
+(dimostrazione utilizzo react native)
+\item Visualizzazione delle proprie credenziali
+(dimostrazione utilizzo libreria walt.id)
+\end{itemize}
+
+\item Verifierapp
+\begin{itemize}
+\item Webapp con pagina fitizzia senza alcuna funzionalità
+\end{itemize}
+\end{itemize}
+   

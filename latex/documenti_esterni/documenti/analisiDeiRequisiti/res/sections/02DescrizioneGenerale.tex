@@ -6,9 +6,9 @@ L’obiettivo del prodotto è quello di creare un’applicazione tramite la qual
 \subsection{Funzioni del prodotto}
 Per quanto riguarda le credenziali d’accesso, dovrà essere possibile: 
 \begin{itemize}
-    \item \textbf{Creare le credenziali}: l’Holder sarà capace di richiedere le sue credenziali d’accesso selezionando le informazioni di suo interesse e consegnandole all’Issuer. L’Issuer si impegna di creare la credenziale rispettando i dati forniti dall’utente;
+    \item \textbf{Creare le credenziali}: l’Holder sarà capace di richiedere le sue credenziali selezionando le informazioni di suo interesse e consegnandole all’Issuer. L’Issuer si impegna di creare la credenziale rispettando i dati forniti dall’utente;
     \item \textbf{Memorizzare e gestire le credenziali}: il Personal Identity Wallet si occuperà di memorizzare tutte le credenziali di accesso dell’utente in un unico luogo digitale sicuro. L’utente potrà visualizzare l’elenco delle credenziali di accesso presenti nel suo wallet;
-    \item \textbf{Consegnare in modo sicuro le credenziali}: le credenziali d’accesso create dall’Issuer dovranno essere consegnate in modo sicuro all’Holder. Il Personal Identity Wallet si occuperà di garantire la riservatezza e l’integrità delle credenziali d’accesso durante la fase di consegna.
+    \item \textbf{Consegnare in modo sicuro le credenziali}: le credenziali d’accesso create dall’Issuer dovranno essere consegnate in modo sicuro all’Holder. Il Personal Identity Wallet si occuperà di garantire la riservatezza della credenziale; verrà inoltre garantita la possibilità di verifica crittografica da parte di un verifier che la credenziale non sia stata alterata durante la trasmissione.
 \end{itemize}
 Per quanto riguarda l’amministrazione delle credenziali, dovrà essere possibile: 
 \begin{itemize}
@@ -17,15 +17,15 @@ Per quanto riguarda l’amministrazione delle credenziali, dovrà essere possibi
 \end{itemize}
 Per quanto riguarda il Verifier: 
 \begin{itemize}
-    \item \textbf{Richiedere le credenziali}: il Verifier dovrà essere capace di richiedere in modo chiaro e sicuro le credenziali d’accesso dell’Holder per permettere l’accesso a determinate aree riservate o a determinati servizi;
-    \item \textbf{Consegnare le credenziali richieste}: l’Holder potrà consegnare le credenziali richieste dal Verifier in modo chiaro e sicuro;
-    \item \textbf{Validare le credenziali}: il Verifier verificherà dettagliatamente che le credenziali d’accesso fornite dall’Holder siano valide ed integre per poter dare l’accesso ad utenti legittimi e verificati;
+    \item \textbf{Richiedere presentazione delle credenziali}: il Verifier dovrà essere capace di richiedere la prresentazione, in modo chiaro e sicuro, delle credenziali d’accesso dell’Holder per permettere l’accesso a determinate aree riservate o a determinati servizi;
+    \item \textbf{Consegnare le credenziali richieste}: l’Holder potrà consegnare le credenziali richieste dal Verifier in modo sicuro;
+    \item \textbf{Validare le credenziali}: il Verifier verificherà crittograficamente che le credenziali d’accesso fornite dall’Holder siano valide ed integre per poter dare l’accesso ad utenti legittimi e verificati;
     \item \textbf{Concedere l'accesso}: il Verifier, dopo la validazione delle credenziali, dovrà permettere l’accesso all’Holder all’area o ai servizi riservati in modo sicuro.
 \end{itemize}
 
 \subsection{Caratteristiche degli utenti}
-L’applicativo potrà essere utilizzato da ogni Holder. \\
-L'Holder potrebbe essere (ma non solo): 
+L’applicativo potrà essere utilizzato da ogni attore (Holder, Issuer, Verifier). \\
+I ruoli potrebbero essere (ma non solo): 
 \begin{itemize}
     \item Un’amministrazione pubblica (centrale o locale);
     \item Un cittadino italiano maggiorenne, oppure un cittadino estero con codice fiscale italiano;

@@ -24,7 +24,7 @@ Ogni caso d’uso è inoltre definito secondo la seguente struttura:
 Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  casi  d'uso riportante lo stesso titolo e codice.
 \subsection{Attori}
 \begin{itemize}
-    \item\textbf{Holder}: l’Holder è, in generale, un’entità (che può essere un individuo, ma non solo), che potrà gestire le proprie credenziali d’accesso e visualizzarle nel proprio portafoglio digitale. L’Holder utlizzerà questa applicazione per poter richiedere e presentare le proprie credenziali d’accesso comunicando con gli altri due attori, cioè l’Issuer e il Verifier;
+    \item\textbf{Holder}: l’Holder è, in generale, un’entità (che può essere un individuo, ma non solo), che potrà gestire le proprie credenziali d’accesso e visualizzarle nel proprio portafoglio digitale. L’Holder utlizzerà questa applicazione richiede credenziali a un issuer e presenta credenziali a un verifier comunicando con gli altri due attori, cioè l’Issuer e il Verifier;
     \item\textbf{Issuer (sistema).}
     \item\textbf{Issuer (Admin).}
     \item\textbf{Verifier}: il Verifier è l’entità che ha lo scopo di richiedere e verificare le credenziali fornite dall’Holder per permettere l’accesso a determinate aree o servizi che richiedono utenti verificati. Il Verifier verifica le credenziali d’accesso dell’Holder utilizzando un’infrastruttura chiamata Verifiable Data Registry;
@@ -45,8 +45,12 @@ Alcuni  casi  d’uso  possono  essere  associati  ad  un Diagramma UML  dei  ca
     \item conferma password.
 \end{itemize}
 \item \textbf{Postcondizioni:} L’utente (\textit{holder}) risulta registrato alla piattaforma del Wallet.
-\item \textbf{Scenario principale:} L'utente (\textit{holder}) ha eseguito con successo la registrazione.
-\item \textbf{Scenario alternativo:} L'utente (\textit{holder}) non è riuscito ad eseguire la registrazione.
+\item \textbf{Scenario principale:} L'utente (\textit{holder}) ha eseguito con successo la registrazione al sistema web di gestione dei wallet che predispone il wallet ell'utente holder.
+\item \textbf{Scenario alternativo:} L'utente (\textit{holder}) non è riuscito ad eseguire la registrazione per via di:
+\begin{itemize}
+    \item dati immessi non corretti;
+    \item dati immessi non conformi alle regole di validazione.
+\end{itemize}
 \item \textbf{estensione:} UC4-Visualizzazione Errore.
 \end{itemize}
 

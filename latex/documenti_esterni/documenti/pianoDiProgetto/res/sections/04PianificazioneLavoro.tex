@@ -1,24 +1,32 @@
 \section{Lavoro svolto}
-parlare dei 2 grandi periodi di tempo: stesura del way of working e inizio codifica
+Il gruppo inizialmente ha deciso di adottare un metodo a cascata durante la stesura dei documenti iniziai e del way of working. Successivamente con l'analisi dei requisiti e l'inizio della codifica il gruppo ha adottato un metodo agile di tipo scrum al fine di organizzarsi meglio e preventivare in anticipo le attività da svolgere per raggiungere l'obiettivo prefissato.
+Ogni sprint presenta le seguenti caratteristiche:
+\begin{itemize}
+    \item{Durata:} 2 settimane.
+    \item{Attività svolte::} Attività che il gruppo si è prefissato e che ha portato a termine.
+    \item{Difficoltà riscontrate:} A fine dello sprint, tramite un lavoro di retrospettiva si riflette sulle difficoltà incontrate.
+    \item{Resoconto dei costi.}
+\end{itemize}
+
 \subsection{Way of working}
 Parlare a grandi linee del metodo a cascata e rotazione ruoli
 
 
-\begin{longtable}{|p{0.15\textwidth}|c|c|c|c|c|c|c|}
+\begin{longtable}{|p{0.085\textwidth}|c|c|c|c|c|c|c|p{0.07\textwidth}|}
     \hline
-    Nome & \begin{tabular}[p]{@{}c@{}}dal 26/04\\ al 30/04\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 01/05\\ al 04/05\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 04/05\\ al 12/05\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 13/05\\ al 19/05\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 20/05\\ al 26/05\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 27/5\\ al 03/06\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 04/06\\ al 09/06\end{tabular} \\
+    Nome &\begin{tabular}[c]{@{}c@{}} dal 26/04\\ al 30/04 \end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 01/05\\ al 04/05\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 04/05\\ al 12/05\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 13/05\\ al 19/05\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 20/05\\ al 26/05\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 27/5\\ al 03/06\end{tabular} & \begin{tabular}[c]{@{}c@{}}dal 04/06\\ al 09/06\end{tabular} & Totale ore\\
     \hline
-    Ibra Elton & AN & VE & AN & RE & AN & VE & PR \\
+    Ibra Elton & AN - 4 ore & VE - 2 ora& AN - 3 ore & RE - 3 ore & AN - 3 ore & VE -2 ore & PR - 4 ore  & 20\\
     \hline
-    Beschin Michele & AN & AN & RE & AN & V & AN & PR \\
+    Beschin Michele & AN - 3 ore & AN - 3 ore & RE - 4 ore & AN - 2 ore & VE - 2 ore & AN - 4 ore & PR - 3 ore & 21 \\
     \hline
-    Lotto Riccardo & AN & RE & AN & V & AN & V & PT \\
+    Lotto Riccardo & AN - 3 ore & RE - 4 ore & AN - 3 ore & VE - 1 ore & AN - 4 ore & VE - 2 ore & PT - 3 ore & 20\\
     \hline
-    Bobirica Andrei Cristian & AN & AN & VE & AN & VE & AN & RE \\
+    Bobirica Andrei Cristian & AN - 4 ore & AN - 3 ore & VE - 1 ore & AN - 2 ore & VE - 2 ore & AN - 4 ore & RE - 5 ore & 22\\
     \hline
-    Andreetto Alessio & AN & VE & AN & VE & AN & RE & AN \\
+    Andreetto Alessio & AN - 3 ore & VE - 2 ore & AN - 3 ore & VE - 2 ore & AN - 4 ore & RE - 4 ore & AN - 3 ore & 21\\
     \hline
-    Corbu Teodor Mihail & AN & AN & VE & AN & RE & AN & VE \\
+    Corbu Teodor Mihail & AN - 3 ore & AN - 4 ore & VE - 2 ore & AN - 2 ore & RE - 3 ore & AN - 3 ore & VE - 2 ore & 19\\
     \hline
 \end{longtable}
 
@@ -44,37 +52,65 @@ Parlare a grandi linee del metodo a cascata e rotazione ruoli
 
 
 \subsection{Requirements and technology baseline}
-parlare dell'inizio approccio scrum dato l'inizio dei lavori con codice
+In vista della prima revisione RTB il gruppo ha scelto di cambiare metodologia di lavoro. Per facilitare la stesura del codice si è scelto di optare per una metodologia agile suddivisa in sprint.
 
-in generali negli sprint riprendere un po i diari di bordo
+
 \subsubsection{Sprint 1}
 \begin{itemize}
-\item \textbf{Periodo:} 29/05/2023-09/06/2023 
-\item compiti da svolgere
-\item difficoltà trovate
-\item tabella ore
+\item \textbf{Durata:} 29/05/2023 - 09/06/2023 
+\item \textbf{Attività svolte:}
+\begin{itemize}
+    \item Ampliamento e revisione della sezione "casi d'uso" all'interno del documento Analisi dei requisiti;
+    \item analisi e studio dei framework e librerie da utilizzare per lo sviluppo del codice;
+    \item creazione e configurazione dell'ambiente di sviluppo;
+    \item Inizio sviluppo piattaforma issuer.
+\end{itemize}
+\item \textbf{Difficoltà riscontrate:}
+\begin{itemize}
+    \item Lo sviluppo della piattaforma holder non era compatibile parallelamente a quella issuer. 
+    \item Difficoltà nel gestire tutte le istanze all'interno di Docker\glo, si è optato per mantenere su container docker soltanto le API.
+\end{itemize}
+\item \textbf{Resoconto dei costi:}
 \end{itemize}
 
 \subsubsection{Sprint 2}
 \begin{itemize}
-    \item \textbf{Periodo:} 12/06/2023-23/06/2023 
-    \item compiti da svolgere
-    \item difficoltà trovate
-    \item tabella ore
+    \item \textbf{Durata:} 12/06/2023 - 23/06/2023 
+    \item \textbf{Attività svolte:}
+    \begin{itemize}
+        \item È stata implementata la libreria grafica Material UI su un branch separato;
+        \item é stato implementato il sistema di login per issuer app, 
+        \item implementazione del front-end per la richiesta di credenziale nell'issuer.
+    \end{itemize}
+    \item \textbf{Difficoltà riscontrate:}
+    \begin{itemize}
+        \item Al momento attuale lo sviluppo del verifier non è compatibile parallelamente ad issuer.
+    \end{itemize}
+    \item \textbf{Resoconto dei costi:}
     \end{itemize}
 
 \subsubsection{Sprint 3}
 \begin{itemize}
-    \item \textbf{Periodo:} 26/05/2023-07/07/2023 
-    \item compiti da svolgere
-    \item difficoltà trovate
-    \item tabella ore
+    \item \textbf{Durata:} 26/05/2023 - 07/07/2023 
+    \item \textbf{Attività svolte:} 
+    \item \textbf{Difficoltà riscontrate:}
+    \begin{itemize}
+        \item In vista del PoC abbiamo sperimentato l’utilizzo della libreria walt.id per la generazione di credenziali.
+        Abbiamo riscontrato delle problematiche riguardanti bug/mancanza di documentazione/parti di funzionalità non complete.
+    \end{itemize}
+    \item \textbf{Resoconto dei costi:}
     \end{itemize}
 
 \subsubsection{Sprint 4}
 \begin{itemize}
-    \item \textbf{Periodo:} 10/05/2023-21/06/2023 
-    \item compiti da svolgere
-    \item difficoltà trovate
-    \item tabella ore
+    \item \textbf{Durata:} 10/05/2023 - 21/06/2023 
+    \item \textbf{Attività svolte:}
+    \begin{itemize}
+        \item la parte grafica prima implementata su un branch a parte è stata implementata anche sull'applicativo issuer,
+        \item assieme alla parte grafica è stata aggiunta una navbar nell'applicativo issuer 
+        \item il database ha subito delle modifiche in particolare alcuni campi oltre che cambiare nome hanno cambiato valori registrati,
+        \item i macro obiettivi che volevamo raggiungere sono stati suddivisi in task più piccoli da gestire per il gruppo e per i componenti singoli.
+    \end{itemize}
+    \item \textbf{Difficoltà riscontrate:}
+    \item \textbf{Resoconto dei costi:}
     \end{itemize}

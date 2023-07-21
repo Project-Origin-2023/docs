@@ -5,7 +5,8 @@ Ogni sprint presenta le seguenti caratteristiche:
     \item{Durata:} 2 settimane.
     \item{Attività svolte::} Attività che il gruppo si è prefissato e che ha portato a termine.
     \item{Difficoltà riscontrate:} A fine dello sprint, tramite un lavoro di retrospettiva si riflette sulle difficoltà incontrate.
-    \item{Resoconto dei costi.}
+    \item{Costi Previsti}
+    \item{Costi Effettivi}
 \end{itemize}
 
 \subsection{Way of working}
@@ -74,24 +75,44 @@ In vista della prima revisione RTB il gruppo ha scelto di cambiare metodologia d
     \item Lo sviluppo della piattaforma holder non era compatibile parallelamente a quella issuer. 
     \item Difficoltà nel gestire tutte le istanze all'interno di Docker\glo, si è optato per mantenere su container docker soltanto le API.
 \end{itemize}
-\item \textbf{Resoconto dei costi:}
-\begin{longtable}{|p{0.085\textwidth}|c|c|c|c|c|c|c|c|}
+\item \textbf{Costi Previsti:}
+\begin{longtable}{|c|c|c|c|}
     \hline
-    Nome & Responsabile & Analista & Verificatore & Programmatore & Progettista & Amministratore & Tot.\\
+    Ruolo & Descrizione & Ore & Costo \\
     \hline
-    Ibra Elton &5 & & & & & &5\\
+    RE & Responsabile & 5 & 150€ \\
     \hline
-    Beschin Michele & & & &4 & & &4 \\
+    AN & Analista & 5 & 125€ \\
     \hline
-    Lotto Riccardo & & & &5 & & &5 \\
+    VE & Verificatore & 5 & 100€ \\
     \hline
-    Bobirica Andrei Cristian & & & & &3 &2 &5 \\
+    PR & Programmatore & 8 & 120€ \\
     \hline
-    Andreetto Alessio & &6 & & & & &6 \\
+    PT & Progettista & 4 & 100€ \\
     \hline
-    Corbu Teodor Mihail & & &6 & & & &6 \\
+    AM & Amministratore & 3 & 60€ \\
     \hline
-    Totale &5 &6 &6 &9 &3 &2 &31 \\
+    Totale & & 30 & 655€ \\
+    \hline
+    \end{longtable}
+\item \textbf{Costi effettivi:}
+\begin{longtable}{|p{0.1\textwidth}|c|c|c|c|c|c|c|c|}
+    \hline
+    Nome & RE & AN & VE & PR & PT & AM & Ore & Costi\\
+    \hline
+    Ibra Elton &5 & & & & & &5 & 150€\\
+    \hline
+    Beschin Michele & & & &4 & & &4 & 60€ \\
+    \hline
+    Lotto Riccardo & & & &5 & & &5& 75€ \\
+    \hline
+    Bobirica Andrei Cristian & & & & &3 &2 &5 & 115€\\
+    \hline
+    Andreetto Alessio & &6 & & & & &6 & 150€\\
+    \hline
+    Corbu Teodor Mihail & & &6 & & & &6 & 120€\\
+    \hline
+    Totale &5 &6 &6 &9 &3 &2 &31& 670€\\
     \hline
 \end{longtable}
 \end{itemize}
@@ -113,24 +134,45 @@ In vista della prima revisione RTB il gruppo ha scelto di cambiare metodologia d
     \begin{itemize}
         \item Al momento attuale lo sviluppo del verifier non è compatibile parallelamente ad issuer.
     \end{itemize}
-    \item \textbf{Resoconto dei costi:}
-    \begin{longtable}{|p{0.085\textwidth}|c|c|c|c|c|c|c|c|}
+    \item \textbf{Costi Previsti:}
+    \begin{longtable}{|c|c|c|c|}
         \hline
-        Nome & Responsabile & Analista & Verificatore & Programmatore & Progettista & Amministratore & Tot.\\
+        Ruolo & Descrizione & Ore & Costo \\
         \hline
-        Ibra Elton & & & &6 & & &6\\
+        RE & Responsabile & 4 & 120€ \\
         \hline
-        Beschin Michele & & & & &7 & &7 \\
+        AN & Analista & 0 & 0€ \\
         \hline
-        Lotto Riccardo &2 & & & &5 & &7 \\
+        VE & Verificatore & 3 & 60€ \\
         \hline
-        Bobirica Andrei Cristian & & & & &3 &4 &7 \\
+        PR & Programmatore & 13 & 195€ \\
         \hline
-        Andreetto Alessio &2 & & &3 & & &5 \\
+        PT & Progettista & 15 & 375€ \\
         \hline
-        Corbu Teodor Mihail & & &3 &4 & & &7 \\
+        AM & Amministratore & 4 & 80€ \\
         \hline
-        Totale &4 &0 &3 &13 &15 &4 &39 \\
+        Totale & & 39 & 830€ \\
+        \hline
+        \end{longtable}
+    \item \textbf{Costi effettivi:}
+    \begin{longtable}{|p{0.1\textwidth}|c|c|c|c|c|c|c|c|}
+        \hline
+        Nome & RE & AN & VE & PR & PT & AM & Ore & Costi\\
+        \hline
+        Ibra Elton & & & &6 & & &6 & 90€\\
+        \hline
+        Beschin Michele & & & & &7 & &7 & 175€\\
+        \hline
+        Lotto Riccardo &2 & & & &5 & &7 & 185€\\
+        \hline
+        Bobirica Andrei Cristian & & & & &3 &4 &7 & 155€\\
+        \hline
+        Andreetto Alessio &2 & & &3 & & &5 & 105€\\
+        \hline
+        Corbu Teodor Mihail & & &3 &4 & & &7 & 120€\\
+        \hline
+        Totale &4 &0 &3 &13 &15 &4 &39 & 830€\\
+ 
         \hline
     \end{longtable}
     \end{itemize}
@@ -151,24 +193,46 @@ In vista della prima revisione RTB il gruppo ha scelto di cambiare metodologia d
         \item In vista del PoC abbiamo sperimentato l’utilizzo della libreria walt.id per la generazione di credenziali.
         Abbiamo riscontrato delle problematiche riguardanti bug/mancanza di documentazione/parti di funzionalità non complete.
     \end{itemize}
-    \item \textbf{Resoconto dei costi:}
-    \begin{longtable}{|p{0.085\textwidth}|c|c|c|c|c|c|c|c|}
+    \item \textbf{Costi Previsti:}
+    \begin{longtable}{|c|c|c|c|}
         \hline
-        Nome & Responsabile & Analista & Verificatore & Programmatore & Progettista & Amministratore & Tot.\\
+        Ruolo & Descrizione & Ore & Costo \\
         \hline
-        Ibra Elton & & & &3 & & &3\\
+        RE & Responsabile & 1 & 30€ \\
         \hline
-        Beschin Michele & & & & & &3 &3 \\
+        AN & Analista & 1 & 25€ \\
         \hline
-        Lotto Riccardo & & &2 &1 & & &3 \\
+        VE & Verificatore & 2 & 40€ \\
         \hline
-        Bobirica Andrei Cristian & & &1 &2 & & &3 \\
+        PR & Programmatore & 3 & 45€ \\
         \hline
-        Andreetto Alessio &2 &2 & & & & &4 \\
+        PT & Progettista & 1 & 25€ \\
         \hline
-        Corbu Teodor Mihail & & & & &3 & &3 \\
+        AM & Amministratore & 2 & 40€ \\
         \hline
-        Totale &2 &2 &3 &6 &3 &3 &19 \\
+        Totale & & 14 & 350€ \\
+        \hline
+        \end{longtable}
+        
+        
+    \item \textbf{Costi effettivi:}
+    \begin{longtable}{|p{0.1\textwidth}|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Nome & RE & AN & VE & PR & PT & AM & Ore & Costi\\
+        \hline
+        Ibra Elton & & & &3 & & &3 & 45€\\
+        \hline
+        Beschin Michele & & & & & &3 &3 & 60€\\
+        \hline
+        Lotto Riccardo & & &2 &1 & & &3 & 55€\\
+        \hline
+        Bobirica Andrei Cristian & & &1 &2 & & &3 &  50€\\
+        \hline
+        Andreetto Alessio &2 &2 & & & & &4 & 110€\\
+        \hline
+        Corbu Teodor Mihail & & & & &3 & &3 & 75€\\
+        \hline
+        Totale &2 &2 &3 &6 &3 &3 &19 & 395€\\
         \hline
     \end{longtable}
     \end{itemize}
@@ -187,24 +251,44 @@ In vista della prima revisione RTB il gruppo ha scelto di cambiare metodologia d
         \item i macro obiettivi che volevamo raggiungere sono stati suddivisi in task più piccoli da gestire per il gruppo e per i componenti singoli.
     \end{itemize}
     \item \textbf{Difficoltà riscontrate:}
-    \item \textbf{Resoconto dei costi:}
-    \begin{longtable}{|p{0.085\textwidth}|c|c|c|c|c|c|c|c|}
+    \item \textbf{Costi Previsti:}
+    \begin{longtable}{|c|c|c|c|}
         \hline
-        Nome & Responsabile & Analista & Verificatore & Programmatore & Progettista & Amministratore & Tot.\\
+        Ruolo & Descrizione & Ore & Costo \\
         \hline
-        Ibra Elton & &2 & &3 &3 & &8\\
+        RE & Responsabile & 2 & 60€ \\
         \hline
-        Beschin Michele &2 & & &5 & & &7 \\
+        AN & Analista & 2 & 50€ \\
         \hline
-        Lotto Riccardo & & &3 &4 & & &7 \\
+        VE & Verificatore & 2 & 40€ \\
         \hline
-        Bobirica Andrei Cristian & & & &5 & & &5 \\
+        PR & Programmatore & 16 & 240€ \\
         \hline
-        Andreetto Alessio & &1 & & &5 & &6 \\
+        PT & Progettista & 8 & 200€ \\
         \hline
-        Corbu Teodor Mihail & & & & & &7 &7 \\
+        AM & Amministratore & 8 & 160€ \\
         \hline
-        Totale &2 &3 &3 &17 &8 &7 &40 \\
+        Totale & & 38 & 750€ \\
+        \hline
+        \end{longtable}
+    \item \textbf{Costi effettivi:}
+    \begin{longtable}{|p{0.1\textwidth}|c|c|c|c|c|c|c|c|}
+        \hline
+        Nome & RE & AN & VE & PR & PT & AM & Ore & Costi\\
+        \hline
+        Ibra Elton & &2 & &3 &3 & &8 & 170€\\
+        \hline
+        Beschin Michele &2 & & &5 & & &7 & 135€\\
+        \hline
+        Lotto Riccardo & & &3 &4 & & &7 & 120€\\
+        \hline
+        Bobirica Andrei Cristian & & & &5 & & &5 & 75€\\
+        \hline
+        Andreetto Alessio & &1 & & &5 & &6 & 150€\\
+        \hline
+        Corbu Teodor Mihail & & & & & &7 &7 & 140€\\
+        \hline
+        Totale &2 &3 &3 &17 &8 &7 &40 & 790€\\
         \hline
     \end{longtable}
     \end{itemize}

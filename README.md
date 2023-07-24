@@ -9,7 +9,7 @@ Informatica, Università degli Studi di Padova
 
 ## Documenti interni
 
-- [Norma di Progetto](./documenti_interni/documenti/normeDiProgetto.pdf)
+- [Norme di Progetto](./documenti_interni/documenti/normeDiProgetto.pdf)
 - [Glossario](./documenti_interni/documenti/glossario.pdf)
 
 ## Documenti esterni

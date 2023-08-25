@@ -5,7 +5,7 @@
 \subsubsection{Database}\label{Database}
 
 \paragraph{Introduzione}
-Tenendo conto dei requisiti e dell’archittettura da rispettare del capitolato, si sono sviluppati 2 database: “issuerdb” per l’Issuer e “walletdb”  per il User (cioè l’utente in possesso del proprio portafoglio digitale).
+Tenendo conto dei requisiti e dell’archittettura da rispettare del capitolato, si sono sviluppati 2 database: “issuerdb” per l’Issuer e “walletdb”  per lo User (cioè l’utente in possesso del proprio portafoglio digitale).
 
 \paragraph{Issuerdb}
     
@@ -15,9 +15,11 @@ Tenendo conto dei requisiti e dell’archittettura da rispettare del capitolato,
 L'immagine sopra riportata descrive il database "issuerdb" implementato mediante un grafico entità-relazioni (schema ER).\\
 Issuerdb è stato pensato per gestire e conservare le informazioni legate agli utenti, alle richieste di certificati digitali (VCS requests) e alle verifiche dei certificati stessi.
 Per quanto richiesto dal capitolato, e per rispettare la logica dietro tutto il meccanismo dell'Issuer, si distinguono 2 tipi diversi di account: gli account "sys\_admins" e gli account "users".\\
-"sys\_admins" sono gli account utilizzati dagli amministratori di sistema, cioè quelle entità che si occupano di approvare (o meglio, verificare) le richieste degli "users" (VCS requests).\\
-"users", invece, sono gli account utilizzati dai semplici utilizzatori del servizio. Si occupano semplicemente di effettuare delle richieste di certificati di loro interesse alle entità che si occupano di verificare i certificati.\\
-Il contenuto della richiesta approvata E rilasciata può essere di 2 tipi soltanto: un "vcs\_content\_marital\_status" (contenuto riferito allo stato di matrimonio di un utente) o un "vcs\_content\_pid" (contenuto riferito ad un documento PID di un utente).\\
+\begin{itemize}
+\item "sys\_admins" sono gli account utilizzati dagli amministratori di sistema, cioè quelle entità che si occupano di approvare (o meglio, verificare) le richieste degli "users" (VCS requests).\\
+\item "users", invece, sono gli account utilizzati dai semplici utilizzatori del servizio. Si occupano semplicemente di effettuare delle richieste di certificati di loro interesse alle entità che si occupano di verificare i certificati.\\
+\end{itemize}
+Il contenuto della richiesta approvata e rilasciata può essere di 2 tipi soltanto: un "vcs\_content\_marital\_status" (contenuto riferito allo stato di matrimonio di un utente) o un "vcs\_content\_pid" (contenuto riferito ad un documento PID di un utente).\\
 Più in dettaglio:\\\\
 \textbf{Tipi enumerati}: sono definite due tabelle ENUM per rappresentare:
 \begin{itemize}

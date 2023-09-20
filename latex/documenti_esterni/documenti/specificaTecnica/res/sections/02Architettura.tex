@@ -41,7 +41,39 @@ Per la Realizzazione delle 3 webapp è stata adottata un architettura a microser
 
 \subsection{Componenti Back-end}
 \subsubsection{OriginiIssuerApi}
+\begin{itemize}
+    \item \textbf{authentication:}È una classe che si occupa della autenticazione, ovvero: login, registrazione. 
+    \item \textbf{datasScrapper:}È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. 
+    \item \textbf{openid:}È la classe che si occupa di comunicare con il container openIdIssuer. Essendo le chiamate dipendenti strettamente dallo sviluppo della libreria waltId, il gruppo ha preferito far comunicare il front-end non direttamente con la libreria waltId ma dialogare con questo layer intermedio. In questa maniera il backend si occuperà di fare le chiamate con la libreria waltId del container openIdIssuer.
+    \item \textbf{DataResponse:}È una classe che si occupa di parametrizzare il tipo di ritorno che il backend fornisce.
+    \item \textbf{InputChecker:}Contiene dei metodi necessari per la verifica e la correttezza degli input fatti al backend.
+    \item \textbf{QRCodeGenerator:}È una classe fondamentale nel processo di credential issuing. Vi sono 2 modi per generare una credenziale ovvero: cros device e same device. Questa classe si occupa di generare un qrcode senza generare direttamente l'immagine ma dando via risorsa al frontend lo stream dell'immagine del qrcode tramite il metodo \textit{pipeGenerateQR}.
+    \item \textbf{Routing:} In questa classe vengono definite 2 funzionalità principali:
+     \begin{itemize}
+     \item Cors ovvero una funzionalità per limitare l'uso da altri dispositivi. Questa opzione viene configuarata tramite corsOptions specificando gli indirizzi di origine da cui un utilizzatore potrà usare il backend. 
+     \item Express è una funzionalità che permette di offrire degli endpoint con cui un altro applicativo potrà fare delle chiamate http. 
+     \end{itemize}
+    Nel componente vengono configurate le nostre classi precedentemente elencate.
+    Inoltre la clsse specifica tutte le chiamate possibili del backend originIssuerApi.
+
+    
+    \item \textbf{index:}Viene creato il routing e il metodo di configurazione degli endpoint.
+\end{itemize}
 \subsubsection{OriginWalletApi}
+\begin{itemize}
+    \item \textbf{authentication:}È una classe che si occupa della autenticazione, ovvero: login, registrazione. 
+    \item \textbf{datasScrapper:}È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. Essendo il database del Walle irrisorio si potrebbe usare un ulteriore strategia, memorizzando i dati su un file XML o JSON. Questo poichè la struttura dei dati e la complessità è semplice e senza relazioni particolari.
+    \item \textbf{openid:}È la classe che si occupa di comunicare con il container openIdWallet. Essendo le chiamate dipendenti strettamente dallo sviluppo della libreria waltId, il gruppo ha preferito far comunicare il front-end non direttamente con la libreria waltId ma dialogare con questo layer intermedio. In questa maniera il backend si occuperà di fare le chiamate con la libreria waltId del container openIdWallet.
+    \item \textbf{DataResponse:}È una classe che si occupa di parametrizzare il tipo di ritorno che il backend fornisce.
+    \item \textbf{InputChecker:}Contiene dei metodi necessari per la verifica e la correttezza degli input fatti al backend.
+    \item \textbf{Routing:} In questa classe vengono definite 2 funzionalità principali:
+    \begin{itemize}
+    \item Cors ovvero una funzionalità per limitare l'uso da altri dispositivi. Questa opzione viene configuarata tramite corsOptions specificando gli indirizzi di origine da cui un utilizzatore potrà usare il backend. 
+    \item Express è una funzionalità che permette di offrire degli endpoint con cui un altro applicativo potrà fare delle chiamate http. 
+    \end{itemize}
+    Nel componente vengono configurate le nostre classi precedentemente elencate.
+    Inoltre la clsse specifica tutte le chiamate possibili del backend originIssuerApi.
+\end{itemize}
 
 \subsection{Componenti Front-end}
 \subsubsection{originIssuer} 
@@ -67,10 +99,37 @@ Per la Realizzazione delle 3 webapp è stata adottata un architettura a microser
 \end{itemize}
 \subsubsection{originVerifier}
 
-\subsection{Componenti}
+\subsection{Componenti database}
+\begin{itemize}
+    \item \textbf{originIssuerDB:}\\
+    \begin{center}
+        \includegraphics[scale = 0.3]{./res/img/issuerdb.png}
+      \end{center}
+    L'immagine sopra riportata descrive il database "issuerdb" implementato mediante un grafico entità-relazioni (schema ER).\\
+    Issuerdb è stato pensato per gestire e conservare le informazioni legate agli utenti, alle richieste di certificati digitali (VCS requests) e alle verifiche dei certificati stessi.
+    Per quanto richiesto dal capitolato, e per rispettare la logica dietro tutto il meccanismo dell'Issuer, si distinguono 2 tipi diversi di account: gli account "sys\_admins" e gli account "users".\\
+    \begin{itemize}
+    \item "sys\_admins" sono gli account utilizzati dagli amministratori di sistema, cioè quelle entità che si occupano di approvare (o meglio, verificare) le richieste degli "users" (VCS requests).\\
+    \item "users", invece, sono gli account utilizzati dai semplici utilizzatori del servizio. Si occupano semplicemente di effettuare delle richieste di certificati di loro interesse alle entità che si occupano di verificare i certificati.\\
+    \end{itemize}
+    Il contenuto della richiesta approvata e rilasciata può essere di 2 tipi soltanto: un "vcs\_content\_marital\_status" (contenuto riferito allo stato di matrimonio di un utente) o un "vcs\_content\_pid" (contenuto riferito ad un documento PID di un utente).\\
+
+
+
+
+    \item \textbf{originIssuerDB:}
+     \begin{center}
+        \includegraphics[scale = 0.6]{./res/img/walletdb.png}
+      \end{center}
+    
+    L’immagine sopra riportata descrive il database “walletdb” implementato mediante un grafico entità-relazioni (schema ER).
+    Walletdb è stato pensato per gestire e conservare (fare lo “storing”) le informazioni legate alle credenziali degli utenti, come espresso da capitolato.\\
+    
+\end{itemize} 
 
 
 \subsection{Diagramma delle classi}
 
 \subsection{Design pattern}
-
+\paragraph{Strategy}:
+\paragraph{Model View-ViewModel}

@@ -45,7 +45,26 @@ Per la Realizzazione delle 3 webapp è stata adottata un architettura a microser
 
 \subsection{Componenti Front-end}
 \subsubsection{originIssuer} 
+\begin{itemize}
+    \item 
+\end{itemize}
 \subsubsection{originWallet}
+\begin{itemize}
+    \item \textbf{App:} questa è la pagina iniziale dell'applicazione, dove viene definito il \textit{routing} delle pagine.
+    \item \textbf{components/Navbar:} questa è la componente che definisce la \textit{navbar} dell'applicazione, che differisce dal tipo di utente che è loggato (user, guest, ...).
+    \item \textbf{controller/LoginController:} questa è la componente che gestisce la pagina di login dell'applicazione. Esso crea la corrispondente 
+    \textit{LoginViewModel} e la corrispondente \textit{LoginView}. Il \textit{controller} si occupa di gestire gli eventi provenienti 
+    dalla \textit{view} e di aggiornare la \textit{viewModel}, che a sua volta aggiorna il \textit{model} presente nel back-end.
+    \item \textbf{controller/LoginViewModel:} Viene creato dal \textit{controller} ma non ha nessun riferimento ad esso, posside solo il riferimento al modello dei dati che esso posside.
+    \item \textbf{controller/LoginView:} viene creato dal \textit{controller} ma non ha nessun riferimento ad esso, posside solo il riferimento al modello dei dati che esso posside e qualche indicazione di \textit{handling} dei dati.
+    \item \textbf{ViewModel:} componente che si occupa del collegamento con il back-end, ha quindi un riferimento al \textit{model}. È unico per tutta l'applicazione\\
+    \\NB. Tutte le componenti seguono la struttura MVVM sopra descritta per la componente \textit{Login}.
+    \item \textbf{ListCredential:} componente che si occupa di mostrare la lista delle credenziali dell'utente presenti nel \textit{Wallet}. Da qui si può andare nel dettaglio di una singola credenziale.
+    \item \textbf{DetailCredential:} componente che si occupa di mostrare i dettagli di una credenziale presente nel \textit{Wallet}. Da qui si può eliminare una credenziale.\\
+    \\NB. Le seguenti componenti hanno nomi controintuitivi ma sono imposti dallo standard \textit{openID}.
+    \item \textbf{InitiateIssuance:} componete che si  occupa dell'accettazione di una richiesta di credenziale da parte di un \textit{Issuer} e vengo reindirizzato alla pagina \textit{ListCredential}.
+    \item \textbf{CredentialRequest:} Componente che si occupa del re indirizzamento di una richiesta di presentazione di una credenziale parte del \textit{Verifier}. 
+\end{itemize}
 \subsubsection{originVerifier}
 
 \subsection{Componenti}

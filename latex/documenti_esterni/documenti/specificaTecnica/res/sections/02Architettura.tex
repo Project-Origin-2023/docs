@@ -35,10 +35,6 @@ Per la Realizzazione delle 3 webapp è stata adottata un architettura a microser
 \end{itemize}
 
 
-
-
-
-
 \subsection{Componenti Back-end}
 \subsubsection{OriginiIssuerApi}
 \begin{itemize}
@@ -77,20 +73,51 @@ Per la Realizzazione delle 3 webapp è stata adottata un architettura a microser
 
 \subsection{Componenti Front-end}
 \subsubsection{originIssuer} 
+
 \begin{itemize}
-    \item 
+    \item \textbf{components/Navbar:} questa è la componente che definisce la \textit{navbar} dell'applicazione, che differisce dal tipo di utente che è loggato (admin, user, guest).
+    \item \textbf{components/useToken:} componente che gestisce la memorizzazione e l'eliminazione del token.
+    \item \textbf{components/Home:} componente che rappresenta la pagina iniziale dell'applicazione.
+    \item \textbf{components/LicenseLable:} componente che gestische i dettagli sulla licenza dell'applicazione.
+    \item \textbf{components/Logout:} componente che gestisce il logout dell'utente.
+\end{itemize}
+
+Ogni seguente componente è composta da 3 parti: \textit{controller}, \textit{viewmodel} e \textit{view}. Il controller crea la corrispondente
+viewModel e view. Il controller si occupa di gestire gli eventi provenienti dalla view e di aggiornare la viewModel, che a sua volta aggiorna 
+il model presente nel back-end. La view si occupa di mostrare i dati presenti nella viewModel e di gestire gli eventi provenienti dall'utente.
+
+\begin{itemize}
+    \item \textbf{Login:} questa è la componente che gestisce la pagina di login dell'applicazione. 
+    \item \textbf{Register:} questa è la componente che gestisce la pagina di registrazione dell'applicazione.
+    \item \textbf{CredentialRequestPID:} questa è la componente che gestisce la pagina di richiesta di una credenziale PID.
+    \item \textbf{CredentialRequestMarital:} questa è la componente che gestisce la pagina di richiesta di una credenziale Marital.
+    \item \textbf{ListCredentialReqauest:} questa è la componente che gestisce la pagina di visualizzazione delle richieste di credenziali. Si viene reindirizzati
+    a questa pagina dopo aver fatto richiesta di una credenziale.
+    \item \textbf{DetailCredentialRequestPID:} questa è la componente che gestisce la pagina di dettaglio di una richiesta di credenziale PID.
+    \item \textbf{DetailCredentialRequestMarital:} questa è la componente che gestisce la pagina di dettaglio di una richiesta di credenziale Marital.
+    \item \textbf{AdminListCredentialRequest:} questa è la componente che gestisce la pagina di visualizzazione delle richieste di credenziali da parte degli admin.
+    In essa sono presenti due liste di richieste: quelle da approvare e quelle già approvate.
+    \item \textbf{AdminVerifyCredentialRequest:} questa è la componente che gestisce la pagina di dettaglio di una richiesta di credenziale da parte degli admin.
 \end{itemize}
 \subsubsection{originWallet}
+
 \begin{itemize}
     \item \textbf{App:} questa è la pagina iniziale dell'applicazione, dove viene definito il \textit{routing} delle pagine.
-    \item \textbf{components/Navbar:} questa è la componente che definisce la \textit{navbar} dell'applicazione, che differisce dal tipo di utente che è loggato (user, guest, ...).
-    \item \textbf{controller/LoginController:} questa è la componente che gestisce la pagina di login dell'applicazione. Esso crea la corrispondente 
-    \textit{LoginViewModel} e la corrispondente \textit{LoginView}. Il \textit{controller} si occupa di gestire gli eventi provenienti 
-    dalla \textit{view} e di aggiornare la \textit{viewModel}, che a sua volta aggiorna il \textit{model} presente nel back-end.
-    \item \textbf{controller/LoginViewModel:} Viene creato dal \textit{controller} ma non ha nessun riferimento ad esso, posside solo il riferimento al modello dei dati che esso posside.
-    \item \textbf{controller/LoginView:} viene creato dal \textit{controller} ma non ha nessun riferimento ad esso, posside solo il riferimento al modello dei dati che esso posside e qualche indicazione di \textit{handling} dei dati.
-    \item \textbf{ViewModel:} componente che si occupa del collegamento con il back-end, ha quindi un riferimento al \textit{model}. È unico per tutta l'applicazione\\
-    \\NB. Tutte le componenti seguono la struttura MVVM sopra descritta per la componente \textit{Login}.
+    \item \textbf{components/Navbar:} questa è la componente che definisce la \textit{navbar} dell'applicazione, che differisce dal tipo di utente che è loggato (user, guest).
+    \item \textbf{components/useToken:} componente che gestisce la memorizzazione e l'eliminazione del token.
+    \item \textbf{components/Home:} componente che rappresenta la pagina iniziale dell'applicazione.
+    \item \textbf{components/LicenseLable:} componente che gestische i dettagli sulla licenza dell'applicazione.
+    \item \textbf{components/Logout:} componente che gestisce il logout dell'utente.  
+\end{itemize}
+
+Ogni seguente componente è composta da 3 parti: \textit{controller}, \textit{viewmodel} e \textit{view}. Il controller crea la corrispondente
+viewModel e view. Il controller si occupa di gestire gli eventi provenienti dalla view e di aggiornare la viewModel, che a sua volta aggiorna 
+il model presente nel back-end. La view si occupa di mostrare i dati presenti nella viewModel e di gestire gli eventi provenienti dall'utente.
+
+\begin{itemize}      
+    \item \textbf{Login:} questa è la componente che gestisce la pagina di login dell'applicazione. 
+    \item \textbf{Register:} questa è la componente che gestisce la pagina di registrazione dell'applicazione.
+    \item \textbf{ViewModel:} componente che si occupa del collegamento con il back-end, ha quindi un riferimento al \textit{model}. È unico per tutta l'applicazione.
     \item \textbf{ListCredential:} componente che si occupa di mostrare la lista delle credenziali dell'utente presenti nel \textit{Wallet}. Da qui si può andare nel dettaglio di una singola credenziale.
     \item \textbf{DetailCredential:} componente che si occupa di mostrare i dettagli di una credenziale presente nel \textit{Wallet}. Da qui si può eliminare una credenziale.\\
     \\NB. Le seguenti componenti hanno nomi controintuitivi ma sono imposti dallo standard \textit{openID}.
@@ -132,4 +159,15 @@ Per la Realizzazione delle 3 webapp è stata adottata un architettura a microser
 
 \subsection{Design pattern}
 \paragraph{Strategy}
-\paragraph{Model View-ViewModel}
+Il Pattern Strategy è un design pattern comportamentale che consente ad un oggetto client di scegliere un algoritmo specifico tra una serie di diversia algoritmi senza dover necessariamente modificare il codice sorgente. Questo favorisce la modularità, la flessibilità del codice e l'incapsulamento. 
+(parte da discutere alle 16)
+
+\paragraph{Model-View-ViewModel}
+Il pattern architetturale model-view-viemodel è stato utilizzato per separare la patye do business logic dell'applicazione da quella della'ui per rendere più manutenibile il codice e per mantenere una gestione più chiara dei dati e dell'interfaccia utente. \\
+In particolare: 
+\begin{itemize}
+    \item \textbf{Model:}
+    \item \textbf{View:}
+    \item \textbf{ViewModel:}
+\end{itemize}
+(parte da discutere alle 16)

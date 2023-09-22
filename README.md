@@ -18,6 +18,7 @@ Informatica, Università degli Studi di Padova
 - [Piano di Progetto](./documenti_esterni/documenti/pianoDiProgetto.pdf)
 - [Piano di Qualifica](./documenti_esterni/documenti/pianoDiQualifica.pdf)
 - [Specifica Tecnica](./documenti_esterni/documenti/specificaTecnica.pdf)
+- [Manuale Utente](./documenti_esterni/documenti/ManualeUtente.pdf)
 - [Personal Identity Wallet](documenti_esterni/documenti/Capitolato/PersonalIdentityWallet.pdf)
 
 # Crediti

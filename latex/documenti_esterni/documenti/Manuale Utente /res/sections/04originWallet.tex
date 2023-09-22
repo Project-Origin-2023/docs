@@ -1,38 +1,33 @@
 \section{Wallet}
-Il wallet consente la gestione di credenziali richieste presso un issuer.
+Il wallet consente la memorizzazione di credenziali, il credential issuing da parte di un issuer e la verifiable presentation da parte di un verifier.
 
 \subsection{Registrazione al Wallet}
-Per la registrazione occorre fornire un indirizzo email e una password
+Per la registrazione occorre fornire un indirizzo email e una password.
 \begin{center}
-\includegraphics[scale = 0.9]{./res/img/wallet/wallet_register.png}
+\includegraphics[scale = 0.2]{./res/img/wallet/new/wallet_register.png}
 \end{center}
 
 \subsection{Login al Wallet}
-Il login si effettua utilizzando email e password utilizzate durante la registrazione
-
-\subsection{Storage di credenziale}
-Una volta effettuato il login al wallet e richiesto il Rilascio di una credenziale presso un issuer, è possibile concludere il processo di Issuing cliccando su Accept.\\
-In questo modo la credenziale verrà memorizzata nel wallet
+Il login si effettua utilizzando email e password utilizzate durante la registrazione.
 \begin{center}
-\includegraphics[scale = 0.9]{./res/img/wallet/wallet_continue_issuing.png}
+\includegraphics[scale = 0.9]{./res/img/wallet/new/wallet_login.png}
+\end{center}
+
+\subsection{Visualizzazione delle proprie credenziali}
+Una volta effettuato il login al wallet è possibile vedere la lista delle proprie credenziali. Premendo su Dettagli è possibile vedere tutte le informazioni di una credenziale, e premendo su elimina è possibile eliminare la credenziale.
+\begin{center}
+    \includegraphics[scale = 0.2]{./res/img/wallet/new/wallet_credential_list.png}
+    \includegraphics[scale = 0.2]{./res/img/wallet/new/wallet_credential_detail.png}
 \end{center}
 
 \subsection{Presentazione di credenziale}
-Cliccando su START PRESENTATION è possibile presentare una credenziale ad un verifier per poter accedere a dei servizi
+Dopo che si è fatto partire un processo di connessione ad un verifier, per completare la verifiable presentation utilizzando la metodologia cross device, si può utilizzare questa pagina per inserire l'URI openID e continuare la presentazione.\\
+Si verrà reindirizzati alla pagina di credential request.
 \begin{center}
-\includegraphics[scale = 0.9]{./res/img/wallet/wallet_start_presentation.png}
+\includegraphics[scale = 0.2]{./res/img/wallet/new/wallet_presentation.png}
 \end{center}
-\subsection{Visualizzazione e gestione}
-Nella pagina di visualizzazione verrà mostrato un elenco di tutte le credenziali memorizzate nel wallet. \newline
+\subsection{Pagina Credential Request}
+In questa pagina si visualizzano le credenziali presentabili con una verifiable presentation e si selezionano le credenziali che si intende presentare. Premendo il pulsante Present si completerà il processo di presentazione e si verrà reindirizzati al verifier.
 \begin{center}
-\includegraphics[scale = 0.9]{./res/img/wallet/wallet_credentials_list.png}
+\includegraphics[scale = 0.2]{./res/img/wallet/new/wallet_present.png}
 \end{center}
-Cliccando su DETTAGLIO è possibile visualizzare tutte le informazioni memorizzate nella credenziale. \\
-\begin{center}
-\includegraphics[scale = 0.9]{./res/img/wallet/wallet_credential_detail.png}
-\end{center}
-In seguito è possibile visualizzate tutte le informazioni contenute in una credenziale, e si può decidere di eliminarla.
-\begin{center}
-\includegraphics[scale = 0.9]{./res/img/wallet/wallet_credential_delete.png}
-\end{center}
-%anche se questa immagine è quasi identica a quella di prima, la lascerei

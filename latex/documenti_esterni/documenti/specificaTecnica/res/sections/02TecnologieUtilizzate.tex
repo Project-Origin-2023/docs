@@ -1,0 +1,40 @@
+\section{Tecnologie Utilizzate}
+Essendo la struttura delle webapp a microservizi  ono state utilizzate le segueni tecnologie:
+\begin{itemize}
+    \item Docker,
+    \item Docker Container.
+\end{itemize}
+
+Per il deployment dei container è stata gestita la configurazione tramite un file docker compose \textit{docker-compose.yaml}.
+\subsection{Tecnologie Back-end}
+\begin{itemize}
+    \item Node.js + Javascript
+    \item Express: per la creazione di endpoint e creazione di server Http. 
+\end{itemize}
+
+\subsection{Tecnologie Front-end}
+Per la realizzazione della parte grafica degli applicativi web sono state usate le seguenti tecnologie:
+\begin{itemize}
+    \item Vite + React + Javascript,
+    \item Axios per eseguire le chiamate http,
+    \item Material UI.
+\end{itemize}
+
+Vite nello specifico ci è servito per gestire meglio le dipendenze, fare il building della webapplication in maniera migliore e avere più velocità. \\\
+
+Material-UI è una libreria di componenti UI (User Interface) per React fatto da Google. Material-UI è una libreria che viene utilizzata principalmente per realizzare interfacce utente dinamiche e personalizzate.
+Segue il design system “Material Design”, che si occupa di fornire linee guida di design per la realizzazione di applicazioni e siti web.\\
+
+\subsection{Tecnologie Database}
+\begin{itemize}
+    \item BDMS PostegreSQL
+\end{itemize}
+
+
+\subsection{Tecnologie Di Supporto}
+\begin{itemize}
+    \item nginx: Proxy manager per gestire il flusso di dati in arrivo dall'esterno delle nostre componenti e reindirizzarlo all'interno dei nostri componenti docker.
+    \item WaltID: utilizzato per rispettare lo standard OpenIDV4 CI-VP con container messi a disposizione da waltID.
+\end{itemize}
+
+\subsection{Autenticazione e sicurezza}

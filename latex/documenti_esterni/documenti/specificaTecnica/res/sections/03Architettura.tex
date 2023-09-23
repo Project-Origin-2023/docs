@@ -4,7 +4,7 @@
 Per la Realizzazione delle 3 webapp è stata adottata un architettura a microservizi, separando le funzioni di back-end da quelle del front-end. È stato fatto il deploy dei vari microservizi di ciascuna webapp su container docker differenti.
 \subsection{Grafico delle componenti}
 
-\includegraphics[scale = 0.15]{./res/img/microservizi.png}
+\includegraphics[scale = 0.3]{./res/img/microservizi.png}
 
 
 \subsubsection{Container \textbf{nginx}}
@@ -36,7 +36,7 @@ Lo utilizziamo come server proxy per gestire il reindirezzamento del traffico ht
 \subsection{Componenti dell'\textbf{Issuer}}
 
 \subsubsection{OriginiIssuerApi (backend)}
-\includegraphics[scale=0.1]{./res/img/backendissuer.png}
+\includegraphics[scale=0.25]{./res/img/backendissuer.png}
 \begin{itemize}
     \item \textbf{authentication:}È una classe che si occupa della autenticazione, ovvero: login, registrazione. 
     \item \textbf{datasScrapper:}È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. 
@@ -55,7 +55,7 @@ Lo utilizziamo come server proxy per gestire il reindirezzamento del traffico ht
 \end{itemize}
 
 \subsubsection{originIssuer (frontend)} 
-\includegraphics[scale=0.08]{./res/img/frontendissuer.png}
+\includegraphics[scale=0.2]{./res/img/frontendissuer.png}
 \begin{itemize}
     \item \textbf{components/Navbar:} questa è la componente che definisce la \textit{navbar} dell'applicazione, che differisce dal tipo di utente che è loggato (admin, user, guest).
     \item \textbf{components/useToken:} componente che gestisce la memorizzazione e l'eliminazione del token. Tramite il suo utilizzo si riesce a garantire l'autenticazione del front-end presso il back-end.
@@ -98,7 +98,7 @@ il model presente nel back-end. La view si occupa di mostrare i dati presenti ne
 \subsection{Componenti del \textbf{Wallet}}
 
 \subsubsection{OriginWalletApi (backend)}
-\includegraphics[scale=0.1]{./res/img/backendwallet.png}
+\includegraphics[scale=0.25]{./res/img/backendwallet.png}
 \begin{itemize}
     \item \textbf{authentication:}È una classe che si occupa della autenticazione, ovvero: login, registrazione. 
     \item \textbf{datasScrapper:}È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. Essendo il database del Walle irrisorio si potrebbe usare un ulteriore strategia, memorizzando i dati su un file XML o JSON. Questo poichè la struttura dei dati e la complessità è semplice e senza relazioni particolari.
@@ -115,7 +115,7 @@ il model presente nel back-end. La view si occupa di mostrare i dati presenti ne
 \end{itemize}
 
 \subsubsection{originWallet (frontend)}
-\includegraphics[scale=0.08]{./res/img/frontendwallet.png}
+\includegraphics[scale=0.2]{./res/img/frontendwallet.png}
 \begin{itemize}
     \item \textbf{App:} questa è la pagina iniziale dell'applicazione, dove viene definito il \textit{routing} delle pagine.
     \item \textbf{components/Navbar:} questa è la componente che definisce la \textit{navbar} dell'applicazione, che differisce dal tipo di utente che è loggato (user, guest).
@@ -154,7 +154,7 @@ il model presente nel back-end. La view si occupa di mostrare i dati presenti ne
 
 \subsection{Componenti del \textbf{Verifier}}
 \subsubsection{originVerifier (frontend)}
-\includegraphics[scale=0.08]{./res/img/frontendverifier.png}
+\includegraphics[scale=0.22]{./res/img/frontendverifier.png}
 \begin{itemize}
     \item \textbf{App:} questa è la pagina iniziale dell'applicazione, dove viene definito il \textit{routing} delle pagine.
     \item \textbf{components/Navbar:} questa è la componente che definisce la \textit{navbar} dell'applicazione, che differisce dal tipo di utente che è loggato.
@@ -187,7 +187,7 @@ Nel Nostro caso ad esempio essendo il database di Wallet semplice e con nessuna 
 In particolare abbiamo applicato il pattern secondo la seguente struttura : 
 
 \begin{center}
-    \includegraphics[scale = 0.3]{./res/img/MVVM.png}
+    \includegraphics[scale = 0.4]{./res/img/MVVM.png}
   \end{center}
   
 Introducendo la componente controller all'interno del pattern abbiamo un interazione in più tra la view e il ViewModel. Questo ci permette di:

@@ -1,0 +1,80 @@
+\section{Test}
+I test hanno verificato principalmente il corretto funzionamento del backend. Tramite il test degli endpoint è stato verificato il corretto flusso di funzionamento di tutte le componenti del backend, come il database.\\
+Per il test del backend è anche stato utilizzato postman, per verificare manualmente, dove necessario, il test degli endpoint.\\
+Il frontend è stato testato manualmente, verificando il corretto funzionamento delle pagine e dei componenti.\\
+
+\subsection{Test di sistema}
+%tabella (longtable) con 2 colonne: test e requisito
+\begin{longtable}{ 
+    >{\centering}M{0.10\textwidth} 
+    >{\centering}M{0.70\textwidth} 
+    >{\centering\arraybackslash}M{0.10\textwidth} 
+    }
+\rowcolorhead
+\headertitle{\textbf{ID}} &
+\headertitle{\textbf{Descrizione}} &
+\centering \headertitle{\textbf{Esito}}
+\endfirsthead
+\endhead
+TS01 & Verificato il corretto flusso di richiesta di una credenziale & PASSATO \tabularnewline
+TS02 & Verificato il corretto flusso di approvazione di una richiesta di credenziale & PASSATO \tabularnewline
+TS03 & Verificato il corretto flusso di rifiuto di una richiesta di credenziale & PASSATO \tabularnewline
+TS04 & Verificato il corretto flusso di presentazione di una credenziale & PASSATO \tabularnewline
+%aggiungerne altri
+\end{longtable}
+\subsection{Test di integrazione}%ce ne sono un paio, collegamenti tra i container
+\begin{longtable}{ 
+    >{\centering}M{0.10\textwidth} 
+    >{\centering}M{0.70\textwidth} 
+    >{\centering\arraybackslash}M{0.10\textwidth} 
+    }
+\rowcolorhead
+\headertitle{\textbf{ID}} &
+\headertitle{\textbf{Descrizione}} &
+\centering \headertitle{\textbf{Esito}}
+\endfirsthead
+\endhead
+TI01 & Collegamento tra Origin Issuer e Origin Wallet & PASSATO \tabularnewline
+TI02 & Collegamento tra Origin Wallet e Origin Verifier & PASSATO \tabularnewline
+\end{longtable}
+
+\subsection{Test di unità}
+\begin{longtable}{ 
+    >{\centering}M{0.10\textwidth} 
+    >{\centering}M{0.70\textwidth} 
+    >{\centering\arraybackslash}M{0.10\textwidth} 
+    }
+\rowcolorhead
+\headertitle{\textbf{ID}} &
+\headertitle{\textbf{Descrizione}} &
+\centering \headertitle{\textbf{Esito}}
+\endfirsthead
+\endhead
+TU01 & Registrazione utente Origin Issuer & PASSATO \tabularnewline
+TU02 & Login Utente Origin Issuer & PASSATO \tabularnewline
+TU03 & Login Admin Origin Issuer & PASSATO \tabularnewline
+TU04 & Richiesta Credenziale PID & PASSATO \tabularnewline
+TU05 & Richiesta Credenziale Marital Status & PASSATO \tabularnewline
+TU06 & Rilascio Credenziale con metodologia same device & PASSATO \tabularnewline
+TU07 & Rilascio Credenziale con metodologia cross device & PASSATO \tabularnewline
+TU08 & Richiesta Credenziale solo con token di autenticazione& PASSATO \tabularnewline
+TU09 & Visualizzazione lista richieste di credenziale utente & PASSATO \tabularnewline
+TU10 & Visualizzazione dettagli singola richista di credenziale PID & PASSATO \tabularnewline
+TU11 & Visualizzazione dettagli singola richista di credenziale Marital Status & PASSATO \tabularnewline
+TU12 & Visualizzazione lista richieste di credenziale admin & PASSATO \tabularnewline
+TU13 & Approvazione richiesta di credenziale & PASSATO \tabularnewline
+TU14 & Visualizzazione richieste di credenziale in pending & PASSATO \tabularnewline
+TU15 & Visualizzazione richieste di credenziale not pending & PASSATO \tabularnewline
+TU16 & Approvazione richieste di credenziale in pending & PASSATO \tabularnewline
+TU17 & Rifiuto richieste di credenziale in pending & PASSATO \tabularnewline
+TU18 & Registrazione utente Origin Wallet & PASSATO \tabularnewline
+TU19 & Login utente Origin Wallet & PASSATO \tabularnewline
+TU20 & Visualizzazione lista di credenziali utente & PASSATO \tabularnewline
+TU21 & Visualizzazione dettaglio credenziale utente & PASSATO \tabularnewline
+TU22 & Eliminazione credenziale utente& PASSATO \tabularnewline
+TU23 & Presentazione credenziale & PASSATO \tabularnewline
+TU24 & Approvazione presentazione credenziale& PASSATO \tabularnewline
+TU25 & Rifiuto presentazione credenziale& PASSATO \tabularnewline
+TU26 & Accesso ai servizi Verifier & PASSATO \tabularnewline
+
+\end{longtable}

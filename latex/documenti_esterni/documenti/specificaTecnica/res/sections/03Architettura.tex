@@ -8,7 +8,7 @@ Per la Realizzazione delle 3 webapp è stata adottata un architettura a microser
 
 
 \subsubsection{Container \textbf{nginx}}
-Lo utilizziamo come server proxy per gestire il reindirizzamento del traffico http tramite domini verso i container interni della rete docker. Alcuni container, nello specifico quelli adibiti allo standard OpenId, utilizzati da noi e sviluppati da WaltId, per funzionare la loro configurazione è basata solo sull'utilizzo di domini. Pertanto questo necessita forzatamente l'utilizzo dei precedentemente citati domini per accedere alle funzionalità.  
+Lo utilizziamo come server proxy\glo per gestire il reindirizzamento del traffico http tramite domini verso i container interni della rete docker. Alcuni container, nello specifico quelli adibiti allo standard OpenId, utilizzati da noi e sviluppati da WaltId, per funzionare la loro configurazione è basata solo sull'utilizzo di domini. Pertanto questo necessita forzatamente l'utilizzo dei precedentemente citati domini per accedere alle funzionalità.  
 \subsubsection{Containers dell'\textbf{Issuer}}
 \begin{itemize}
     \item \textbf{originIssuerApi:} È la componente di back-end della webapp Issuer che si occupa di gestire le richieste provenienti dal front-end e di comunicare con il database \textit{originIssuerDB} per la memorizzazione dei dati.
@@ -46,7 +46,7 @@ Lo utilizziamo come server proxy per gestire il reindirizzamento del traffico ht
     \item \textbf{QRCodeGenerator:} È una classe fondamentale nel processo di credential issuing. Vi sono 2 modi per generare una credenziale ovvero: cros device e same device. Questa classe si occupa di generare un qrcode senza generare direttamente l'immagine ma dando via risorsa al frontend lo stream dell'immagine del qrcode tramite il metodo \textit{pipeGenerateQR}.
     \item \textbf{Routing:} In questa classe vengono definite 2 funzionalità principali:
      \begin{itemize}
-     \item Cors ovvero una funzionalità per limitare l'uso da altri dispositivi. Questa opzione viene configuarata tramite corsOptions specificando gli indirizzi di origine da cui un utilizzatore potrà usare il backend. 
+     \item Cors ovvero una funzionalità per limitare l'uso da altri dispositivi. Questa opzione viene configurata tramite corsOptions specificando gli indirizzi di origine da cui un utilizzatore potrà usare il backend. 
      \item Express è una funzionalità che permette di offrire degli endpoint\glo con cui un altro applicativo potrà fare delle chiamate http. 
      \end{itemize}
     Nel componente vengono configurate le nostre classi precedentemente elencate.
@@ -101,7 +101,7 @@ il model presente nel back-end. La view si occupa di mostrare i dati presenti ne
 \includegraphics[scale=0.25]{./res/img/backendwallet.png}
 \begin{itemize}
     \item \textbf{authentication:} È una classe che si occupa della autenticazione, ovvero: login e registrazione. 
-    \item \textbf{datasScrapper:} È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. Essendo il database del Walle irrisorio si potrebbe usare un ulteriore strategia, memorizzando i dati su un file XML o JSON. Questo poiché la struttura dei dati e la complessità è semplice e senza relazioni particolari.
+    \item \textbf{datasScrapper:} È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. Essendo il database del Wallet irrisorio si potrebbe usare un ulteriore strategia, memorizzando i dati su un file XML o JSON. Questo poiché la struttura dei dati e la complessità è semplice e senza relazioni particolari.
     \item \textbf{openid:} È la classe che si occupa di comunicare con il container openIdWallet. Essendo le chiamate dipendenti strettamente dallo sviluppo della libreria waltId, il gruppo ha preferito far comunicare il front-end non direttamente con la libreria waltId ma dialogare con questo layer intermedio. In questa maniera il backend si occuperà di fare le chiamate con la libreria waltId del container openIdWallet.
     \item \textbf{DataResponse:} È una classe che si occupa di parametrizzare il tipo di ritorno che il backend fornisce.
     \item \textbf{InputChecker:} Contiene dei metodi necessari per la verifica e la correttezza degli input fatti al backend.
@@ -123,7 +123,7 @@ il model presente nel back-end. La view si occupa di mostrare i dati presenti ne
     \item \textbf{components/Home:} componente che rappresenta la pagina iniziale dell'applicazione.
     \item \textbf{components/LicenseLable:} componente che gestisce i dettagli sulla licenza dell'applicazione.
     \item \textbf{components/Logout:} componente che gestisce il logout dell'utente.  
-    \item \textbf{pageState:} componente che gestisce il dialogo ed il reindirizzamento tra le applicazioni. Questa componente memorizza lo stato in cui si trova il \textit{wallet} prima di un reindirizzamento e lo riprende dopo che questo è terminato.
+    \item \textbf{pageState:} componente che gestisce il dialogo e il reindirizzamento tra le applicazioni. Questa componente memorizza lo stato in cui si trova il \textit{wallet} prima di un reindirizzamento e lo riprende dopo che questo è terminato.
 \end{itemize}
 
 Ogni seguente componente è composta da 3 parti: \textit{controller}, \textit{viewmodel} e \textit{view}. Il controller crea la corrispondente

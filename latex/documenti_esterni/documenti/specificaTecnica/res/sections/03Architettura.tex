@@ -8,7 +8,7 @@ Per la Realizzazione delle 3 webapp è stata adottata un architettura a microser
 
 
 \subsubsection{Container \textbf{nginx}}
-Lo utilizziamo come server proxy per gestire il reindirezzamento del traffico http tramite domini verso i container interni della rete docker. Alcuni container, nello specifico quelli addibiti allo standard OpenId, utilizzati da noi e sviluppati da WaltId, per funzionare la loro configurazione è basata solo sull'utilizzo di domini. Pertando questo necessita forzatamente l'utilizzo dei precedementemente citati domini per accedere alle funzionalità.  
+Lo utilizziamo come server proxy per gestire il reindirizzamento del traffico http tramite domini verso i container interni della rete docker. Alcuni container, nello specifico quelli adibiti allo standard OpenId, utilizzati da noi e sviluppati da WaltId, per funzionare la loro configurazione è basata solo sull'utilizzo di domini. Pertanto questo necessita forzatamente l'utilizzo dei precedentemente citati domini per accedere alle funzionalità.  
 \subsubsection{Containers dell'\textbf{Issuer}}
 \begin{itemize}
     \item \textbf{originIssuerApi:} È la componente di back-end della webapp Issuer che si occupa di gestire le richieste provenienti dal front-end e di comunicare con il database \textit{originIssuerDB} per la memorizzazione dei dati.
@@ -25,8 +25,8 @@ Lo utilizziamo come server proxy per gestire il reindirezzamento del traffico ht
 \end{itemize}
 \subsubsection{Containers del \textbf{Verifier}}
 \begin{itemize}
-    \item \textbf{originVerifier:}È la componete di front-end della webapp Verifier. Essa si interfaccia con l'utente per inviare segnali e ricevere dati dal Back-end \textit{originVerfierApi}. Per la realizzazione del codice è stato adottato il pattern architetturale MVVM (Model-View-ViewModel).
-    \item \textbf{openIdVerifier:}È una componente della libreria WaltID per mantenere lo standard openId di comunicazione tra Verifier e le altre webapp, al fine di rispettare le richieste del capitolato.
+    \item \textbf{originVerifier:} È la componete di front-end della webapp Verifier. Essa si interfaccia con l'utente per inviare segnali e ricevere dati dal Back-end \textit{originVerfierApi}. Per la realizzazione del codice è stato adottato il pattern architetturale MVVM (Model-View-ViewModel).
+    \item \textbf{openIdVerifier:} È una componente della libreria WaltID per mantenere lo standard openId di comunicazione tra Verifier e le altre webapp, al fine di rispettare le richieste del capitolato.
 \end{itemize}
 \subsubsection{Container \textbf{Adminer}}
 È un container che permette agli sviluppatori di gestire i database tramite interfaccia web.
@@ -38,19 +38,19 @@ Lo utilizziamo come server proxy per gestire il reindirezzamento del traffico ht
 \subsubsection{OriginiIssuerApi (backend)}
 \includegraphics[scale=0.25]{./res/img/backendissuer.png}
 \begin{itemize}
-    \item \textbf{authentication:}È una classe che si occupa della autenticazione, ovvero: login, registrazione. 
-    \item \textbf{datasScrapper:}È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. 
-    \item \textbf{openid:}È la classe che si occupa di comunicare con il container openIdIssuer. Essendo le chiamate dipendenti strettamente dallo sviluppo della libreria waltId, il gruppo ha preferito far comunicare il front-end non direttamente con la libreria waltId ma dialogare con questo layer intermedio. In questa maniera il backend si occuperà di fare le chiamate con la libreria waltId del container openIdIssuer.
-    \item \textbf{DataResponse:}È una classe che si occupa di parametrizzare il tipo di ritorno che il backend fornisce.
-    \item \textbf{InputChecker:}Contiene dei metodi necessari per la verifica e la correttezza degli input fatti al backend.
-    \item \textbf{QRCodeGenerator:}È una classe fondamentale nel processo di credential issuing. Vi sono 2 modi per generare una credenziale ovvero: cros device e same device. Questa classe si occupa di generare un qrcode senza generare direttamente l'immagine ma dando via risorsa al frontend lo stream dell'immagine del qrcode tramite il metodo \textit{pipeGenerateQR}.
+    \item \textbf{authentication:} È una classe che si occupa della autenticazione, ovvero: login, registrazione. 
+    \item \textbf{datasScrapper:} È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. 
+    \item \textbf{openid:} È la classe che si occupa di comunicare con il container openIdIssuer. Essendo le chiamate dipendenti strettamente dallo sviluppo della libreria waltId, il gruppo ha preferito far comunicare il front-end non direttamente con la libreria waltId ma dialogare con questo layer intermedio. In questa maniera il backend si occuperà di fare le chiamate con la libreria waltId del container openIdIssuer.
+    \item \textbf{DataResponse:} È una classe che si occupa di parametrizzare il tipo di ritorno che il backend fornisce.
+    \item \textbf{InputChecker:} Contiene dei metodi necessari per la verifica e la correttezza degli input fatti al backend.
+    \item \textbf{QRCodeGenerator:} È una classe fondamentale nel processo di credential issuing. Vi sono 2 modi per generare una credenziale ovvero: cros device e same device. Questa classe si occupa di generare un qrcode senza generare direttamente l'immagine ma dando via risorsa al frontend lo stream dell'immagine del qrcode tramite il metodo \textit{pipeGenerateQR}.
     \item \textbf{Routing:} In questa classe vengono definite 2 funzionalità principali:
      \begin{itemize}
      \item Cors ovvero una funzionalità per limitare l'uso da altri dispositivi. Questa opzione viene configuarata tramite corsOptions specificando gli indirizzi di origine da cui un utilizzatore potrà usare il backend. 
      \item Express è una funzionalità che permette di offrire degli endpoint con cui un altro applicativo potrà fare delle chiamate http. 
      \end{itemize}
     Nel componente vengono configurate le nostre classi precedentemente elencate.
-    Inoltre la clsse specifica tutte le chiamate possibili del backend originIssuerApi.
+    Inoltre la classe specifica tutte le chiamate possibili del backend originIssuerApi.
     \item \textbf{index:}Viene creato il routing e il metodo di configurazione degli endpoint.
 \end{itemize}
 
@@ -60,7 +60,7 @@ Lo utilizziamo come server proxy per gestire il reindirezzamento del traffico ht
     \item \textbf{components/Navbar:} questa è la componente che definisce la \textit{navbar} dell'applicazione, che differisce dal tipo di utente che è loggato (admin, user, guest).
     \item \textbf{components/useToken:} componente che gestisce la memorizzazione e l'eliminazione del token. Tramite il suo utilizzo si riesce a garantire l'autenticazione del front-end presso il back-end.
     \item \textbf{components/Home:} componente che rappresenta la pagina iniziale dell'applicazione.
-    \item \textbf{components/LicenseLable:} componente che gestische i dettagli sulla licenza dell'applicazione.
+    \item \textbf{components/LicenseLable:} componente che gestisce i dettagli sulla licenza dell'applicazione.
     \item \textbf{components/Logout:} componente che gestisce il logout dell'utente.
 \end{itemize}
 
@@ -100,11 +100,11 @@ il model presente nel back-end. La view si occupa di mostrare i dati presenti ne
 \subsubsection{OriginWalletApi (backend)}
 \includegraphics[scale=0.25]{./res/img/backendwallet.png}
 \begin{itemize}
-    \item \textbf{authentication:}È una classe che si occupa della autenticazione, ovvero: login, registrazione. 
-    \item \textbf{datasScrapper:}È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. Essendo il database del Walle irrisorio si potrebbe usare un ulteriore strategia, memorizzando i dati su un file XML o JSON. Questo poichè la struttura dei dati e la complessità è semplice e senza relazioni particolari.
-    \item \textbf{openid:}È la classe che si occupa di comunicare con il container openIdWallet. Essendo le chiamate dipendenti strettamente dallo sviluppo della libreria waltId, il gruppo ha preferito far comunicare il front-end non direttamente con la libreria waltId ma dialogare con questo layer intermedio. In questa maniera il backend si occuperà di fare le chiamate con la libreria waltId del container openIdWallet.
-    \item \textbf{DataResponse:}È una classe che si occupa di parametrizzare il tipo di ritorno che il backend fornisce.
-    \item \textbf{InputChecker:}Contiene dei metodi necessari per la verifica e la correttezza degli input fatti al backend.
+    \item \textbf{authentication:} È una classe che si occupa della autenticazione, ovvero: login e registrazione. 
+    \item \textbf{datasScrapper:} È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. Essendo il database del Walle irrisorio si potrebbe usare un ulteriore strategia, memorizzando i dati su un file XML o JSON. Questo poiché la struttura dei dati e la complessità è semplice e senza relazioni particolari.
+    \item \textbf{openid:} È la classe che si occupa di comunicare con il container openIdWallet. Essendo le chiamate dipendenti strettamente dallo sviluppo della libreria waltId, il gruppo ha preferito far comunicare il front-end non direttamente con la libreria waltId ma dialogare con questo layer intermedio. In questa maniera il backend si occuperà di fare le chiamate con la libreria waltId del container openIdWallet.
+    \item \textbf{DataResponse:} È una classe che si occupa di parametrizzare il tipo di ritorno che il backend fornisce.
+    \item \textbf{InputChecker:} Contiene dei metodi necessari per la verifica e la correttezza degli input fatti al backend.
     \item \textbf{Routing:} In questa classe vengono definite 2 funzionalità principali:
     \begin{itemize}
     \item Cors ovvero una funzionalità per limitare l'uso da altri dispositivi. Questa opzione viene configuarata tramite corsOptions specificando gli indirizzi di origine da cui un utilizzatore potrà usare il backend. 
@@ -121,7 +121,7 @@ il model presente nel back-end. La view si occupa di mostrare i dati presenti ne
     \item \textbf{components/Navbar:} questa è la componente che definisce la \textit{navbar} dell'applicazione, che differisce dal tipo di utente che è loggato (user, guest).
     \item \textbf{components/useToken:} componente che gestisce la memorizzazione e l'eliminazione del token. Tramite il suo utilizzo si riesce a garantire l'autenticazione del front-end presso il back-end.
     \item \textbf{components/Home:} componente che rappresenta la pagina iniziale dell'applicazione.
-    \item \textbf{components/LicenseLable:} componente che gestische i dettagli sulla licenza dell'applicazione.
+    \item \textbf{components/LicenseLable:} componente che gestisce i dettagli sulla licenza dell'applicazione.
     \item \textbf{components/Logout:} componente che gestisce il logout dell'utente.  
     \item \textbf{pageState:} componente che gestisce il dialogo ed il reindirizzamento tra le applicazioni. Questa componente memorizza lo stato in cui si trova il \textit{wallet} prima di un reindirizzamento e lo riprende dopo che questo è terminato.
 \end{itemize}
@@ -138,7 +138,7 @@ il model presente nel back-end. La view si occupa di mostrare i dati presenti ne
     \item \textbf{DetailCredential:} componente che si occupa di mostrare i dettagli di una credenziale presente nel \textit{Wallet}. Da qui si può eliminare una credenziale.\\
     \\NB. Le seguenti componenti hanno nomi controintuitivi ma sono imposti dallo standard \textit{openID}.
     \item \textbf{InitiateIssuance:} componete che si  occupa dell'accettazione di una richiesta di credenziale da parte di un \textit{Issuer} e vengo reindirizzato alla pagina \textit{ListCredential}.
-    \item \textbf{CredentialRequest:} componente che si occupa del re indirizzamento di una richiesta di presentazione di una credenziale parte del \textit{Verifier}. 
+    \item \textbf{CredentialRequest:} componente che si occupa del reindirizzamento di una richiesta di presentazione di una credenziale parte del \textit{Verifier}. 
     \item \textbf{StartIssuerInitiatedIssuance:} componente necessaria per il \textit{credential issuing} cross-device, quindi attraverso URI openID.
     \item \textbf{StartPresentation:} componente necessaria per la \textit{verifiable presentation} cross-device, quindi fare il fullfill di una presentazione attraverso URI openID.
 \end{itemize}
@@ -160,7 +160,7 @@ il model presente nel back-end. La view si occupa di mostrare i dati presenti ne
     \item \textbf{components/Navbar:} questa è la componente che definisce la \textit{navbar} dell'applicazione, che differisce dal tipo di utente che è loggato.
     \item \textbf{components/useToken:} componente che gestisce la memorizzazione e l'eliminazione del token. Tramite il suo utilizzo si riesce a garantire l'autenticazione del front-end presso il back-end.
     \item \textbf{components/Home:} componente che rappresenta la pagina iniziale dell'applicazione.
-    \item \textbf{components/LicenseLable:} componente che gestische i dettagli sulla licenza dell'applicazione.
+    \item \textbf{components/LicenseLable:} componente che gestisce i dettagli sulla licenza dell'applicazione.
     \item \textbf{components/Logout:} componente che gestisce il logout dell'utente.  
 \end{itemize}
 
@@ -169,21 +169,21 @@ viewModel e view. Il controller si occupa di gestire gli eventi provenienti dall
 il model presente nel back-end. La view si occupa di mostrare i dati presenti nella viewModel e di gestire gli eventi provenienti dall'utente.
 
 \begin{itemize}
-    \item Connect: componente necessaria per effettuare la connesione e presentare una credenziale di tipo PID al \textit{Verifier} attraverso il proprio \textit{Wallet}.
+    \item Connect: componente necessaria per effettuare la connessione e presentare una credenziale di tipo PID al \textit{Verifier} attraverso il proprio \textit{Wallet}.
     \item PresentationSuccess: componente che si occupa di mostrare il successo della presentazione di una credenziale.
     \item ServiceIsee: servizio offerto dal \textit{Verifier} che simula la richiesta di un ISEE, per acceder a questo componente si è vincolati all'utilizzo di un token di autorizzazione rilasciato dal componente openID e rilasciato solo in nel caso la procedura di verifiable presentation è completata con successo. 
 \end{itemize}
 
 \subsection{Design pattern}
 \subsubsection{Strategy}
-Il Pattern Strategy è un design pattern comportamentale che consente ad un oggetto client di scegliere un algoritmo specifico tra una serie di diversia algoritmi senza dover necessariamente modificare il codice sorgente. Questo favorisce la modularità, la flessibilità del codice e l'incapsulamento. 
-Esso è stato utilizzato per la componente del Wallet e dell'Issuer. Essendo che entrambe hanno la necessità, in quanto web application, di collegarsi al backend. Quest'ultimo deve memorizzare, richiedere e visualizzare i dati in un database. Il gruppo ha deciso di adottare tale pattern data la possibilità in futuro di cambiare sistema di dbms o struttura di contenimento di dati (XML o JSON) cambiando soltanto algoritmo senza dover cambiare il codice sorgente per intero. 
-Questo è stato possibile attraverso l'utilizzo di 3 classi: \textit{dataScapper} essendo l'interfaccia principale con la quale la web application interagiasce, tramite il metodo setStrategy è stato utilizzata la strategia \textit{DatabaseStrategy}. Quest'ultima è una strategia di reperimento dei dati specifici, applicata per una tipologia specifica di database; ereditata dalla classe \textit{Database}. 
-Il pattern utilizzato si discosta da quello imparato durante il corso poichè il linquaggio di programmazione Javascript non implementa l'ereditarietà nelle classi. Per sopperire a tale mancanza è stata usata la relazione \textit{has-a}.
+Il Pattern Strategy è un design pattern comportamentale che consente a un oggetto client di scegliere un algoritmo specifico tra una serie di diversi algoritmi senza dover necessariamente modificare il codice sorgente.Questo favorisce la modularità, la flessibilità del codice e l'incapsulamento. 
+Esso è stato utilizzato per la componente del Wallet e dell'Issuer. Essendo che entrambe hanno la necessità, in quanto web application, di collegarsi al backend. Quest'ultimo deve memorizzare, richiedere e visualizzare i dati in un database.Il gruppo ha deciso di adottare tale pattern data la possibilità in futuro di cambiare sistema di dbms o struttura di contenimento di dati (XML o JSON) cambiando soltanto algoritmo senza dover cambiare il codice sorgente per intero. 
+Questo è stato possibile attraverso l'utilizzo di 3 classi: \textit{dataScapper} essendo l'interfaccia principale con la quale la web application interagiasce, tramite il metodo setStrategy è stato utilizzata la strategia \textit{DatabaseStrategy}.Quest'ultima è una strategia di reperimento dei dati specifici, applicata per una tipologia specifica di database; ereditata dalla classe \textit{Database}. 
+Il pattern utilizzato si discosta da quello imparato durante il corso poiché il linguaggio di programmazione Javascript non implementa l'ereditarietà nelle classi.Per sopperire a tale mancanza è stata usata la relazione \textit{has-a}.
 Nel Nostro caso ad esempio essendo il database di Wallet semplice e con nessuna relazione è possibile in futuro applicare una strategia JSONStrategy al posto di DatabaseStrategy.
 
 \subsubsection{Il pattern architetturale Model-View-ViewModel}
-È stato utilizzato per separare la parte di business logic dell'applicazione da quella della'ui per rendere più manutenibile il codice e per mantenere una gestione più chiara dei dati e dell'interfaccia utente. \\
+È stato utilizzato per separare la parte di business logic dell'applicazione da quella dell'ui per rendere più manutenibile il codice e per mantenere una gestione più chiara dei dati e dell'interfaccia utente. \\
 In particolare abbiamo applicato il pattern secondo la seguente struttura : 
 
 \begin{center}
@@ -197,4 +197,4 @@ Introducendo la componente controller all'interno del pattern abbiamo un interaz
     \item riusciamo meglio a gestire i dati ed elaborarli.
 \end{itemize}
 
-Nello specifico quset'ultimo punto era necessario poichè non dovevamo soltanto mostrare dei dati presi direttamnete dal database. In questa maniera abbiamo usato il controller come component di react. Questa struttura è stata adottata per tutte e 3 le web application. 
+Nello specifico quest'ultimo punto era necessario poiché non dovevamo soltanto mostrare dei dati presi direttamente dal database. In questa maniera abbiamo usato il controller come component di react. Questa struttura è stata adottata per tutte e 3 le web application. 

@@ -36,7 +36,7 @@ Lo utilizziamo come server proxy\glo per gestire il reindirizzamento del traffic
 \subsection{Componenti dell'\textbf{Issuer}}
 
 \subsubsection{OriginiIssuerApi (backend)}
-\includegraphics[scale=0.25]{./res/img/backendissuer.png}
+\includegraphics[scale=0.12]{./res/img/backendissuer.png}
 \begin{itemize}
     \item \textbf{authentication:} È una classe che si occupa della autenticazione, ovvero: login, registrazione. 
     \item \textbf{datasScrapper:} È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. 
@@ -98,7 +98,7 @@ il model presente nel back-end. La view si occupa di mostrare i dati presenti ne
 \subsection{Componenti del \textbf{Wallet}}
 
 \subsubsection{OriginWalletApi (backend)}
-\includegraphics[scale=0.25]{./res/img/backendwallet.png}
+\includegraphics[scale=0.12]{./res/img/backendwallet.png}
 \begin{itemize}
     \item \textbf{authentication:} È una classe che si occupa della autenticazione, ovvero: login e registrazione. 
     \item \textbf{datasScrapper:} È un insieme di classi che si occupa di dialogare con il database reperendo e memorizzando i dati da esso. È stato realizzato tramite un insieme di 3 classi che rispettano il pattern strategy. Essendo il database del Wallet irrisorio si potrebbe usare un ulteriore strategia, memorizzando i dati su un file XML o JSON. Questo poiché la struttura dei dati e la complessità è semplice e senza relazioni particolari.
